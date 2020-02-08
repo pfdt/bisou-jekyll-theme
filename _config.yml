@@ -1,0 +1,34 @@
+title: boozy bisou
+short_title: bisou
+description: cocktail recipes collection
+baseurl: 
+urlbase: https://boozybisou.com
+locale: en_US
+cloudinary_600x400: https://res.cloudinary.com/pfdt/image/upload/c_fill,g_auto:no_faces,h_400,q_80,w_600
+permalink: "/:path/"
+collections:
+  recipes:
+    output: true
+    permalink: "/:path/"
+  posts:
+    output: true
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: recipes
+    values:
+      layout: recipe
+plugins:
+  - jekyll-sitemap
+  - jekyll-menus
+exclude:
+- ".gitignore"
+- ".gitattributes"
+- ".jekyll-cache"
+- CNAME
+- README.md

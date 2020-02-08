@@ -1,0 +1,26 @@
+<footer class="site-footer">
+	<div class="content-footer">
+		{% if page.layout and page.layout == "recipe" %}
+		<span class="home">
+			<i class="far fa-caret-square-left"></i>
+			<div class="label">back home</div>
+		</span>		
+		<a href="/admin/#/pages/_recipes-{{ page.slug }}-md/" class="adminContent"><span class="edit">
+			<i class="far fa-edit"></i>
+			<div class="label">edit recipe</div>
+		</span></a>	
+		<span class="close">
+			<i class="far fa-window-close"></i>
+			<div class="label">close page</div>
+		</span>
+		{% endif %}
+	</div>
+</footer>
+<!-- Javascript -->
+<script src="{{ '/assets/js/jquery-3.3.1.min.js' | relative_url }}" type="text/javascript"></script>
+<script src="{{ '/assets/js/isotope.pkgd.min.js' | relative_url }}" type="text/javascript"></script>
+<script src='https://www.gstatic.com/firebasejs/5.7.1/firebase-app.js'></script>
+<script src='https://www.gstatic.com/firebasejs/5.7.1/firebase-auth.js'></script>
+<script src='https://www.gstatic.com/firebasejs/5.7.1/firebase-database.js'></script>
+<script src="{{ '/assets/js/main.js' | relative_url }}" type="text/javascript"></script>
+<script src="{{ '/assets/js/custom.js' | relative_url }}" type="text/javascript"></script>

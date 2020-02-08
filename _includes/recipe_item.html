@@ -1,0 +1,34 @@
+{% comment %}
+	recipe card displayed in recipes list
+{% endcomment %}
+<div class="pure-u-1 pure-u-md-1-3 element-item c_{{ recipe.category | slugify }} r_{{ recipe.slug }}" id="{{ recipe.slug }}" data-name="{{ recipe.title }}" data-date="{{ recipe.date }}">
+	<div class="card">
+		<i class="star far fa-star" value="{{ recipe.slug }}"></i>
+		<div class="card-header">
+			{% if recipe.image and recipe.image != "" %}
+			<img src="{{ site.cloudinary_600x400 }}{{ recipe.image }}" alt="{{ recipe.title }}">
+			{% else %}
+				<img src="{{ "/assets/img/placeholder.png" | absolute_url }}" alt="{{ recipe.title }}">
+			{% endif %}
+			<h3>
+				{% if recipe.title.size > 22 %}
+					<a href="{{ recipe.url | absolute_url }}">
+						{% assign arraytitle = recipe.title | split: " " %}
+						{% if arraytitle.size > 3 %}
+						<p class="hl">{{ recipe.title | truncatewords: 3, "" }}</p>
+						<p class="hl">{{ arraytitle | shift | shift | shift | join:" " }}</p>
+						{% else %}
+						<p class="hl">{{ recipe.title | truncatewords: 2, "" }}</p>
+						<p class="hl">{{ arraytitle | shift | shift | join:" " }}</p>
+					{% endif %}</a>	
+				{% else %}
+				<a class="hl" href="{{ recipe.url | absolute_url }}">{{ recipe.title }}</a>
+				{% endif %}
+			</h3>
+		</div>
+		<div class="card-body">
+			<p>{{ recipe.ingredients | replace: '
+', ', ' | replace: "ounces", "oz" | replace: "ounce", "oz" | replace: "oz.", "oz" | replace: "teaspoon", "tsp" | replace: "barspoon", "tsp" | replace: "tablespoon", "tbsp" | replace: "1/4", "¼" | replace: "1/2", "½" | replace: "3/4", "¾" | replace: "1/3", "⅓" | replace: "2/3", "⅔"}}</p>
+		</div>
+	</div>
+</div>

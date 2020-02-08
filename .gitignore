@@ -1,0 +1,8 @@
+_data/
+_posts/
+_recipes/
+_site/
+.jekyll-cache/
+.sass-cache/
+.DS_Store
+*/.DS_Store

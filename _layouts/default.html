@@ -1,0 +1,9 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	{% include head.html %}
+	<body class="{% if page.layout and page.layout != "" %}{{ page.layout }}{% else %}{% endif %}">
+		{% include header.html %}
+		{{ content }}
+		{% include footer.html %}
+	</body>
+</html>
