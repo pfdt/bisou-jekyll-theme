@@ -1,15 +1,16 @@
 ---
-layout: null
+layout: compress
 regenerate: true
 ---
 {% assign first = true %}
 [
 {% for item in site.recipes %}{% if item.title != null and item.title != empty %}{% unless first %},{% endunless %}{
-    "title": {{ item.title | jsonify }},
-    "data_search": ".r_{{ item.slug }}",
-    "ingredients": "{{ item.ingredients | strip_html | replace: '
-', ', ' | remove:'"' }}",
-    "categories": "{% for category in item.categories %}{{ category }}{% unless forloop.last %}, {% endunless %}{% endfor %}",
-    "technique": "{{ item.technique }}"
+    "title": {{ item.title | jsonify | downcase }},
+    "data_search": {{ item.slug | prepend:".r_" | jsonify }},
+    "ingredients": {{ item.ingredients | strip_html | replace: '
+', ', ' | remove:'"' | jsonify | downcase }},
+    "category": {% for category in item.categories %}{{ category | jsonify | downcase }}{% unless forloop.last %}, {% endunless %}{% endfor %},
+    "technique": {{ item.technique | jsonify | downcase }},
+    "source": {{ item.source-text | jsonify | downcase }} 
 }
 {% assign first = false %}{% endif %}{% endfor %}]

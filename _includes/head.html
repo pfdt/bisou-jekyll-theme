@@ -1,14 +1,15 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>{% if page.layout == 'recipe' %}{{ page.title }} | {% endif %}{{ site.title }}{% if page.layout == 'recipes_list' %} - {{ site.description }}{% endif %}</title>
-	<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+	<title>{% if page.layout == 'recipe-single' %}{{ page.title }} | {% endif %}{{ site.title }}{% if page.layout == 'recipes_list' %} - {{ site.description }}{% endif %}</title>
+	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | replace: "
+	", " " }}{% else %}{{ site.description }}{% endif %}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	{% comment %} open graph meta {% endcomment %}
-	<meta property="og:title" content="{% if page.layout == 'recipe' %}{{ page.title }}, a {{ page.category | downcase }} cocktail recipe | {% endif %}{{ site.title }}{% if page.layout == 'recipes_list' %} - {{ site.description }}{% endif %}">
-	<meta property="og:type" content="{% if page.layout == 'recipe' %}article{% else %}website{% endif %}">
+	<meta property="og:title" content="{% if page.layout == 'recipe-single' %}{{ page.title }}, a {{ page.category | downcase }} cocktail recipe | {% endif %}{{ site.title }}{% if page.layout == 'recipes_list' %} - {{ site.description }}{% endif %}">
+	<meta property="og:type" content="{% if page.layout == 'recipe-single' %}article{% else %}website{% endif %}">
 	<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.urlbase }}">
-	<meta property="og:image" content="{% if page.layout == 'recipe' %}{{ site.cloudinary_600x400 }}{{ page.image }}{% else %}{{ '/img/placeholder.png' | relative_url }}{% endif %}">
+	<meta property="og:image" content="{% if page.layout == 'recipe-single' %}{{ site.img-dir--sharing }}{{ page.image }}{% else %}{{ '/assets/img/sharing-img.png' | absolute_url }}{% endif %}">
 	<meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | replace: "
 	", " " }}{% else %}{{ site.description }}{% endif %}">
 	<meta property="og:site_name" content="{{ site.title }}">
@@ -16,30 +17,53 @@
 	{% if page.date %}
 	<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
 	{% endif %}
-	{% comment %} favicon & app icon {% endcomment %}
-	<link rel="icon" href="{{ '/favicon.ico' | relative_url }}"/>
-	<link rel="apple-touch-icon" sizes="57x57" href="{{ '/assets/img/touch-icon-57.png' | relative_url }}">
-	<link rel="apple-touch-icon" sizes="76x76" href="{{ '/assets/img/touch-icon-76.png' | relative_url }}">
-	<link rel="apple-touch-icon" sizes="120x120" href="{{ '/assets/img/touch-icon-120.png' | relative_url }}">
-	<link rel="apple-touch-icon" sizes="152x152" href="{{ '/assets/img/touch-icon-152.png' | relative_url }}">
-	<link rel="apple-touch-icon" sizes="167x167" href="{{ '/assets/img/touch-icon-167.png' | relative_url }}">
-	<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/touch-icon-180.png' | relative_url }}">
-	<link rel="icon" sizes="192x192" href="{{ '/assets/img/touch-icon-192.png' | relative_url }}">
-	<link rel="icon" sizes="128x128" href="{{ '/assets/img/touch-icon-128.png' | relative_url }}">
-	<link rel="stylesheet" href="{{ '/assets/css/pure-min.css' | relative_url }}">
-	<!--[if lte IE 8]>
-	<link rel="stylesheet" href="{{ '/assets/css/grids-responsive-old-ie-min.css' | relative_url }}">
-	<![endif]-->
-	<!--[if gt IE 8]><!-->
-	<link rel="stylesheet" href="{{ '/assets/css/grids-responsive-min.css' | relative_url }}">
-	<!--<![endif]-->
-	<link rel="stylesheet" href="{{ '/assets/css/main.min.css' | relative_url }}">
-	<!-- Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-47423799-3"></script>
+	{% comment %} favicon {% endcomment %}
+	<link rel="apple-touch-icon" sizes="180x180" href="{{ '/apple-touch-icon.png' | relative_url }}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | relative_url }}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16.png' | relative_url }}">
+	<link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+	<link rel="mask-icon" href="{{ '/safari-pinned-tab.svg' | relative_url }}" color="#0c1e30">
+	<link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}">
+	<meta name="apple-mobile-web-app-title" content="boozy bisou">
+	<meta name="application-name" content="boozy bisou">
+	<meta name="msapplication-TileColor" content="#0c1e30">
+	<meta name="msapplication-config" content="{{ '/browserconfig.xml' | relative_url }}">
+	<meta name="theme-color" content="#0c1e30">
+	
+	<!-- CSS -->
+	<style rel="stylesheet" type="text/css" crossorigin="anonymous">
+		{% include pure-min.css %}
+		{% if site.env == 'production' %}
+			{% include main.min.css %}
+		{% else %}
+			{% include main.css %}
+		{% endif %}		
+	</style>
+	
+	<!-- Javascript -->
+	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
+	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/isotope.pkgd.min.js' | relative_url }}"></script>
+	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/lazyload.min.js' | relative_url }}"></script>
+	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/bodyScrollLock.min.js' | relative_url }}"></script>
+	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/firebase-app.js' | relative_url }}"></script>
+	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/firebase-auth.js' | relative_url }}"></script>
+	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/firebase-database.js' | relative_url }}"></script>
+	{% if site.env == 'production' %}
+		<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
+	{% else %}
+		<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/main.js' | relative_url }}"></script>
+	{% endif %}
+	
+	{% if site.googlanalytics_ID  and site.googlanalytics_ID != "" %}
 	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'UA-47423799-3');
+		window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+		ga('create', '{{ site.googlanalytics_ID }}', 'auto');
+		ga('send', 'pageview');
 	</script>
+	<script defer src='https://www.google-analytics.com/analytics.js'></script>
+	{% endif %}
+	
+	<!-- Preload -->
+	<link rel="preload" href="{{ '/assets/img/logo-icon.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img/bookmarks.svg' | relative_url }}" as="image">
 </head>

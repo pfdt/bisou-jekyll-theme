@@ -1,0 +1,26 @@
+---
+label: recipes-list
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: Titre
+  config:
+    required: true
+- type: select
+  name: category
+  config:
+    source:
+      type: documents
+      section: taxonomies
+      file: _data/taxonomies.yml
+      path: categories
+    required: false
+  label: Catégorie
+- type: text
+  name: layout
+  label: Layout
+  hidden: false
+  default: recipes-lists
+  config:
+    required: true

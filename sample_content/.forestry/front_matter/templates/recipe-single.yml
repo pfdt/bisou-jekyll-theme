@@ -1,0 +1,55 @@
+---
+label: recipe-single
+hide_body: false
+fields:
+- type: text
+  label: Titre
+  name: title
+  config:
+    required: true
+- type: select
+  name: category
+  config:
+    source:
+      type: documents
+      section: taxonomies
+      file: _data/taxonomies.yml
+      path: categories
+    required: false
+  label: Catégorie
+- type: select
+  name: technique
+  config:
+    source:
+      type: documents
+      section: taxonomies
+      file: _data/taxonomies.yml
+      path: techniques
+    required: false
+  label: Technique
+- type: textarea
+  name: ingredients
+  label: Ingrédients
+  config:
+    wysiwyg: false
+    schema:
+      format: markdown
+    required: true
+- type: text
+  name: source-url
+  label: Source (url)
+- name: source-text
+  type: text
+  config:
+    required: false
+  label: Source (text)
+- type: file
+  name: image
+  label: Image
+- type: text
+  name: layout
+  label: Layout
+  hidden: true
+  default: recipe-single
+  config:
+    required: false

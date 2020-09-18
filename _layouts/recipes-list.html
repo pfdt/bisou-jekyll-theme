@@ -1,0 +1,19 @@
+---
+layout: default
+---
+{% comment %}
+	This layout is used to display all the recipes, filtered by a category if specified
+{% endcomment %}
+	<div id="content" class="grid-layout">
+		<div id="isotopeContent" class="pure-g">
+			{% assign sorted_recipes = site.recipes | sort: "title" %}
+			{% for recipe in sorted_recipes %}
+				{% include recipe-item.html %}
+			{% endfor %}
+		</div>
+		<div id="no-result">
+			<li>no result found</li>
+			<li><a class="simple-link">show all</a></li>
+		</div>
+	</div>
+</div>

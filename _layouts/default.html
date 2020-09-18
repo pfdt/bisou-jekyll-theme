@@ -1,9 +1,18 @@
+---
+layout: compress
+---
 <!doctype html>
 <html class="no-js" lang="en">
 	{% include head.html %}
-	<body class="{% if page.layout and page.layout != "" %}{{ page.layout }}{% else %}{% endif %}">
+	<body class="{% if page.layout and page.layout != '' %}layout--{{ page.layout }}{% else %}{% endif %}">
 		{% include header.html %}
-		{{ content }}
+		<div id="main-container" class="container pure-g">
+			{% include sidebar.html %}
+			{{ content }}
+		</div>
+		{% include modal.html %}
+		<div class="overlay" id="overlay--sidebar"></div>
+		<div class="overlay overlay--modal" id="overlay--modal"></div>
 		{% include footer.html %}
 	</body>
 </html>

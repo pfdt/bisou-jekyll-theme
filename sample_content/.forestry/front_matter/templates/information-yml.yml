@@ -1,0 +1,63 @@
+---
+label: taxonomies
+hide_body: true
+fields:
+- type: boolean
+  name: forcedeploy
+  label: force deployement
+  description: toggle to trigger a deploy
+- type: list
+  name: categories
+  label: categories
+  config:
+    use_select: false
+    source:
+      type: documents
+- type: list
+  name: techniques
+  label: techniques
+- name: account
+  type: field_group
+  config: {}
+  fields:
+  - name: login_title
+    type: text
+    config:
+      required: false
+    label: login title
+  - name: login_body
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: login body
+  - name: login_close
+    type: text
+    config:
+      required: false
+    label: login close
+  - name: signed-in_title
+    type: text
+    config:
+      required: false
+    label: signed-in title
+  - name: signed-in_body
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: signed-in body
+  - name: signed-in_close
+    type: text
+    config:
+      required: false
+    label: signed-in close
+  label: account modal content
+pages:
+- _data/taxonomies.yml

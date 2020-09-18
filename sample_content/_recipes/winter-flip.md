@@ -1,0 +1,20 @@
+---
+layout: recipe
+title: Winter flip
+category: Dairy
+technique: Dry Shake
+ingredients: |-
+  1 oz sweet vermouth
+  ½ pineapple rum
+  ⅓ oz maple syrup
+  ⅓ oz orange juice
+  1 egg
+  4 dashes of chocolate bitters
+source: https://youtu.be/-HGoeDqMtuw
+image: "/v1578749699/bb/brandy-flip-recipe_wru1af.jpg"
+star: 
+
+---
+Pour all the ingredients in a shaker without ice and shake. Add ice and shake again and strain in a glass.
+
+Garnish with sesame seeds.

@@ -1,24 +1,21 @@
 <header class="site-header">
-	<div class="container">
-	  	<nav class="main-nav">
-			<h1 class="logo"><a>{{ site.name }}</a></h1>
-			<ul class="navigation button-group filter-button-group">
-				{% for category in site.data.taxonomies.categories %}
-				<li><a class="button chl c_{{ category | slugify }} inactive" data-filter=".c_{{ category | slugify }}">{{ category }}</a></li>
-				{% endfor %}
-				<li><a class="button fas fa-window-close inactive" data-filter="*"></a></li>
-				<li><a class="button fas fa-star inactive" data-filter="#account_card"></a></li>
-			</ul>
-			<div class="searchbar">
-				<span class="search_switch">
-					<i class="fas fa-search"></i>
-					<i class="fas fa-times"></i>
-				</span>
-				<form method="get" onSubmit="return false" data-search-form>
-				    <input type="search" name="q" id="q" placeholder="search" data-search-input />
-				</form>
-				<span class="search_clear"><i class="fas fa-window-close"></i></span>
-			</div>
-		</nav>
-	</div>
+  	<nav id="main-nav">
+	  	<div id="burger">
+	  		{% include burger.svg %}
+	  	</div>
+		<h1 id="logo">
+			<a class="main-nav__icons" {% if page.layout and page.layout == 'recipe-single' %} href="/"{% endif %}>{{ site.name }}</a>
+		</h1>
+		<div class="searchbar">
+			<form id="searchbar__form" method="get" onSubmit="return false" data-search-form>
+			    <input id="searchbar__input" type="search" name="q" id="q" data-search-input />
+			    {% include search-icon.svg %}
+			    {% include search-empty.svg %}
+			</form>
+		</div>
+		<div id="account">
+			{% include account-button.svg %}
+			</a>
+		</div>
+	</nav>
 </header>

@@ -1,0 +1,24 @@
+---
+layout: recipe
+title: Pink Rabbit
+category: Spirit-forward
+technique: Stir
+ingredients: |-
+  1 ounce gin
+  1 ounce blanc vermouth
+  1 ounce rooibos tea (see Editor's Note)
+  1/2 teaspoon lemon juice
+source: https://punchdrink.com/recipes/pink-rabbit/
+image: "/v1549918615/bb/Article-Pink-Rabbit-Summer-Cocktails-Five-Ingredient-Easy-Drink-Recipes.jpg"
+date: 2019-02-11 21:57:33 +0100
+
+---
+Combine all ingredients and stir briefly with ice to chill, taking care not to over-dilute the mixture.
+
+Strain into a wine glass.
+
+Express an orange peel over the drink and discard.
+
+**rooibos tea**
+
+To make the rooibos tea: Bring 12 ounces of water to a boil. Once boiling, remove the pot from the heat and wait a minute before combining the water with a level tablespoon of good quality, loose-leaf rooibos tea. Allow the tea to steep for 10 to 12 minutes—an intentionally long steep designed to coax the bright tannins out of the tea leaf. Strain the tea through a wire mesh strainer, making sure to press all of the water from the solids. Cover the tea and place it in the refrigerator until chilled. The tea can be made up to 48 hours in advance.

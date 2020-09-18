@@ -1,0 +1,70 @@
+---
+layout: default
+---
+{% comment %}
+	This layout is used by the documents in the _posts/ collection
+{% endcomment %}
+  <div id="content" class="card card--single before-bg--{{ page.category | slugify }} r_{{ page.slug }}">
+	    
+	<div class="card__cover card__cover--single">
+      {% if page.image and page.image != "" %}
+        <img class="card__cover__img card__cover__img--single" src="{{ site.img-dir--card }}{{ page.image }}" alt="{{ recipe.title }}">
+      {% else %}
+        <div class="card__cover__img card__cover__img--list card__cover__img--placeholder" alt="{{ page.title }}"></div>
+      {% endif %}
+	</div>
+	
+	<div class="card__body card__body--single pure-g">
+	
+		<div class="card__body__controls pure-u-1">
+			<div class="card__body__controls__rating" value="{{ page.slug }}">				
+				<div class="rating__dots"></div>
+				<div class="rating__borders"></div>
+				<div class="rating__icons 5" title="5 stars" value="5"></div>
+			    <div class="rating__icons 4" title="4 stars" value="4"></div>
+			    <div class="rating__icons 3" title="3 stars" value="3"></div>
+			    <div class="rating__icons 2" title="2 stars" value="2"></div>
+				<div class="rating__icons 1" title="1 star" value="1"></div>
+			</div>
+			<div class="card__body__controls__bookmark" value="{{ page.slug }}"></div>
+		</div>
+		<div class="card__body__title pure-u-1">
+			<a class="" href="{{ page.url | absolute_url }}">
+				<h1>{{ page.title | downcase }}</h1>
+			</a>
+		</div>
+		
+		{% comment %}
+		<div class="card__body__taxonomies pure-u-1">
+		  	<div class="">{{ page.category | downcase }}</div>
+		  	<div class="">{{ page.technique | downcase }}</div>
+		  	{% if page.source and page.source != "" %}
+			<div class="source">source : <a href="{{ page.source }}" target="_blank" >{{ page.source }}</a></div> 
+			{% else %}{% endif %}
+		</div>
+		{% endcomment %}
+		
+		<div class="card__body__ingredients pure-u-1 pure-u-sm-1-2">	
+			<span class="card__body__ingredients__item p-ingredient">{{ page.ingredients | replace: "ounces", "oz" | replace: "ounce", "oz" | replace: "oz.", "oz" | replace: "teaspoon", "tsp" | replace: "barspoon", "tsp" | replace: "tablespoon", "tbsp" | replace: "1/4", "¼" | replace: "1/2", "½" | replace: "3/4", "¾" | replace: "1/3", "⅓" | replace: "2/3", "⅔" | replace: '
+', '</span><span class="card__body__ingredients__item p-ingredient">'}}</span>
+		</div>
+		
+		<div class="card__body__description--single pure-u-1 pure-u-sm-1-2">
+			<div class="card__body__description__label label">instructions :</div>
+			<div class="card__body__description__instructions e-instructions">{{ content }}</div>		
+			{% if page.source-url and page.source-url != "" %}{% assign source-url = true %}{% else %}{% endif %}
+			{% if page.source-text and page.source-text != "" %}{% assign source-text = true %}{% else %}{% endif %}
+			{% if source-url or source-text %}
+			<div class="card__body__description__label label">source :</div>
+			<div class="">{{ page.source-text }}</div>
+			<a class="simple-link" href="{{ page.source-url }}" target="_blank" >{{ page.source-url | replace: "https://", "" | replace: "http://", "" | replace: "www.", "" | split: "/" | first }}</a>
+			</div>
+			{% else %}{% endif %}			
+		</div>
+		
+		<div class="card__body__edit-recipe pure-u-1">
+			<a href="/admin/#/pages/_recipes-{{ page.slug }}-md/" class="adminContent simple-link">edit recipe</a>
+		</div>
+	</div>
+</div>
+

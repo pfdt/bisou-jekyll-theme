@@ -1,0 +1,16 @@
+<div class="modal fade" id="account-modal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content modal-content__header">
+		<h2 class="modal-title">{{ site.data.taxonomies.account.login_title }}</h2>
+		{% include close.svg %}
+	</div>
+	<div class="modal-content modal-content__body">
+		{{ site.data.taxonomies.account.login_body | markdownify }}
+	</div>
+	<div class="modal-content modal-content__button">
+		{% include google-sign.svg %}
+		<a class="modal-off js-close-modal simple-link">{{ site.data.taxonomies.account.login_close }}</a>
+		<a id="button--signOut" class="simple-link">sign out</a>
+	</div>
+	<div class="modal-content modal-content__footer">	
+	</div>
+</div>

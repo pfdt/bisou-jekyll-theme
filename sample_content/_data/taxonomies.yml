@@ -1,0 +1,30 @@
+---
+forcedeploy: false
+categories:
+- Bitter
+- Dairy
+- Long
+- Citrusy
+- Spirit-forward
+- Sweet & fruity
+- Tiki
+- Tropical
+- Zero-proof
+techniques:
+- Blend
+- By the batch
+- Dry Shake
+- In glass
+- Shake
+- Stir
+- Swizzle
+account:
+  login_title: login to...
+  login_body: "<li>add recipes to your personal collection,</li><li>rate your favorites
+    recipes,</li><li>sync your preferences between your devices.</li>"
+  login_close: no thanks, back to the recipes...
+  signed-in_title: your are logged in, let's...
+  signed-in_body: "<li>add recipes to your personal collection,</li><li>rate your
+    favorites recipes,</li><li>sync your preferences between your devices.</li>"
+  signed-in_close: ok, back to the recipes...
+  privacy: 

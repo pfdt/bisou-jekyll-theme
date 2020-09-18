@@ -22,6 +22,6 @@ Neither shaken, nor stirred.
 - Client-side search and filter: [jekyll-search](https://github.com/mathaywarduk/jekyll-search), [Isotope](https://isotope.metafizzy.co/)
 - CMS and deployment: [Forestry](https://forestry.io/)
 
-Some lines and good tips from [cagrimmett/jekyll-tools](https://github.com/cagrimmett/jekyll-tools), [James Barnett](https://codepen.io/jamesbarnett/pen/vlpkh) and uzful advices from [mandawan](https://github.com/mandawan).
+Some lines and good tips from [cagrimmett/jekyll-tools](https://github.com/cagrimmett/jekyll-tools), [James Barnett](https://codepen.io/jamesbarnett/pen/vlpkh), [willmcpo/body-scroll-lock](https://github.com/willmcpo/body-scroll-lock), [RealFaviconGenerator](https://realfavicongenerator.net/) and uzful advices from [mandawan](https://github.com/mandawan).
 
 I'm not a developer and this is my first time using jekyll and more broadly github, I hope it is not too dirty. :)

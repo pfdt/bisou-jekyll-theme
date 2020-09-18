@@ -1,0 +1,58 @@
+title: bisou
+description: a cocktail recipes jekyll theme
+urlbase: https://boozybisou.com
+url: https://boozybisou.com
+permalink: "/:path/"
+
+img-dir--card: 
+img-dir--sharing: 
+googlanalytics_ID: ""
+firebase_apiKey: ""
+firebase_authDomain: ""
+firebase_databaseURL: ""
+firebase_projectId: ""
+firebase_storageBucket: ""
+firebase_messagingSenderId: ""
+
+collections:
+  recipes:
+    output: true
+    permalink: "/:path/"
+  posts:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: recipes
+    values:
+      layout: recipe-single
+
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: []
+  blanklines: false
+  profile: false
+  startings: all
+
+remote_theme: pfdt/bisou-jekyll-theme@develop
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-sitemap
+
+exclude:
+- ".gitignore"
+- ".gitattributes"
+- ".jekyll-cache"
+- "sample_content/"
+- CNAME
+- README.md
