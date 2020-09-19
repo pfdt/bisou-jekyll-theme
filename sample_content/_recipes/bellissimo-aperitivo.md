@@ -10,8 +10,8 @@ ingredients:  |-
   1 dash maraschino liqueur
   1 dash Angostura bitters
 source: http://imbibemagazine.com/bellissimo-aperitivo/
-image: "/bb/bellissimo-aperitivo.jpg"
-layout: recipe
+image: "/boozybisou/bellissimo-aperitivo.jpg"
+layout: recipe-single
 
 ---
 Combine ingredients in a mixing glass and fill with ice.  

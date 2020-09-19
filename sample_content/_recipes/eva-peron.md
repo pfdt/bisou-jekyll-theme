@@ -10,8 +10,8 @@ ingredients:  |-
   1 oz lime juice
   1 oz ginger beer
 source: http://imbibemagazine.com/eva-peron-recipe/
-image: "/bb/eva-peron.jpg"
-layout: recipe
+image: "/boozybisou/eva-peron.jpg"
+layout: recipe-single
 
 ---
 Combine the Fernet Branca, sweet vermouth, ginger liqueur and lime juice in an ice-filled shaker.  

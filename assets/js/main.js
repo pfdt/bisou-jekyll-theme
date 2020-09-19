@@ -21,13 +21,13 @@ const
 	allowEmpty = false,
 	disableBodyScroll = bodyScrollLock.disableBodyScroll,
 	enableBodyScroll = bodyScrollLock.enableBodyScroll,
-	jsonFeedUrl = 'assets/feeds/feed.json',
+	jsonFeedUrl = '/assets/feeds/feed.json',
 	firebase_apiKey = {{ site.firebase_apiKey | jsonify }},
-	firebase_authDomain = {{ site.firebase_authDomain | jsonify }},
-	firebase_databaseURL = {{ site.firebase_databaseURL | jsonify }},
 	firebase_projectId = {{ site.firebase_projectId | jsonify }},
-	firebase_storageBucket = {{ site.firebase_storageBucket | jsonify }},
-	firebase_messagingSenderId = {{ site.firebase_messagingSenderId | jsonify }},
+	firebase_databaseName = {{ site.firebase_databaseName | jsonify }},
+	firebase_authDomain = firebase_projectId+'.firebaseapp.com',
+	firebase_databaseURL = firebase_databaseName+'.firebaseio.com',
+	firebase_storageBucket = firebase_projectId+'.appspot.com',
 	signedIn_modalTitle = {{ site.data.taxonomies.account.signed-in_title | jsonify }},
 	signedIn_modalBody = {{ site.data.taxonomies.account.signed-in_body | markdownify | jsonify }},
 	signedIn_modalClose = {{ site.data.taxonomies.account.signed-in_close | jsonify }},
@@ -47,8 +47,8 @@ $(document).ready(function () {
 		$gridContainer = $("#isotopeContent"),
 		$bookmarksFilter = $("#filter-button--bookmarks"),
 		$recipesAll = $("#filter-button--all-recipes"),
-		$sidebar = $("#sidebar"),
-		$accountModal = $("#account-modal");
+		$sidebar = document.querySelector('#sidebar'),
+		$accountModal = document.querySelector('#account-modal');
 
     /* ==========================================================================
 	Initiate on launch
@@ -86,13 +86,11 @@ $(document).ready(function () {
     initiateFirebase();
 
     function initiateFirebase() {
-        const config = {
+        var config = {
             apiKey: firebase_apiKey,
             authDomain: firebase_authDomain,
             databaseURL: firebase_databaseURL,
-            projectId: firebase_projectId,
-            storageBucket: firebase_storageBucket,
-            messagingSenderId: firebase_messagingSenderId,
+            storageBucket: firebase_storageBucket
         };
         firebase.initializeApp(config);
     }
@@ -336,7 +334,7 @@ $(document).ready(function () {
         $('.main-nav__icons--account > path').css('display', 'none');
         $('.modal-title').html(signedIn_modalTitle);
         $('.modal-body').html(signedIn_modalBody);
-        $('.modal-button .modal-off').html(signedIn_modalClose);
+        $('.modal-content__button .modal-off').html(signedIn_modalClose);
     }
     async function signedOut() {
         $('body').removeClass('signed-in');
@@ -344,7 +342,7 @@ $(document).ready(function () {
         $('.main-nav__icons--account > path').css('display', 'block');
         $('.modal-title').html(login_modalTitle);
         $('.modal-body').html(login_modalBody);
-        $('.modal-button .modal-off').html(login_modalClose);
+        $('.modal-content__button .modal-off').html(login_modalClose);
         $('.adminContent').removeClass('active');
         currentBookmarks = ':not(*)';
     }
@@ -641,19 +639,10 @@ $(document).ready(function () {
         activeSidebar = true;
         $("body").addClass("activeSidebar");
 		if (wideLayout == false) {
-			disableBodyScroll($sidebar, {
-				allowTouchMove: el => {
-					while (el && el !== document.body) {
-						if (el.getAttribute('body-scroll-lock-ignore') !== null) {
-							return true;
-						}
-						el = el.parentElement;
-					}
-				},
-			});    
+			disableBodyScroll($sidebar);
         }
     }
-
+	
     async function disableSidebar() {
         activeSidebar = false;
         $("body").removeClass("activeSidebar");

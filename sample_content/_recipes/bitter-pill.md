@@ -10,8 +10,8 @@ ingredients:  |-
   ½ oz demerara syrup (1:1)
   ½ oz egg white
 source: http://imbibemagazine.com/bitter-pill/
-image: "/bb/bitter-pill.jpg"
-layout: recipe
+image: "/boozybisou/bitter-pill.jpg"
+layout: recipe-single
 
 ---
 Shake ingredients with ice and strain into an ice-filled glass. Garnish by twisting the peel over the finished drink.

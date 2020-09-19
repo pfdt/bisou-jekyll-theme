@@ -1,5 +1,5 @@
 ---
-layout: recipe
+layout: recipe-single
 title: Flor de Piña
 category: Tropical
 technique: Shake
@@ -10,7 +10,7 @@ ingredients: |-
   2 oz pineapple juice
   2 oz coconut water
 source: http://imbibemagazine.com/flor-de-pina-guelaguetza-los-angeles/
-image: "/v1560890193/bb/flor-de-pin%CC%83a-from-guelaguetza-crdt-dylan-jeni.jpg"
+image: "/v1560890193/boozybisou/flor-de-pin%CC%83a-from-guelaguetza-crdt-dylan-jeni.jpg"
 star: 5
 
 ---

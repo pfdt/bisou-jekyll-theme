@@ -11,8 +11,8 @@ ingredients:  |-
   1,5 oz carrot juice
   1 splash Perrier
 source: http://imbibemagazine.com/i-dont-carrot-all-bitter-twisted-phoenix/
-image: "/bb/i-dont-carrot-all.jpg"
-layout: recipe
+image: "/boozybisou/i-dont-carrot-all.jpg"
+layout: recipe-single
 
 ---
 In a pilsner glass, combine all the ingredients and fill halfway with crushed ice.  

@@ -14,8 +14,8 @@ ingredients:  |-
   2 dash absinthe
   1 dash Angostura bitters
 source: https://punchdrink.com/recipes/zombie/
-image: "/bb/zombie.jpg"
-layout: recipe
+image: "/boozybisou/zombie.jpg"
+layout: recipe-single
 
 ---
 Add all ingredients to a cocktail shaker.  

@@ -12,8 +12,8 @@ ingredients:  |-
   2 dash chocolate bitters
   2 dash Angostura bitters
 source: http://imbibemagazine.com/scorpion-reef/
-image: "/bb/scorpion-reef.jpg"
-layout: recipe
+image: "/boozybisou/scorpion-reef.jpg"
+layout: recipe-single
 
 ---
 Combine all the ingredients, except the Angostura bitters, in a stemless wine glass and fill halfway with crushed ice.  

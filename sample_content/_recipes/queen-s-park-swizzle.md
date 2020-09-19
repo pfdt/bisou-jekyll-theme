@@ -9,7 +9,7 @@ source: http://imbibemagazine.com/queen-s-park-swizzle-recipe/
 technique: Swizzle
 category: Long
 title: Queen's Park Swizzle
-image: "/v1552308550/bb/qps.png"
+image: "/v1552308550/boozybisou/qps.png"
 date: 2019-03-11 13:49:15 +0100
 
 ---

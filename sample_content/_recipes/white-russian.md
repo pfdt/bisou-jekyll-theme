@@ -9,8 +9,8 @@ ingredients:  |-
   1 oz heavy cream
   ½ oz coffee
 source: http://imbibemagazine.com/white-russian-recipe/
-image: "/bb/white-russian.jpg"
-layout: recipe
+image: "/boozybisou/white-russian.jpg"
+layout: recipe-single
 
 ---
 Combine ingredients in a shaker with ice, shake to chill and pour into a glass.

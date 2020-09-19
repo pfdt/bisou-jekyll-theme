@@ -11,8 +11,8 @@ ingredients:  |-
   ¼ oz simple syrup (1:1)
   2 oz champagne
 source: http://imbibemagazine.com/bittercup-recipe/
-image: "/bb/bittercup.jpg"
-layout: recipe
+image: "/boozybisou/bittercup.jpg"
+layout: recipe-single
 
 ---
 Combine all ingredients, except sparkling wine, and shake with ice.  

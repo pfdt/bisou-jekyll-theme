@@ -1,5 +1,5 @@
 ---
-layout: recipe
+layout: recipe-single
 title: Juicebox Cobbler
 category: Long
 technique: In glass
@@ -10,7 +10,7 @@ ingredients: |-
   1/2 oz passion fruit syrup
   3 oz sweet vermouth
 source: https://punchdrink.com/recipes/juicebox-cobbler/
-image: "/v1552837103/bb/Article-Juicebox-Cobbler-Cocktail-Recipe-Dan-Greenbaum-Diamond-Reef-Brooklyn-NYC.jpg"
+image: "/v1552837103/boozybisou/Article-Juicebox-Cobbler-Cocktail-Recipe-Dan-Greenbaum-Diamond-Reef-Brooklyn-NYC.jpg"
 date: 2019-03-17 16:39:26 +0100
 
 ---

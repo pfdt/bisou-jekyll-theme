@@ -1,5 +1,5 @@
 ---
-layout: recipe
+layout: recipe-single
 title: Planter’s Punch
 category: Tropical
 technique: Shake
@@ -10,7 +10,7 @@ ingredients: |-
   1/2 ounce orange juice
   1/4 ounce simple syrup
 source: https://punchdrink.com/recipes/planters-punch/
-image: "/v1549918742/bb/planters-punch.jpg"
+image: "/v1549918742/boozybisou/planters-punch.jpg"
 date: 2019-02-11 21:59:06 +0100
 
 ---

@@ -11,8 +11,8 @@ ingredients: |-
   ½ oz simple syrup (1:1)
   1 dash allspice dram
 source: 
-image: "/bb/banana-rum.jpg"
-layout: recipe
+image: "/boozybisou/banana-rum.jpg"
+layout: recipe-single
 
 ---
 Muddle the banana in a shaker. Add all the others ingredients and fill with ice.  

@@ -10,8 +10,8 @@ ingredients: |-
   ½ oz rich simple syrup (2:1)
   1 egg white
 source: https://punchdrink.com/recipes/dan-sabos-whiskey-sour/
-image: "/bb/whisky-sour.jpg"
-layout: recipe
+image: "/boozybisou/whisky-sour.jpg"
+layout: recipe-single
 
 ---
 Add all ingredients to a mixing tin and dry shake.  

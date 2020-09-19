@@ -11,8 +11,8 @@ ingredients:  |-
   ½ oz banana liqueur
   ½ oz demerara syrup (1:1)
 source: http://imbibemagazine.com/monteccino-coffee-cocktail/
-image: "/bb/monteccino-coffee.jpg"
-layout: recipe
+image: "/boozybisou/monteccino-coffee.jpg"
+layout: recipe-single
 
 ---
 Combine ingredients in a blender with ice and blend to combine.  

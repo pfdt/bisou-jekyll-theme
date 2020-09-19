@@ -10,8 +10,8 @@ ingredients:  |-
   ½ oz simple syrup (1:1)
   5 mint leaf
 source: http://imbibemagazine.com/shipwreck-recipe/
-image: "/bb/shipwreck.jpg"
-layout: recipe
+image: "/boozybisou/shipwreck.jpg"
+layout: recipe-single
 
 ---
 Combine ingredients in a shaker with ice and shake to chill, then double-strain into a highball over crushed ice and garnish.

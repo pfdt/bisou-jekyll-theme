@@ -9,8 +9,8 @@ ingredients: |-
   ¾ oz lime
   ¾ oz maraschino liqueur
 source: https://punchdrink.com/recipes/paddy-obriens-last-word/
-image: "/bb/last-word.jpg"
-layout: recipe
+image: "/boozybisou/last-word.jpg"
+layout: recipe-single
 
 ---
 Add all ingredients to a cocktail shaker.  

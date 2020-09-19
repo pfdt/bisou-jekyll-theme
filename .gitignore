@@ -5,6 +5,7 @@ _site/
 .DS_Store
 */.DS_Store
 /_data/
+/_plugins/
 /_posts/
 /_recipes/
 /admin/

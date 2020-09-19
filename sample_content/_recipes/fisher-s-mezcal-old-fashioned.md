@@ -1,5 +1,5 @@
 ---
-layout: recipe
+layout: recipe-single
 title: Fisher's Mezcal Old Fashioned
 category: Spirit-forward
 technique: Stir
@@ -10,7 +10,7 @@ ingredients: |-
   2 dashes Angostura bitters
   2 dashes orange bitters
 source: http://imbibemagazine.com/fishers-mezcal-old-fashioned/
-image: "/v1560010830/bb/fishers-mezcal-old-fashioned-crtsy-sawyer-seattle.jpg"
+image: "/v1560010830/boozybisou/fishers-mezcal-old-fashioned-crtsy-sawyer-seattle.jpg"
 star: 5
 
 ---

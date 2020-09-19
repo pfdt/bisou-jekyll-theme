@@ -1,6 +1,6 @@
 ---
 title: Hightail Out
-layout: recipe
+layout: recipe-single
 date: 2019-01-12 13:00:33 +0000
 category: Long
 technique: Shake

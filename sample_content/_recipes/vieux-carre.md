@@ -8,7 +8,7 @@ ingredients: |-
   2 dashes Angostura bitters
 title: Vieux Carre
 source: http://imbibemagazine.com/vieux-carre-recipe/
-image: "/v1552308707/bb/vc.jpg"
+image: "/v1552308707/boozybisou/vc.jpg"
 technique: Stir
 category: Spirit-forward
 date: 2019-03-11 13:51:59 +0100

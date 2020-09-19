@@ -11,8 +11,8 @@ ingredients:  |-
   ½ oz simple syrup (1:1)
   2 dash Angostura bitters
 source: http://imbibemagazine.com/iron-ranger-from-raised-by-wolves/
-image: "/bb/iron-ranger.jpg"
-layout: recipe
+image: "/boozybisou/iron-ranger.jpg"
+layout: recipe-single
 
 ---
 Combine all ingredients in a mixing tin with ½ oz pebble ice and shake to briefly chill and dilute.  

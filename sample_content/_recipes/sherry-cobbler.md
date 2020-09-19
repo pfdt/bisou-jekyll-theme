@@ -1,5 +1,5 @@
 ---
-layout: recipe
+layout: recipe-single
 title: Sherry Cobbler
 category: Long
 technique: Shake
@@ -8,7 +8,7 @@ ingredients: |-
   1/2 ounce simple syrup
   2 or 3 orange slices
 source: https://punchdrink.com/recipes/sherry-cobbler/
-image: "/v1549918873/bb/Sherry-Cobbler.jpg"
+image: "/v1549918873/boozybisou/Sherry-Cobbler.jpg"
 date: 2019-02-11 22:01:16 +0100
 
 ---

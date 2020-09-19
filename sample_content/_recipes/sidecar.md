@@ -9,8 +9,8 @@ ingredients:  |-
   ¾ oz lemon juice
   1 tsp demerara syrup (1:1)
 source: https://punchdrink.com/recipes/joaquin-simos-sidecar/
-image: "/bb/sidecar.jpg"
-layout: recipe
+image: "/boozybisou/sidecar.jpg"
+layout: recipe-single
 
 ---
 Combine all ingredients in a mixing tin and shake with ice.  

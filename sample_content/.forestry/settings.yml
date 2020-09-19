@@ -20,14 +20,14 @@ sections:
 - type: document
   path: _data/taxonomies.yml
   label: Taxonomies
-upload_dir: bb
-public_path: 
+upload_dir: bisou
+public_path: https://res.cloudinary.com/userID/image/upload #replace "userID" by your cloudinary userID
 front_matter_path: ''
 use_front_matter_path: true
 file_template: ":filename:"
 build:
   preview_env:
-  - JEKYLL_ENV=staging
+  - JEKYLL_ENV=master
   preview_output_directory: _site
   install_dependencies_command: bundle install --path vendor/bundle
   preview_docker_image: forestryio/build:latest

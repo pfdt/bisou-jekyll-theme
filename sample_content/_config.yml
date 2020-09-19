@@ -1,18 +1,15 @@
-title: bisou
-description: a cocktail recipes jekyll theme
-urlbase: https://boozybisou.com
-url: https://boozybisou.com
+title: bisou #site title
+description: a cocktail recipes jekyll theme #site description
+urlbase:  #site urlbase
+url:  #site url
 permalink: "/:path/"
 
-img-dir--card: 
-img-dir--sharing: 
-googlanalytics_ID: ""
-firebase_apiKey: ""
-firebase_authDomain: ""
-firebase_databaseURL: ""
-firebase_projectId: ""
-firebase_storageBucket: ""
-firebase_messagingSenderId: ""
+img-dir--card: https://res.cloudinary.com/userID/image/upload/c_fill,g_auto:no_faces,h_465,q_80,w_600/f_auto #img baseurl for card images (for cloudinary replace "userID" by yours
+img-dir--sharing: https://res.cloudinary.com/userID/image/upload/c_fill,g_auto:no_faces,h_630,w_1200/f_auto #img baseurl for sharing images (for cloudinary replace "userID" by yours
+googlanalytics_ID: "" #add your UA ID if needed
+firebase_apiKey: "" #apiKey of your firebase realtime database (for collection and ratings functions)
+firebase_projectId: "" #projectId of your firebase realtime database (for collection and ratings functions)
+firebase_databaseName: "" #databaseName of your firebase realtime database (for collection and ratings functions)
 
 collections:
   recipes:
@@ -32,6 +29,7 @@ defaults:
       type: recipes
     values:
       layout: recipe-single
+      date: 1970-01-01 00:00:00
 
 compress_html:
   clippings: all
@@ -43,7 +41,7 @@ compress_html:
   profile: false
   startings: all
 
-remote_theme: pfdt/bisou-jekyll-theme@develop
+remote_theme: pfdt/bisou-jekyll-theme
 
 plugins:
   - jekyll-remote-theme

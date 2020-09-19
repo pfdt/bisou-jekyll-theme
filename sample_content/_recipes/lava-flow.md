@@ -11,8 +11,8 @@ ingredients:  |-
   24 cl coconut cream
   50 cl ice
 source: https://thechicsite.com/2014/03/21/lava-flow-cocktail/
-image: "/bb/lava-flow.jpg"
-layout: recipe
+image: "/boozybisou/lava-flow.jpg"
+layout: recipe-single
 
 ---
 For 4 glasses.

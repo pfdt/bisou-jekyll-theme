@@ -9,8 +9,8 @@ ingredients:  |-
   ½ oz maple syrup
   ½ oz red wine
 source: http://imbibemagazine.com/toronto-sour-prairie-school/
-image: "/bb/toronto-sour.jpg"
-layout: recipe
+image: "/boozybisou/toronto-sour.jpg"
+layout: recipe-single
 
 ---
 Shake the whiskey, lemon juice and maple syrup in a shaker tin with ice.  

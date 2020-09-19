@@ -11,8 +11,8 @@ ingredients: |-
   8 mint leaf
   1 top ginger beer
 source: https://punchdrink.com/recipes/go-to/
-image: "/bb/go-to.jpg"
-layout: recipe
+image: "/boozybisou/go-to.jpg"
+layout: recipe-single
 
 ---
 Combine gin, St. Germain and lime juice in a collins glass.  

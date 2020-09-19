@@ -16,6 +16,68 @@ fields:
 - type: list
   name: techniques
   label: techniques
+- name: theme-colors
+  type: field_group
+  config: {}
+  fields:
+  - name: dark_color
+    type: color
+    config:
+      required: true
+      color_format: Hex
+    label: dark color
+  - name: deep-dark_color
+    type: color
+    label: deep-dark color
+    config:
+      required: true
+      color_format: Hex
+  - name: light-dark_color
+    type: color
+    config:
+      required: true
+      color_format: Hex
+    label: light-dark color
+  - name: light_color
+    type: color
+    label: light color
+    config:
+      required: true
+      color_format: Hex
+  - name: grey_color
+    type: color
+    config:
+      required: true
+      color_format: Hex
+    label: grey color
+  - name: categories-colors
+    type: field_group_list
+    fields:
+    - name: category-title
+      type: select
+      default: ''
+      config:
+        required: true
+        options: []
+        source:
+          type: documents
+          section: taxonomies
+          file: _data/taxonomies.yml
+          path: categories
+      label: category title
+    - name: category-color
+      type: color
+      label: category color
+      config:
+        required: true
+        color_format: Hex
+      default: "#FFFFFF"
+    config:
+      min: 
+      max: 
+      labelField: category-title
+    label: categories colors
+  label: theme colors
 - name: account
   type: field_group
   config: {}

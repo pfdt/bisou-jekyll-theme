@@ -27,4 +27,29 @@ account:
   signed-in_body: "<li>add recipes to your personal collection,</li><li>rate your
     favorites recipes,</li><li>sync your preferences between your devices.</li>"
   signed-in_close: ok, back to the recipes...
-  privacy: 
+  footer: Powered by <a href="https://github.com/pfdt/bisou-jekyll-theme" target="_blank" class="simple-link">bisous - jekyll theme</a>.
+theme-colors:
+  dark_color: "#001526"
+  deep-dark_color: "#02101D"
+  light-dark_color: "#0C1E30"  
+  light_color: "#FFFFFF"
+  grey_color: "#75797D"
+  categories-colors:
+  - category-title: Bitter
+    category-color: "#FF776B"
+  - category-title: Dairy
+    category-color: "#DCFF8B"
+  - category-title: Long
+    category-color: "#3FDBE8"
+  - category-title: Citrusy
+    category-color: "#FBEE30"
+  - category-title: Spirit-forward
+    category-color: "#1CA2FF"
+  - category-title: Sweet & fruity
+    category-color: "#FC8BEF"
+  - category-title: Tiki
+    category-color: "#FF9827"
+  - category-title: Tropical
+    category-color: "#2CED61"
+  - category-title: Zero-proof
+    category-color: "#FFFFFF"

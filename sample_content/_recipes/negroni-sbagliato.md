@@ -8,8 +8,8 @@ ingredients:  |-
   1 oz sweet vermouth
   1 top prosecco
 source: https://punchdrink.com/recipes/negroni-sbagliato/
-image: "/bb/negroni-sbagliato.jpg"
-layout: recipe
+image: "/boozybisou/negroni-sbagliato.jpg"
+layout: recipe-single
 
 ---
 In a rocks or lowball glass, add Campari, sweet vermouth and ice.  

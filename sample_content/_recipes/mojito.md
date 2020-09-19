@@ -10,8 +10,8 @@ ingredients:  |-
   1 oz Perrier
   8 mint leaf
 source: https://punchdrink.com/recipes/jelani-johnsons-mojito/
-image: "/bb/mojito.jpg"
-layout: recipe
+image: "/boozybisou/mojito.jpg"
+layout: recipe-single
 
 ---
 In a pilsner glass, gently muddle the mint leaves in the simple syrup.  

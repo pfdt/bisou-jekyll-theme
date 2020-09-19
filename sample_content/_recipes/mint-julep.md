@@ -8,8 +8,8 @@ ingredients:  |-
   ¼ oz rich simple syrup (2:1)
   10 mint leaf
 source: https://punchdrink.com/recipes/jeff-morgenthalers-mint-julep/
-image: "/bb/mint-julep.jpg"
-layout: recipe
+image: "/boozybisou/mint-julep.jpg"
+layout: recipe-single
 
 ---
 Muddle mint leaves and simple syrup in a julep cup.  
