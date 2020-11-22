@@ -23,7 +23,7 @@
 				</div>
 				<div class="card__body__controls__bookmark" value="{{ recipe.slug }}"></div>
 			</div>		
-			<h3 class="card__body__title">{{ recipe.title | replace: "'", "’" | downcase }}</h3>
+			<h3 class="card__body__title card__body__title--list">{{ recipe.title | replace: "'", "’" | downcase }}</h3>
 			<p class="card__body__description--list">{{ recipe.ingredients | regex_replace: '[\r\n]', ', ' | regex_replace: '\bonce\S*', "oz" | replace: "oz.", "oz" | replace: "teaspoon", "tsp" | replace: "barspoon", "tsp" | replace: "tablespoon", "tbsp" | replace: "1/4", "¼" | replace: "1/2", "½" | replace: "3/4", "¾" | replace: "1/3", "⅓" | replace: "2/3", "⅔" | replace: "1,5", "1½"}}</p>
 		</div>
 	</div>
