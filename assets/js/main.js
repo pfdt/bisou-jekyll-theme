@@ -360,63 +360,63 @@ $(document).ready(function () {
     });
 
     // header logo click
-    $("#main-nav").on("mousedown", "#logo", function () {
+    $("#main-nav").on("click", "#logo", function () {
         resetFilter();
         disableSidebarCondition();
     });
     
     // header burger click
-    $("#main-nav").on("mousedown", "#burger", function () {
+    $("#main-nav").on("click", "#burger", function () {
         toggleBurger();
     });
     
     // header account click
-    $("#main-nav").on("mousedown", "#account", function () {
+    $("#main-nav").on("click", "#account", function () {
         modalON();
     });
     
     // sidebar filter special items
-    $("#filter-button--specials").on("mousedown", "a", function () {
+    $("#filter-button--specials").on("click", "a", function () {
         filterSpecials($(this));
     });
 
     // sidebar filter items click
-    $("#filter-button--categories").on("mousedown", "a", function () {
+    $("#filter-button--categories").on("click", "a", function () {
         filterCategories($(this));
     });
 
     // sidebar sort items click
-    $("#sorting-button-group").on("mousedown", "li", function () {
+    $("#sorting-button-group").on("click", "li", function () {
         sortItems($(this));
     });
        
     // sidebar empty search
-    $("#searchbar__form").on("mousedown", "#searchbar__empty-search", function () {
+    $("#searchbar__form").on("click", "#searchbar__empty-search", function () {
         resetFilter();
     });
     
     // recipe bookmark clic
-    $(".card__body__controls").on("mousedown", ".card__body__controls__bookmark", function () {
+    $(".card__body__controls").on("click", ".card__body__controls__bookmark", function () {
         toggleBookmark($(this));
     });
 
     // recipe star clic
-    $(".card__body__controls").on("mousedown", ".rating__icons", function () {
+    $(".card__body__controls").on("click", ".rating__icons", function () {
         saveRating($(this));
     });
     
     // body no-result
-	$("#no-result").on("mousedown", "a", function () {
+	$("#no-result").on("click", "a", function () {
         resetFilter();
     });
       
     // modal signIn click
-    $(".modal-content__button").on("mousedown", "#button--signIn", function () {
+    $(".modal-content__button").on("click", "#button--signIn", function () {
 	    googleSignin();
     });
     
     // modal signOut click
-    $(".modal-content__button").on("mousedown", "#button--signOut", function () {
+    $(".modal-content__button").on("click", "#button--signOut", function () {
 	    googleSignout();
 	    signedOut();
 		if (currentFilter == "cat=bookmarks") {
@@ -425,7 +425,7 @@ $(document).ready(function () {
     });
     
     // modal close modal click
-    $("#account-modal").on("mousedown", ".js-close-modal", function () {
+    $("#account-modal").on("click", ".js-close-modal", function () {
         modalOFF();
 		if (!currentUserID) {
         	resetFilter();
@@ -433,12 +433,12 @@ $(document).ready(function () {
     });
 
     // overlay--sidebar click
-    $("body").on("mousedown", "#overlay--sidebar", function () {
+    $("body").on("click", "#overlay--sidebar", function () {
         disableSidebar();
     });
     
 	// overlay--modal click
-	$("body").on("mousedown", "#overlay--modal", function () {
+	$("body").on("click", "#overlay--modal", function () {
         modalOFF();
 		if (!currentUserID) {
         	resetFilter();
