@@ -1,12 +1,12 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>{% if page.layout == 'recipe-single' %}{{ page.title }} | {% endif %}{{ site.title }}{% if page.layout == 'recipes_list' %} - {{ site.description }}{% endif %}</title>
+	<title>{% if page.layout == 'recipe-single' %}{{ page.title }} | {% endif %}{{ site.title }}{% if page.layout == 'recipes-list' %} - {{ site.description }}{% endif %}</title>
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | replace: "
 	", " " }}{% else %}{{ site.description }}{% endif %}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	{% comment %} open graph meta {% endcomment %}
-	<meta property="og:title" content="{% if page.layout == 'recipe-single' %}{{ page.title }}, a {{ page.category | downcase }} cocktail recipe | {% endif %}{{ site.title }}{% if page.layout == 'recipes_list' %} - {{ site.description }}{% endif %}">
+	<meta property="og:title" content="{% if page.layout == 'recipe-single' %}{{ page.title }}, a {{ page.category | downcase }} cocktail recipe | {% endif %}{{ site.title }}{% if page.layout == 'recipes-list' %} - {{ site.description }}{% endif %}">
 	<meta property="og:type" content="{% if page.layout == 'recipe-single' %}article{% else %}website{% endif %}">
 	<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.urlbase }}">
 	<meta property="og:image" content="{% if page.layout == 'recipe-single' %}{{ site.img-dir--sharing }}{{ page.image }}{% else %}{{ '/assets/img/sharing-img.png' | absolute_url }}{% endif %}">
