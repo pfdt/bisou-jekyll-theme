@@ -5,7 +5,7 @@ regenerate: true
 {% assign first = true %}
 [
 {% for item in site.recipes %}{% if item.title != null and item.title != empty %}{% unless first %},{% endunless %}{
-    "title": {{ item.title | jsonify | downcase }},
+    "title": {{ item.title | jsonify | replace: "’", "'"| downcase }},
     "data_search": {{ item.slug | prepend:".r_" | jsonify }},
     "ingredients": {{ item.ingredients | strip_html | replace: '
 ', ', ' | remove:'"' | jsonify | downcase }},

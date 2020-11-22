@@ -146,9 +146,10 @@ $(document).ready(function () {
 	        currentFilter = "cat=" + paramCat;
 			$bookmarksFilter.addClass("active");
 			isotopeFilter(filterValue);
-        } else if (paramSearch == true) {
+        } else if (paramSearch == true) {       
             currentFilter = "q=" + paramCat;
-            $searchInput.val(paramCat);
+            let searchInput = decodeURIComponent(paramCat);
+            $searchInput.val(searchInput);
         } else if (paramCat !== "all") {
             var filterValue = ".c_" + paramCat;
             currentFilter = "cat=" + paramCat;
@@ -801,7 +802,9 @@ $(document).ready(function () {
         q = q
             .toLowerCase()
             .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "");
+            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/[\u2019]/g, "'");
+        console.log(q);
         $.each(jsonFeed, function (index, item) {
             // check if search term is in content or title
             let title = item.title || "";
@@ -818,7 +821,7 @@ $(document).ready(function () {
         });
         if (resultsCount > 0) {
             var filterValue = searchValues.join(", ");
-            currentFilter = "q=" + q;
+            currentFilter = "q=" + encodeURIComponent(q);
             $("#no-result").removeClass("active");
             pushURL();
         } else {

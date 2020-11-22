@@ -30,7 +30,7 @@ layout: default
 		</div>
 		<div class="card__body__title pure-u-1">
 			<a class="" href="{{ page.url | absolute_url }}">
-				<h1>{{ page.title | downcase }}</h1>
+				<h1>{{ page.title | replace: "'", "’" | downcase }}</h1>
 			</a>
 		</div>
 		
