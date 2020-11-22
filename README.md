@@ -25,3 +25,6 @@ This theme is compatible with jekyll-remote-theme and my personal website is liv
 Some lines and good tips from [cagrimmett/jekyll-tools](https://github.com/cagrimmett/jekyll-tools), [pure-css/pure](https://github.com/pure-css/pure/), [verlok/vanilla-lazyload]([cagrimmett/jekyll-tools](https://github.com/cagrimmett/jekyll-tools)), [James Barnett](https://codepen.io/jamesbarnett/pen/vlpkh), [willmcpo/body-scroll-lock](https://github.com/willmcpo/body-scroll-lock), [RealFaviconGenerator](https://realfavicongenerator.net/) and uzful advices from [mandawan](https://github.com/mandawan).
 
 I'm not a developer and this is my first time using jekyll and more broadly github, I hope it is not too dirty. :)
+
+
+*latest version: v2.0.2*
