@@ -53,10 +53,10 @@ $(document).ready(function () {
     /* ==========================================================================
 	Initiate on launch
 	========================================================================== */
-
+		
     // Lady load - image loading
     initiateLazyLoad();
-
+	
     // Isotope - initiate
     var $grid = $($gridContainer).isotope({
         itemSelector: '.grid-item',
@@ -99,11 +99,15 @@ $(document).ready(function () {
     firebase.auth().onAuthStateChanged(function (user) {
         loadFirebaseDatas(user);
     });
+    
+    // Get dark theme preference
+    getThemePreference();
+
 
     /* ==========================================================================
 	Loading functions
 	========================================================================== */
-
+	
     /**
      * Lazy load - image loading
      */
@@ -334,7 +338,7 @@ $(document).ready(function () {
         $('.main-nav__icons--account').css('background-image', "url('"+userPhotoURL+"')");
         $('.main-nav__icons--account > path').css('display', 'none');
         $('.modal-title').html(signedIn_modalTitle);
-        $('.modal-body').html(signedIn_modalBody);
+        $('.modal-content__body').html(signedIn_modalBody);
         $('.modal-content__button .modal-off').html(signedIn_modalClose);
     }
     async function signedOut() {
@@ -342,11 +346,22 @@ $(document).ready(function () {
 		$('.main-nav__icons--account').css('background-image', 'none');
         $('.main-nav__icons--account > path').css('display', 'block');
         $('.modal-title').html(login_modalTitle);
-        $('.modal-body').html(login_modalBody);
+        $('.modal-content__body').html(login_modalBody);
         $('.modal-content__button .modal-off').html(login_modalClose);
         $('.adminContent').removeClass('active');
         currentBookmarks = ':not(*)';
     }
+    
+    /**
+     * Theme preference
+     */
+	async function getThemePreference() {
+		currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+		if (currentTheme && currentTheme === 'dark') {
+		    $(".theme-switch input[type='checkbox']").prop( "checked", true );
+		}
+	}
+    
 
     /* ==========================================================================
 	Interactivity / triggers
@@ -446,8 +461,14 @@ $(document).ready(function () {
         }
     });
 
+	// theme switcher click
+    $(".theme-switch").on("change", "input[type='checkbox']", function () {
+	    switchTheme($(this));
+    });
+		
     // initiate search functionality
     initSearch();
+
 
     /* ==========================================================================
 	Interactivity / functions
@@ -748,6 +769,17 @@ $(document).ready(function () {
         $("body").removeClass("modal-open");
         enableBodyScroll($accountModal);
     }
+    
+	// theme switcher
+	function switchTheme(e) {
+	    if(e.is(':checked')) {
+			document.documentElement.setAttribute('data-theme', 'dark');
+			localStorage.setItem('theme', 'dark');
+	    } else {
+			document.documentElement.setAttribute('data-theme', 'light');
+			localStorage.setItem('theme', 'light');
+	    }
+	}
 
     /**
      * Search functions

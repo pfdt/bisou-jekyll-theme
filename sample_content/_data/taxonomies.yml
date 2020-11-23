@@ -21,19 +21,21 @@ techniques:
 account:
   login_title: login to...
   login_body: "<li>add recipes to your personal collection,</li><li>rate your favorites
-    recipes,</li><li>sync your preferences between your devices.</li>"
+    recipes,</li><li>sync your preferences between your devices,</li><li>enable a true dark mode.</li>"
   login_close: no thanks, back to the recipes...
   signed-in_title: your are logged in, let's...
   signed-in_body: "<li>add recipes to your personal collection,</li><li>rate your
-    favorites recipes,</li><li>sync your preferences between your devices.</li>"
+    favorites recipes,</li><li>sync your preferences between your devices,</li><li>try the true dark mode.</li>"
   signed-in_close: ok, back to the recipes...
   footer: Powered by <a href="https://github.com/pfdt/bisou-jekyll-theme" target="_blank" class="simple-link">bisous - jekyll theme</a>.
 theme-colors:
-  dark_color: "#001526"
-  deep-dark_color: "#02101D"
-  light-dark_color: "#0C1E30"  
-  light_color: "#FFFFFF"
-  grey_color: "#75797D"
+  primary-color: "#02101D"
+  bg-color: "#001526"
+  secondary-bg-color: "#0C1E30"
+  font-color: "#FFFFFF"
+  secondary-font-color: "#75797D"
+  alt_primary-and-bg-color: "#000000"
+  alt_secondary-bg-color: "#092740"
   categories-colors:
   - category-title: Bitter
     category-color: "#FF776B"

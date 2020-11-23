@@ -5,6 +5,7 @@
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | replace: "
 	", " " }}{% else %}{{ site.description }}{% endif %}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	{% comment %} open graph meta {% endcomment %}
 	<meta property="og:title" content="{% if page.layout == 'recipe-single' %}{{ page.title }}, a {{ page.category | downcase }} cocktail recipe | {% endif %}{{ site.title }}{% if page.layout == 'recipes-list' %} - {{ site.description }}{% endif %}">
 	<meta property="og:type" content="{% if page.layout == 'recipe-single' %}article{% else %}website{% endif %}">
@@ -41,6 +42,7 @@
 	</style>
 	
 	<!-- Javascript -->
+	<script type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/dark-theme.min.js' | relative_url }}"></script>
 	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
 	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/isotope.pkgd.min.js' | relative_url }}"></script>
 	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/lazyload.min.js' | relative_url }}"></script>

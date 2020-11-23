@@ -20,36 +20,57 @@ fields:
   type: field_group
   config: {}
   fields:
-  - name: dark_color
+  - name: primary-color
+    type: color
+    label: primary color
+    config:
+      required: true
+      color_format: Hex
+    description: "<em>used in default/light theme: nav and sidebar background</em>"
+  - name: bg-color
     type: color
     config:
       required: true
       color_format: Hex
-    label: dark color
-  - name: deep-dark_color
-    type: color
-    label: deep-dark color
-    config:
-      required: true
-      color_format: Hex
-  - name: light-dark_color
+    label: bg color
+    description: "<em>used in default/light theme: body background and alt text color</em>"
+  - name: secondary-bg-color
     type: color
     config:
       required: true
       color_format: Hex
-    label: light-dark color
-  - name: light_color
+    label: secondary bg color
+    description: "<em>used in default/light theme: search input and active filter
+      background</em>"
+  - name: font-color
     type: color
-    label: light color
+    label: font color
     config:
       required: true
       color_format: Hex
-  - name: grey_color
+    description: "<em>used in default/light theme: default text and icons color and
+      modal background</em>"
+  - name: secondary-font-color
     type: color
     config:
       required: true
       color_format: Hex
-    label: grey color
+    label: secondary color
+    description: "<em>used in default/light theme: secondary texts color</em>"
+  - name: alt_primary-and-bg-color
+    type: color
+    label: alt primary and bg color
+    config:
+      required: false
+      color_format: Hex
+    description: "<em>used in dark theme: replace the primary and the bg color</em>"
+  - name: alt_secondary-bg-color
+    type: color
+    label: alt secondary bg color
+    config:
+      required: false
+      color_format: Hex
+    description: "<em>used in dark theme: replace the secondary bg color</em>"
   - name: categories-colors
     type: field_group_list
     fields:
