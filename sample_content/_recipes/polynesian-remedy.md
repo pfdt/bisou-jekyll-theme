@@ -11,7 +11,7 @@ ingredients:  |-
   1 oz lemon juice
   4 dash scotch whisky
 source: http://imbibemagazine.com/polynesian-remedy/
-image: "/boozybisou/polynesian-remedy.jpg"
+image: /assets/img/polynesian-remedy.jpg
 layout: recipe-single
 
 ---

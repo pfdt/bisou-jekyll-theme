@@ -12,7 +12,7 @@ ingredients:  |-
   4 tbsp heavy cream
   3 dash orange blossom water
 source: http://imbibemagazine.com/ramos-gin-fizz/
-image: "/boozybisou/ramos-gin-fizz.jpg"
+image: /assets/img/ramos-gin-fizz.jpg
 layout: recipe-single
 
 ---

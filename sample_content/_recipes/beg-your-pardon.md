@@ -11,7 +11,7 @@ ingredients:  |-
   1 dash allspice dram
   3 coriander
 source: http://imbibemagazine.com/beg-your-pardon-recipe/
-image: "/boozybisou/beg-your-pardon.jpg"
+image: /assets/img/beg-your-pardon.jpg
 layout: recipe-single
 
 ---

@@ -10,7 +10,7 @@ ingredients:  |-
   ½ oz demerara syrup (1:1)
   ½ oz egg white
 source: http://imbibemagazine.com/bitter-pill/
-image: "/boozybisou/bitter-pill.jpg"
+image: /assets/img/bitter-pill.jpg
 layout: recipe-single
 
 ---

@@ -10,7 +10,7 @@ ingredients: |-
   ¾ oz demerara syrup (1:1)
   2 dash Angostura bitters
 source: http://imbibemagazine.com/barbadian-gin-punch-swizzle-recipe/
-image: "/boozybisou/barbadian-gin-punch-swizzle.jpg"
+image: /assets/img/barbadian-gin-punch-swizzle.jpg
 layout: recipe-single
 
 ---

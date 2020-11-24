@@ -12,7 +12,7 @@ ingredients:  |-
   2 dash chocolate bitters
   2 dash Angostura bitters
 source: http://imbibemagazine.com/scorpion-reef/
-image: "/boozybisou/scorpion-reef.jpg"
+image: /assets/img/scorpion-reef.jpg
 layout: recipe-single
 
 ---

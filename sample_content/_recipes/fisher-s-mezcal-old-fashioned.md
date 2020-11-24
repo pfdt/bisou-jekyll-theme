@@ -10,7 +10,7 @@ ingredients: |-
   2 dashes Angostura bitters
   2 dashes orange bitters
 source: http://imbibemagazine.com/fishers-mezcal-old-fashioned/
-image: "/v1560010830/boozybisou/fishers-mezcal-old-fashioned-crtsy-sawyer-seattle.jpg"
+image: /assets/img/fishers-mezcal-old-fashioned-crtsy-sawyer-seattle.jpg
 star: 5
 
 ---

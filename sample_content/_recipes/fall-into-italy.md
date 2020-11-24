@@ -11,7 +11,7 @@ ingredients:  |-
   ¾ oz simple syrup (1:1)
   2 dash mole bitters
 source: http://imbibemagazine.com/fall-into-italy-equal-parts-cocktail/
-image: "/boozybisou/fall-into-italy.jpg"
+image: /assets/img/fall-into-italy.jpg
 layout: recipe-single
 
 ---

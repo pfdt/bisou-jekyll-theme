@@ -10,7 +10,7 @@ ingredients: |-
   ¼ oz grapefruit juice
   1 tsp maraschino liqueur
 source: https://www.jeffreymorgenthaler.com/
-image: "/boozybisou/daiquiri-no-3.jpg"
+image: /assets/img/daiquiri-no-3.jpg
 layout: recipe-single
 
 ---

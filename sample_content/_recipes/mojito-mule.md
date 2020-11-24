@@ -9,7 +9,7 @@ ingredients: |-
   ½ oz mint-ginger syrup
   3 oz ginger beer
 source: https://www.realsimple.com/food-recipes/browse-all-recipes/minty-moscow-mule-punch
-image: "/boozybisou/mojito-mule.jpg"
+image: /assets/img/mojito-mule.jpg
 layout: recipe-single
 
 ---

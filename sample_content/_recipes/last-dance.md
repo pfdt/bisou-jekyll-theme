@@ -9,7 +9,7 @@ ingredients: |-
   ¾ oz maraschino liqueur
   ¾ oz lemon juice
 source: http://imbibemagazine.com/armagnac-cocktail-last-dance/
-image: "/boozybisou/last-dance.jpg"
+image: /assets/img/last-dance.jpg
 layout: recipe-single
 
 ---

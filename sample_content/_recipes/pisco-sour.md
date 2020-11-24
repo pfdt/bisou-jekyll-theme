@@ -9,7 +9,7 @@ ingredients:  |-
   ½ oz simple syrup (1:1)
   ½ egg white
 source: https://punchdrink.com/recipes/pisco-sour/
-image: "/boozybisou/pisco-sour.jpg"
+image: /assets/img/pisco-sour.jpg
 layout: recipe-single
 
 ---

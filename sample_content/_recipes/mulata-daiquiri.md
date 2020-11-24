@@ -9,7 +9,7 @@ ingredients:  |-
   ¾ oz cocoa liqueur
   ½ oz demerara syrup (1:1)
 source: http://imbibemagazine.com/mulata-daiquiri/
-image: "/boozybisou/mulata-daiquiri.jpg"
+image: /assets/img/mulata-daiquiri.jpg
 layout: recipe-single
 
 ---

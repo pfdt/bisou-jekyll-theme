@@ -8,7 +8,7 @@ ingredients:  |-
   ¾ oz Campari
   ¾ oz sweet vermouth
 source: https://punchdrink.com/recipes/dantes-negroni/
-image: "/boozybisou/negroni.jpg"
+image: /assets/img/negroni.jpg
 layout: recipe-single
 
 ---

@@ -10,7 +10,7 @@ ingredients:  |-
   ½ oz simple syrup (1:1)
   5 mint leaf
 source: http://imbibemagazine.com/shipwreck-recipe/
-image: "/boozybisou/shipwreck.jpg"
+image: /assets/img/shipwreck.jpg
 layout: recipe-single
 
 ---

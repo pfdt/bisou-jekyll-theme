@@ -10,7 +10,7 @@ ingredients:  |-
   1 oz lime juice
   1 oz ginger beer
 source: http://imbibemagazine.com/eva-peron-recipe/
-image: "/boozybisou/eva-peron.jpg"
+image: /assets/img/eva-peron.jpg
 layout: recipe-single
 
 ---

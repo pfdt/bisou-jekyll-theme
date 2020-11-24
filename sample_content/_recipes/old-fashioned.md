@@ -9,7 +9,7 @@ ingredients: |-
   1 tsp rich demerara syrup
   3 dashes Dad's Bitters
 source: https://punchdrink.com/recipes/tom-macys-old-fashioned/
-image: "/v1546890361/boozybisou/Recipe-Thumb-Best-Old-Fashioned-Recipe-Tom-Macy-Clover-Club-Brooklyn-NYC.jpg"
+image: /assets/img/Recipe-Thumb-Best-Old-Fashioned-Recipe-Tom-Macy-Clover-Club-Brooklyn-NYC.jpg
 
 ---
 Combine all ingredients in a mixing glass over ice and stir until chilled. Strain into a rocks glass over a large ice cube.

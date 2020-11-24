@@ -11,7 +11,7 @@ ingredients:  |-
   1,5 oz carrot juice
   1 splash Perrier
 source: http://imbibemagazine.com/i-dont-carrot-all-bitter-twisted-phoenix/
-image: "/boozybisou/i-dont-carrot-all.jpg"
+image: /assets/img/i-dont-carrot-all.jpg
 layout: recipe-single
 
 ---

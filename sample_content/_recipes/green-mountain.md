@@ -10,7 +10,7 @@ ingredients: |-
   ½ oz simple syrup (1:1)
   2 sprigs mint
 source: http://imbibemagazine.com/green-mountain-cognac-cocktail/
-image: "/v1560010449/boozybisou/green-mountain-wm-mulherins-sons-gallery-philly-crdt-daniel-olsovsky.jpg"
+image: /assets/img/green-mountain-wm-mulherins-sons-gallery-philly-crdt-daniel-olsovsky.jpg
 
 ---
 Combine all the ingredients in a shaker and shake with ice to chill.

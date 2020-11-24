@@ -11,7 +11,7 @@ ingredients: |-
   8 mint leaf
   1 top ginger beer
 source: https://punchdrink.com/recipes/go-to/
-image: "/boozybisou/go-to.jpg"
+image: /assets/img/go-to.jpg
 layout: recipe-single
 
 ---

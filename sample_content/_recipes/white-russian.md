@@ -9,7 +9,7 @@ ingredients:  |-
   1 oz heavy cream
   ½ oz coffee
 source: http://imbibemagazine.com/white-russian-recipe/
-image: "/boozybisou/white-russian.jpg"
+image: /assets/img/white-russian.jpg
 layout: recipe-single
 
 ---

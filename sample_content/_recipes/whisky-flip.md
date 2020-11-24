@@ -10,7 +10,7 @@ ingredients:  |-
   1 whole egg
   1 dash nutmeg
 source: 
-image: "/boozybisou/whisky-flip.jpg"
+image: /assets/img/whisky-flip.jpg
 layout: recipe-single
 
 ---

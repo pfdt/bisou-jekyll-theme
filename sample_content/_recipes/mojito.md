@@ -10,7 +10,7 @@ ingredients:  |-
   1 oz Perrier
   8 mint leaf
 source: https://punchdrink.com/recipes/jelani-johnsons-mojito/
-image: "/boozybisou/mojito.jpg"
+image: /assets/img/mojito.jpg
 layout: recipe-single
 
 ---

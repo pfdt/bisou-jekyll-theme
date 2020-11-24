@@ -9,7 +9,7 @@ ingredients:  |-
   ½ oz maple syrup
   ½ oz red wine
 source: http://imbibemagazine.com/toronto-sour-prairie-school/
-image: "/boozybisou/toronto-sour.jpg"
+image: /assets/img/toronto-sour.jpg
 layout: recipe-single
 
 ---

@@ -8,7 +8,7 @@ ingredients:  |-
   ¼ oz rich simple syrup (2:1)
   10 mint leaf
 source: https://punchdrink.com/recipes/jeff-morgenthalers-mint-julep/
-image: "/boozybisou/mint-julep.jpg"
+image: /assets/img/mint-julep.jpg
 layout: recipe-single
 
 ---

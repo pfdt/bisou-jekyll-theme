@@ -10,7 +10,7 @@ ingredients: |-
   4 slices cucumber
   2 oz still water, to top
 source: http://imbibemagazine.com/green-beast-absinthe-cocktail/
-image: "/v1556446198/boozybisou/green-beast-absinthe-cocktail-sweet-liberty-miami-crdt-ellie-groden.jpg"
+image: /assets/img/green-beast-absinthe-cocktail-sweet-liberty-miami-crdt-ellie-groden.jpg
 date: 2019-04-28 12:10:02 +0200
 
 ---

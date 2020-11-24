@@ -8,7 +8,7 @@ layout: default
 	    
 	<div class="card__cover card__cover--single">
       {% if page.image and page.image != "" %}
-        <img class="card__cover__img card__cover__img--single" src="{{ site.img-dir--card }}{{ page.image }}" alt="{{ recipe.title }}">
+        <img class="card__cover__img card__cover__img--single" src="{% if site.env != 'production' %}{{ site.urlbase }}{% endif %}{{ page.image }}{{ site.img-transform--card }}" alt="{{ recipe.title }}">
       {% else %}
         <div class="card__cover__img card__cover__img--list card__cover__img--placeholder" alt="{{ page.title }}"></div>
       {% endif %}

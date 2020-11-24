@@ -11,7 +11,7 @@ ingredients:  |-
   ½ oz simple syrup (1:1)
   2 dash Angostura bitters
 source: http://imbibemagazine.com/iron-ranger-from-raised-by-wolves/
-image: "/boozybisou/iron-ranger.jpg"
+image: /assets/img/iron-ranger.jpg
 layout: recipe-single
 
 ---

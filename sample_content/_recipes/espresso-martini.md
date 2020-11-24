@@ -9,7 +9,7 @@ ingredients:  |-
   ½ oz Kahlua
   ¼ oz simple syrup (1:1)
 source: http://imbibemagazine.com/vodka-espresso-recipe/
-image: "/boozybisou/espresso-martini.jpg"
+image: /assets/img/espresso-martini.jpg
 layout: recipe-single
 
 ---

@@ -10,7 +10,7 @@ ingredients:  |-
   ¼ oz rich simple syrup (2:1)
   ½ egg white
 source: http://imbibemagazine.com/green-eyes-gin-cocktail/
-image: "/boozybisou/green-eyes-gin.jpg"
+image: /assets/img/green-eyes-gin.jpg
 layout: recipe-single
 
 ---

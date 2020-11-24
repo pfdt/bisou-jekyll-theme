@@ -12,7 +12,7 @@ ingredients: |-
   1 tsp Demerara syrup
   2 dashes mole bitters
 source: http://imbibemagazine.com/scotch-and-coconut-cocktail/
-image: "/v1547297889/boozybisou/cane-and-table-scotch-and-coconut-horizontal-crdt-emma-janzen.jpg"
+image: /assets/img/cane-and-table-scotch-and-coconut-horizontal-crdt-emma-janzen.jpg
 star: 5
 
 ---

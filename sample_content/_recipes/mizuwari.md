@@ -8,7 +8,7 @@ ingredients: |-
   3-4 big ice cubes
   1 top mineral water
 source: https://youtu.be/AfEs5eczhy4
-image: "/v1578749030/boozybisou/IMG_6279_whogjq.jpg"
+image: /assets/img/IMG_6279_whogjq.jpg
 
 ---
 Put 3-4 big ice cube in a collins glass, pour the the whisky and stir.  

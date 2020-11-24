@@ -11,7 +11,7 @@ ingredients: |-
   5-7 mint leaves
   ½ oz blackstrap rum, to float
 source: http://imbibemagazine.com/scurvy-root-rum-cocktail/
-image: "/v1560010314/boozybisou/scurvy-root-makani-los-angeles-crdt-.jpg"
+image: /assets/img/scurvy-root-makani-los-angeles-crdt-.jpg
 
 ---
 Muddle the mint in a shaker tin, then add the remaining ingredients (minus the blackstrap rum), plus ice.

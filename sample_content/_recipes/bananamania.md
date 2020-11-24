@@ -11,7 +11,7 @@ ingredients: |-
   ½ oz simple syrup (1:1)
   1 dash allspice dram
 source: 
-image: "/boozybisou/banana-rum.jpg"
+image: /assets/img/banana-rum.jpg
 layout: recipe-single
 
 ---

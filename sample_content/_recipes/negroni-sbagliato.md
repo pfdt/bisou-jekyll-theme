@@ -8,7 +8,7 @@ ingredients:  |-
   1 oz sweet vermouth
   1 top prosecco
 source: https://punchdrink.com/recipes/negroni-sbagliato/
-image: "/boozybisou/negroni-sbagliato.jpg"
+image: /assets/img/negroni-sbagliato.jpg
 layout: recipe-single
 
 ---

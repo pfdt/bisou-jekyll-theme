@@ -20,9 +20,9 @@ sections:
 - type: document
   path: _data/taxonomies.yml
   label: Taxonomies
-upload_dir: bisou
-public_path: https://res.cloudinary.com/userID/image/upload #replace "userID" by your cloudinary userID
-front_matter_path: ''
+upload_dir: assets/img
+public_path: https://YOUR_DOMAIN/assets/img #replace "YOUR_DOMAIN" by your domaine name
+front_matter_path: "/assets/img"
 use_front_matter_path: true
 file_template: ":filename:"
 build:

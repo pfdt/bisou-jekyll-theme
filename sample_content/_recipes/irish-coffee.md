@@ -10,7 +10,7 @@ ingredients: |-
   3 ½ oz coffee
   1 oz heavy cream, to top
 source: https://punchdrink.com/recipes/dead-rabbit-irish-coffee-no-2/
-image: "/v1546890107/boozybisou/Article2-Irish-Coffee-Cocktail-Recipe-Dead-Rabbit-NYC.jpg"
+image: /assets/img/Article2-Irish-Coffee-Cocktail-Recipe-Dead-Rabbit-NYC.jpg
 
 ---
 In a six-oz glass, stir together the whiskey, demerara syrup and hot coffee.

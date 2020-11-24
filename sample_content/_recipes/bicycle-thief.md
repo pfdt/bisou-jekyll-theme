@@ -11,7 +11,7 @@ ingredients:  |-
   ½ oz simple syrup (1:1)
   1 top Perrier
 source: http://imbibemagazine.com/the-bicycle-thief-cocktail/
-image: "/boozybisou/bicycle-thief.jpg"
+image: /assets/img/bicycle-thief.jpg
 layout: recipe-single
 
 ---

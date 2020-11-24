@@ -9,7 +9,7 @@ ingredients: |-
   1 oz vanilla syrup
   ½ oz lime juice
 source: https://punchdrink.com/recipes/porn-star-martini/
-image: "/v1560009484/boozybisou/Article-Porn-Star-Vodka-Passionfruit-Martini-Recipe-Giuseppe-Gonzalez-Suffolk-Arms-NYC.jpg"
+image: /assets/img/Article-Porn-Star-Vodka-Passionfruit-Martini-Recipe-Giuseppe-Gonzalez-Suffolk-Arms-NYC.jpg
 
 ---
 Put all ingredients in a cocktail shaker and shake.

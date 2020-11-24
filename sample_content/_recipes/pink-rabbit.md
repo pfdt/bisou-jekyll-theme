@@ -9,7 +9,7 @@ ingredients: |-
   1 ounce rooibos tea (see Editor's Note)
   1/2 teaspoon lemon juice
 source: https://punchdrink.com/recipes/pink-rabbit/
-image: "/v1549918615/boozybisou/Article-Pink-Rabbit-Summer-Cocktails-Five-Ingredient-Easy-Drink-Recipes.jpg"
+image: /assets/img/Article-Pink-Rabbit-Summer-Cocktails-Five-Ingredient-Easy-Drink-Recipes.jpg
 date: 2019-02-11 21:57:33 +0100
 
 ---

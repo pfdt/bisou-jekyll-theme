@@ -11,7 +11,7 @@ ingredients:  |-
   ¼ oz simple syrup (1:1)
   2 oz champagne
 source: http://imbibemagazine.com/bittercup-recipe/
-image: "/boozybisou/bittercup.jpg"
+image: /assets/img/bittercup.jpg
 layout: recipe-single
 
 ---

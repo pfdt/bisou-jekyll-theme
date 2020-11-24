@@ -12,7 +12,7 @@ ingredients: |-
   ¼ oz lemon juice
   ¼ oz lime juice
 source: https://punchdrink.com/recipes/fairbanks-loan-2/
-image: "/v1560010995/boozybisou/Article-Recipe-Douglas-Fairbanks-Cocktail-Recipe-Brian-Kane-The-International-Bar-Philadelphia-1000x617.jpg"
+image: /assets/img/Article-Recipe-Douglas-Fairbanks-Cocktail-Recipe-Brian-Kane-The-International-Bar-Philadelphia-1000x617.jpg
 
 ---
 Combine all ingredients in a mixing tin and shake with ice.

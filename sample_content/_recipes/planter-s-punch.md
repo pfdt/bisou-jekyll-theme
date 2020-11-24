@@ -10,7 +10,7 @@ ingredients: |-
   1/2 ounce orange juice
   1/4 ounce simple syrup
 source: https://punchdrink.com/recipes/planters-punch/
-image: "/v1549918742/boozybisou/planters-punch.jpg"
+image: /assets/img/planters-punch.jpg
 date: 2019-02-11 21:59:06 +0100
 
 ---

@@ -4,8 +4,8 @@ urlbase:  #site urlbase
 url:  #site url
 permalink: "/:path/"
 
-img-dir--card: https://res.cloudinary.com/userID/image/upload/c_fill,g_auto:no_faces,h_465,q_80,w_600/f_auto #img baseurl for card images (for cloudinary replace "userID" by yours
-img-dir--sharing: https://res.cloudinary.com/userID/image/upload/c_fill,g_auto:no_faces,h_630,w_1200/f_auto #img baseurl for sharing images (for cloudinary replace "userID" by yours
+img-transform--card: ?nf_resize=smartcrop&w=600&h=465 #Netlify Large Media img transform parameters for card images
+img-transform--sharing: ?nf_resize=smartcrop&w=1200&h=630 #Netlify Large Media img transform parameters for sharing images
 googlanalytics_ID: "" #add your UA ID if needed
 firebase_apiKey: "" #apiKey of your firebase realtime database (for collection and ratings functions)
 firebase_projectId: "" #projectId of your firebase realtime database (for collection and ratings functions)
