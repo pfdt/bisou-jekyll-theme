@@ -141,6 +141,15 @@ fields:
     config:
       required: false
     label: signed-in close
+  - name: footer
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: footer text
   label: account modal content
 pages:
 - _data/taxonomies.yml
