@@ -17,7 +17,7 @@ This theme is compatible with jekyll-remote-theme and my personal website is liv
 *Neither shaken, nor stirred.*
 
 - Static site generator: [Jekyll](https://github.com/jekyll/jekyll)
-- Image hosting: [Cloudinary](https://cloudinary.com/)
+- Website and img hosting: [Netlify and Netlify Large Media](https://www.netlify.com/)
 - Login and user database hosting: [Firebase](https://firebase.google.com)
 - Client-side search and filter: [jekyll-search](https://github.com/mathaywarduk/jekyll-search), [Isotope](https://isotope.metafizzy.co/)
 - CMS : [Forestry](https://forestry.io/)
@@ -27,4 +27,4 @@ Some lines and good tips from [cagrimmett/jekyll-tools](https://github.com/cagri
 I'm not a developer and this is my first time using jekyll and more broadly github, I hope it is not too dirty. :)
 
 
-*latest version: v2.0.2*
+*latest version: v2.1*
