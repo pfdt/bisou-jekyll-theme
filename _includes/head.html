@@ -10,7 +10,7 @@
 	<meta property="og:title" content="{% if page.layout == 'recipe-single' %}{{ page.title }}, a {{ page.category | downcase }} cocktail recipe | {% endif %}{{ site.title }}{% if page.layout == 'recipes-list' %} - {{ site.description }}{% endif %}">
 	<meta property="og:type" content="{% if page.layout == 'recipe-single' %}article{% else %}website{% endif %}">
 	<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.urlbase }}">
-	<meta property="og:image" content="{% if page.layout == 'recipe-single' %}{{ site.urlbase }}{{ page.image }}{{ site.img-transform--sharing }}{% else %}{{ '/assets/img/sharing-img.png' | absolute_url }}{% endif %}">
+	<meta property="og:image" content="{% if page.layout == 'recipe-single' %}{{ site.urlbase }}{{ page.image }}{{ site.img-transform--sharing }}{% else %}{{ '/assets/img-static/sharing-img.png' | absolute_url }}{% endif %}">
 	<meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | replace: "
 	", " " }}{% else %}{{ site.description }}{% endif %}">
 	<meta property="og:site_name" content="{{ site.title }}">
@@ -66,6 +66,31 @@
 	{% endif %}
 	
 	<!-- Preload -->
-	<link rel="preload" href="{{ '/assets/img/logo-icon.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img/bookmarks.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/logo-icon.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/alt_logo-icon.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/star--borders.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/alt_star--borders.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/star.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/alt_star.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/bookmark.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/alt_bookmark.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/arrow--up.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/alt_arrow--up.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/arrow--down.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/alt_arrow--down.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/logo.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/alt_logo.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/bookmarks.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/alt_bookmarks.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/star--dots.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/alt_star--dots.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/bookmark--border.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/alt_bookmark--border.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/sort--name.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/alt_sort--name.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/sort--date.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/alt_sort--date.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/sort--rating.svg' | relative_url }}" as="image">
+	<link rel="preload" href="{{ '/assets/img-static/alt_sort--rating.svg' | relative_url }}" as="image">
+	
 </head>

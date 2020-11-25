@@ -1,0 +1,3 @@
+---
+---
+<svg class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" xml:space="preserve"><g><circle style="fill:{{ site.data.taxonomies.theme-colors.font_color }}" cx="12" cy="13.31" r="1.31"/></g></svg>

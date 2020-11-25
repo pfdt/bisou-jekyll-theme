@@ -21,7 +21,7 @@ const
 	allowEmpty = false,
 	disableBodyScroll = bodyScrollLock.disableBodyScroll,
 	enableBodyScroll = bodyScrollLock.enableBodyScroll,
-	jsonFeedUrl = '/assets/feeds/feed.json',
+	jsonFeedUrl = '/assets/feeds/recipes.json',
 	firebase_apiKey = {{ site.firebase_apiKey | jsonify }},
 	firebase_projectId = {{ site.firebase_projectId | jsonify }},
 	firebase_databaseName = {{ site.firebase_databaseName | jsonify }},
@@ -836,7 +836,6 @@ $(document).ready(function () {
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "")
             .replace(/[\u2019]/g, "'");
-        console.log(q);
         $.each(jsonFeed, function (index, item) {
             // check if search term is in content or title
             let title = item.title || "";

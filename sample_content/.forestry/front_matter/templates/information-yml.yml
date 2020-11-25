@@ -20,21 +20,21 @@ fields:
   type: field_group
   config: {}
   fields:
-  - name: primary-color
+  - name: primary_color
     type: color
     label: primary color
     config:
       required: true
       color_format: Hex
     description: "<em>used in default/light theme: nav and sidebar background</em>"
-  - name: bg-color
+  - name: bg_color
     type: color
     config:
       required: true
       color_format: Hex
     label: bg color
     description: "<em>used in default/light theme: body background and alt text color</em>"
-  - name: secondary-bg-color
+  - name: secondary-bg_color
     type: color
     config:
       required: true
@@ -42,7 +42,7 @@ fields:
     label: secondary bg color
     description: "<em>used in default/light theme: search input and active filter
       background</em>"
-  - name: font-color
+  - name: font_color
     type: color
     label: font color
     config:
@@ -50,27 +50,54 @@ fields:
       color_format: Hex
     description: "<em>used in default/light theme: default text and icons color and
       modal background</em>"
-  - name: secondary-font-color
+  - name: secondary-font_color
     type: color
     config:
       required: true
       color_format: Hex
     label: secondary color
     description: "<em>used in default/light theme: secondary texts color</em>"
-  - name: alt_primary-and-bg-color
-    type: color
-    label: alt primary and bg color
-    config:
-      required: false
-      color_format: Hex
-    description: "<em>used in dark theme: replace the primary and the bg color</em>"
-  - name: alt_secondary-bg-color
-    type: color
-    label: alt secondary bg color
-    config:
-      required: false
-      color_format: Hex
-    description: "<em>used in dark theme: replace the secondary bg color</em>"
+  - name: alt_theme_colors
+    type: field_group
+    config: {}
+    fields:
+    - name: alt_primary_color
+      type: color
+      config:
+        required: false
+        color_format: Hex
+      label: alt primary color
+      description: "<em>used in alt/dark theme: nav and sidebar background</em>"
+    - name: alt_bg_color
+      type: color
+      label: alt bg color
+      config:
+        required: false
+        color_format: Hex
+      description: "<em>used in alt/dark theme: body background and alt text color</em>"
+    - name: alt_secondary-bg_color
+      type: color
+      label: alt secondary-bg color
+      config:
+        required: false
+        color_format: Hex
+      description: "<em>used in alt/dark theme: search input and active filter background</em>"
+    - name: alt_font_color
+      type: color
+      label: alt font color
+      config:
+        required: false
+        color_format: Hex
+      description: "<em>used in alt/dark theme: default text and icons color and modal
+        background</em>"
+    - name: alt_secondary-font_color
+      type: color
+      label: alt secondary-font color
+      config:
+        required: false
+        color_format: Hex
+      description: "<em>used in alt/dark theme: secondary texts color</em>"
+    label: alt/dark theme colors
   - name: categories-colors
     type: field_group_list
     fields:

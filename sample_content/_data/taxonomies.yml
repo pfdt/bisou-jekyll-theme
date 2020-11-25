@@ -29,13 +29,17 @@ account:
   signed-in_close: ok, back to the recipes...
   footer: Powered by <a href="https://github.com/pfdt/bisou-jekyll-theme" target="_blank" class="simple-link">bisous - jekyll theme</a>.
 theme-colors:
-  primary-color: "#02101D"
-  bg-color: "#001526"
-  secondary-bg-color: "#0C1E30"
-  font-color: "#FFFFFF"
-  secondary-font-color: "#75797D"
-  alt_primary-and-bg-color: "#000000"
-  alt_secondary-bg-color: "#092740"
+  primary_color: "#02101D"
+  bg_color: "#001526"
+  secondary-bg_color: "#0C1E30"
+  font_color: "#FFFFFF"
+  secondary-font_color: "#75797D"
+  alt_theme_colors:
+    alt_primary_color: "#000000"
+    alt_bg_color: "#000000"
+    alt_secondary-bg_color: "#092740"
+    alt_font_color: "#E0E0E4"
+    alt_secondary-font_color: "#75797D"
   categories-colors:
   - category-title: Bitter
     category-color: "#FF776B"
