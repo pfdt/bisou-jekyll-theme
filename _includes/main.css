@@ -196,7 +196,15 @@ a {
 	    touch-action: manipulation;
 }
 #burger {
-	margin: 0 1.2rem 0 16.5rem;
+	height: 100%;
+	margin-left: calc(16rem - 1.2rem);
+	padding: 0 1.2rem 0 1.7rem;
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 /* logo */
@@ -221,6 +229,14 @@ a {
 
 #account {
 	position: absolute;
+	height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-right: 1.2rem;
 }
 .signed-in .main-nav__icons--account {
 	background-size: cover;
@@ -1041,6 +1057,7 @@ body:not(.signed-in) #sort-button--rating {
 	.searchbar {
 		margin-left: unset;
 		margin-right: auto;
+		padding-left: 1em;
 	}
 	#searchbar__input {
 		height: 2.26em;
@@ -1062,17 +1079,19 @@ body:not(.signed-in) #sort-button--rating {
 	}
 	#account {
 		position: relative;
+		padding-right: 0;
 	}
 	#logo {
 		position: relative;
 		right: auto;
-		margin-right: 1.2rem;
+		padding: 0 0.6rem;
 	}
 	#logo > a {
 		background-size: 100%;
 	}
 	#burger {
 		margin-left: 0;
+		padding: 0 0.6rem 0 0;
 	}
 	
 	.activeSidebar .filter-button__title, .activeSidebar .sidebar .sorting, .activeSidebar .sidebar span {
