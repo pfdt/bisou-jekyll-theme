@@ -6,7 +6,7 @@ regenerate: true
 [
 {% for item in site.recipes %}{% if item.title != null and item.title != empty %}{% unless first %},{% endunless %}{
     "title": {{ item.title | jsonify | replace: "’", "'"| downcase }},
-    "data_search": {{ item.slug | prepend:".r_" | jsonify }},
+    "data_search": {{ item.slug | slugify | prepend:".r_" | jsonify }},
     "ingredients": {{ item.ingredients | strip_html | replace: '
 ', ', ' | remove:'"' | jsonify | downcase }},
     "category": {% for category in item.categories %}{{ category | jsonify | downcase }}{% unless forloop.last %}, {% endunless %}{% endfor %},

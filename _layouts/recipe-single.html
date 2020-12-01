@@ -4,7 +4,7 @@ layout: default
 {% comment %}
 	This layout is used by the documents in the _posts/ collection
 {% endcomment %}
-  <div id="content" class="card card--single before-bg--{{ page.category | slugify }} r_{{ page.slug }}">
+  <div id="content" class="card card--single before-bg--{{ page.category | slugify }} r_{{ page.slug | slugify }}">
 	    
 	<div class="card__cover card__cover--single">
       {% if page.image and page.image != "" %}
@@ -17,7 +17,7 @@ layout: default
 	<div class="card__body card__body--single pure-g">
 	
 		<div class="card__body__controls pure-u-1">
-			<div class="card__body__controls__rating" value="{{ page.slug }}">				
+			<div class="card__body__controls__rating" value="{{ page.slug | slugify }}">				
 				<div class="rating__dots"></div>
 				<div class="rating__borders"></div>
 				<div class="rating__icons 5" title="5 stars" value="5"></div>
@@ -26,7 +26,7 @@ layout: default
 			    <div class="rating__icons 2" title="2 stars" value="2"></div>
 				<div class="rating__icons 1" title="1 star" value="1"></div>
 			</div>
-			<div class="card__body__controls__bookmark" value="{{ page.slug }}"></div>
+			<div class="card__body__controls__bookmark" value="{{ page.slug | slugify }}"></div>
 		</div>
 		<div class="card__body__title card__body__title--single pure-u-1">
 			<a class="" href="{{ page.url | absolute_url }}">
@@ -63,7 +63,7 @@ layout: default
 		</div>
 		
 		<div class="card__body__edit-recipe pure-u-1">
-			<a href="/admin/#/pages/_recipes-{{ page.slug }}-md/" class="adminContent simple-link">edit recipe</a>
+			<a href="/admin/#/pages/_recipes-{{ page.slug | slugify }}-md/" class="adminContent simple-link">edit recipe</a>
 		</div>
 	</div>
 </div>
