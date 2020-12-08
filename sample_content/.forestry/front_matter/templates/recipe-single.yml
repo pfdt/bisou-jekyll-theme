@@ -35,6 +35,7 @@ fields:
     schema:
       format: markdown
     required: true
+  description: "<em>list one ingredient per line, starting with the quantity</em>"
 - type: text
   name: source-url
   label: Source (url)

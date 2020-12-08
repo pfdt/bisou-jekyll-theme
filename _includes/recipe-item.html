@@ -24,7 +24,8 @@
 				<div class="card__body__controls__bookmark" value="{{ recipe.slug | slugify }}"></div>
 			</div>		
 			<h3 class="card__body__title card__body__title--list">{{ recipe.title | replace: "'", "’" | downcase }}</h3>
-			<p class="card__body__description--list">{{ recipe.ingredients | regex_replace: '[\r\n]', ', ' | regex_replace: '\bonce\S*', "oz" | replace: "oz.", "oz" | replace: "teaspoon", "tsp" | replace: "barspoon", "tsp" | replace: "tablespoon", "tbsp" | replace: "1/4", "¼" | replace: "1/2", "½" | replace: "3/4", "¾" | replace: "1/3", "⅓" | replace: "2/3", "⅔" | replace: "1,5", "1½"}}</p>
+			<p class="card__body__description--list">{{ recipe.ingredients | downcase | 
+regex_replace: '^([0-9¼½¾⅓⅔]*\s?[¼½¾⅓⅔]?|[0-9]*(\/|,|\.|-|to|or)[0-9]*)\s?(oz.?|ounces?|cups?|tb?sp|(table|tea|bar)spoon|dash(es)?|drops?|top|pinch(es)?|slices?|pieces?|splash(es)?|sprigs?|cubes?|large|(m|c)?l|k?g)?\s', '' | regex_replace: '^handful\sof\s|\s\(.*\)|,\s.*', '' | regex_replace: '[\r\n]', ', ' }}</p>
 		</div>
 	</div>
 </div>

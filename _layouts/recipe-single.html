@@ -45,8 +45,7 @@ layout: default
 		{% endcomment %}
 		
 		<div class="card__body__ingredients pure-u-1 pure-u-sm-1-2">	
-			<span class="card__body__ingredients__item p-ingredient">{{ page.ingredients | replace: "ounces", "oz" | replace: "ounce", "oz" | replace: "oz.", "oz" | replace: "teaspoon", "tsp" | replace: "barspoon", "tsp" | replace: "tablespoon", "tbsp" | replace: "1/4", "¼" | replace: "1/2", "½" | replace: "3/4", "¾" | replace: "1/3", "⅓" | replace: "2/3", "⅔" | replace: "1,5", "1½" | replace: '
-', '</span><span class="card__body__ingredients__item p-ingredient">'}}</span>
+			<span class="card__body__ingredients__item p-ingredient">{{ page.ingredients | regex_replace: 'ounces?|oz\.', 'oz' | regex_replace: '(tea|bar)spoon', 'tsp' | regex_replace: '(?<=[0-9]),5', '½' | replace: "tablespoon", "tbsp" | replace: "1/4", "¼" | replace: "1/2", "½" | replace: "3/4", "¾" | replace: "1/3", "⅓" | replace: "2/3", "⅔" | regex_replace: '[\r\n]', '</span><span class="card__body__ingredients__item p-ingredient">'}}</span>
 		</div>
 		
 		<div class="card__body__description--single pure-u-1 pure-u-sm-1-2">
@@ -57,7 +56,7 @@ layout: default
 			{% if source-url or source-text %}
 			<div class="card__body__description__label label">source :</div>
 			<div class="">{{ page.source-text }}</div>
-			<a class="simple-link" href="{{ page.source-url }}" target="_blank" >{{ page.source-url | replace: "https://", "" | replace: "http://", "" | replace: "www.", "" | split: "/" | first }}</a>
+			<a class="simple-link" href="{{ page.source-url }}" target="_blank" >{{ page.source-url | regex_replace: '(https?:\/\/)?(www\.)?', '' | split: "/" | first }}</a>
 			</div>
 			{% else %}{% endif %}			
 		</div>
