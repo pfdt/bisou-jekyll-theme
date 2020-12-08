@@ -3,7 +3,7 @@ ingredients: |-
   ¾ oz rye whiskey
   ¾ oz Cognac
   ¾ oz sweet vermouth
-  1 barspoon Bénédictine
+  1 tsp Bénédictine
   2 dashes Peychaud’s bitters
   2 dashes Angostura bitters
 title: Vieux Carre

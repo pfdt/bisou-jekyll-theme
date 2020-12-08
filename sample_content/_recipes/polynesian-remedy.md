@@ -4,7 +4,7 @@ date: 2018-08-19 18:10:11 +0100
 category: Tiki
 technique: Shake
 ingredients:  |-
-  1,75 oz dark rum
+  1¾ oz dark rum
   ½ oz orgeat syrup
   ½ oz ginger syrup
   ¼ oz honey syrup (2:1)

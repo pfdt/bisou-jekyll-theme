@@ -1,7 +1,7 @@
 ---
 ingredients: |-
   2 oz gin
-  1 1/2 oz genepy
+  1½ oz genepy
   2 dashes orange bitters
 technique: Stir
 category: Spirit-forward

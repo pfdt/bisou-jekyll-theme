@@ -7,7 +7,7 @@ ingredients: |-
   1-inch cube fresh pineapple
   1 orange half-wheel
   1 lemon wedge
-  1/2 oz passion fruit syrup
+  ½ oz passion fruit syrup
   3 oz sweet vermouth
 source: https://punchdrink.com/recipes/juicebox-cobbler/
 image: /assets/img/Article-Juicebox-Cobbler-Cocktail-Recipe-Dan-Greenbaum-Diamond-Reef-Brooklyn-NYC.jpg
@@ -18,6 +18,6 @@ Add the pineapple, orange, lemon and passion fruit syrup to a mixing tin and mud
 
 Add the vermouth and swirl briefly.
 
-Dump the contents of the tin into a chilled Collins glass. Fill the glass 3/4 full with with pebble or crushed ice and mix briefly with a spoon or metal straw to integrate.
+Dump the contents of the tin into a chilled Collins glass. Fill the glass ¾ full with with pebble or crushed ice and mix briefly with a spoon or metal straw to integrate.
 
 Garnish with fruit and a mint sprig.

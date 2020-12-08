@@ -5,7 +5,7 @@ category: Bitter
 technique: Stir
 ingredients:  |-
   2 oz sweet vermouth
-  1,5 oz fino sherry
+  1½ oz fino sherry
   2 tsp Fernet Branca
   1 dash maraschino liqueur
   1 dash Angostura bitters

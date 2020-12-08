@@ -2,10 +2,10 @@
 source: http://imbibemagazine.com/the-20th-century-cocktail/
 title: 20th Century
 ingredients: |-
-  1½ oz. gin
-  ¾ oz. fresh lemon juice
-  ½ oz. Lillet Blanc
-  ½ oz. white crème de cacao
+  1½ oz gin
+  ¾ oz fresh lemon juice
+  ½ oz Lillet Blanc
+  ½ oz white crème de cacao
 category: Citrusy
 technique: Shake
 image: /assets/img/anatomy-20th-century-cocktail-crdt-john-valls-dk.jpg

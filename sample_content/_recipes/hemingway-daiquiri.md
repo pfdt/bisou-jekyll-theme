@@ -16,11 +16,11 @@ layout: recipe-single
 ---
 A tester :
 
-* 2 ounces white rum
-* 3/4 ounce lime juice
-* 1/2 ounce grapefruit juice
-* 1/4 ounce maraschino liqueur
-* 1/4 ounce rich simple syrup (2:1)
+* 2 oz white rum
+* ¾ oz lime juice
+* ½ oz grapefruit juice
+* ¼ oz maraschino liqueur
+* ¼ oz rich simple syrup (2:1)
 * 1 small piece grapefruit peel, approximately ½ inch x 2 inches
 
 [https://punchdrink.com/recipes/st-john-frizells-hemingway-daiquiri/](https://punchdrink.com/recipes/st-john-frizells-hemingway-daiquiri/ "https://punchdrink.com/recipes/st-john-frizells-hemingway-daiquiri/")

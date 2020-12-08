@@ -7,7 +7,7 @@ ingredients:  |-
   2 oz light rum
   1 oz simple syrup (1:1)
   ¾ oz lime juice
-  1 oz Perrier
+  1 oz soda water
   8 mint leaf
 source: https://punchdrink.com/recipes/jelani-johnsons-mojito/
 image: /assets/img/mojito.jpg

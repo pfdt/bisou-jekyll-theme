@@ -16,7 +16,7 @@ Combine all ingredients in a mixing glass over ice and stir until chilled. Strai
 
 Garnish with orange and lemon peels
 
-**Dad's Bitters Blend:** 
+#### Dad's Bitters Blend: 
 
 1 ½ oz Angostura bitters 
 

@@ -4,7 +4,7 @@ date: 2018-08-21 22:19:50 +0000
 category: Sweet & fruity
 technique: In glass
 ingredients: |-
-  1,5 oz gin
+  1½ oz gin
   ¾ oz St-Germain
   ¾ oz lime juice
   2 slice cucumber

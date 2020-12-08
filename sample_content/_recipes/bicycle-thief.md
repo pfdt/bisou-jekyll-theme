@@ -7,9 +7,9 @@ ingredients:  |-
   1 oz Campari
   1 oz gin
   ½ oz lemon juice
-  1,5 oz grapefruit juice
+  1½ oz grapefruit juice
   ½ oz simple syrup (1:1)
-  1 top Perrier
+  1 top soda water
 source: http://imbibemagazine.com/the-bicycle-thief-cocktail/
 image: /assets/img/bicycle-thief.jpg
 layout: recipe-single

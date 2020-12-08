@@ -4,8 +4,8 @@ date: 2018-08-19 22:38:16 +0100
 category: Tiki
 technique: Shake
 ingredients:  |-
-  1,5 oz Jamaican rum
-  1,5 oz dark rum
+  1½ oz Jamaican rum
+  1½ oz dark rum
   1 oz overproof rum
   ⅓ oz grapefruit juice
   1 tbsp cinnamon syrup

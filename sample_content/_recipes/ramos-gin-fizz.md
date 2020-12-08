@@ -4,7 +4,7 @@ date: 2018-08-13 19:23:54 +0100
 category: Dairy
 technique: Shake
 ingredients:  |-
-  1,5 oz gin
+  1½ oz gin
   1 oz simple syrup (1:1)
   ½ oz lemon juice
   ½ oz lime juice

@@ -19,7 +19,7 @@ Add ice and shake again until chilled.
 Strain over ice into a rocks glass and garnish with an orange half-wheel and a brandied cherry.
 
 
-**Riffs :**  
+#### Riffs :  
 - Use Grenadine syrup
 - Use Honey Syrup
 - Use Maple syrup

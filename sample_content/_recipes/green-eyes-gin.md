@@ -4,7 +4,7 @@ date: 2018-08-19 16:35:08 +0100
 category: Tropical
 technique: Dry shake
 ingredients:  |-
-  1,5 oz gin
+  1½ oz gin
   ¾ oz yellow Chartreuse
   ¾ oz lime juice
   ¼ oz rich simple syrup (2:1)

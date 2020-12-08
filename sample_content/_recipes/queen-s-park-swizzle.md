@@ -1,10 +1,10 @@
 ---
 ingredients: |-
   3 oz Demerara rum
-  3/4 oz fresh lime juice, plus the spent lime half
-  1/2 oz 2:1 Demerara syrup (see page 78)
+  ¾ oz fresh lime juice, plus the spent lime half
+  ½ oz demerara syrup (2:1)
   3 dashes Angostura bitters
-  8 to 10 mint leaves
+  8-10 mint leaves
 source: http://imbibemagazine.com/queen-s-park-swizzle-recipe/
 technique: Swizzle
 category: Long

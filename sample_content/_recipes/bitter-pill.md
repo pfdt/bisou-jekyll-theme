@@ -4,7 +4,7 @@ date: 2018-08-18 21:53:35 +0100
 category: Bitter
 technique: Shake
 ingredients:  |-
-  1,5 oz dark rum
+  1½ oz dark rum
   ½ oz Fernet Branca
   ½ oz lime juice
   ½ oz demerara syrup (1:1)
