@@ -55,8 +55,8 @@ layout: default
 			{% if page.source-text and page.source-text != "" %}{% assign source-text = true %}{% else %}{% endif %}
 			{% if source-url or source-text %}
 			<div class="card__body__description__label label">source :</div>
-			<div class="">{{ page.source-text }}</div>
-			<a class="simple-link" href="{{ page.source-url }}" target="_blank" >{{ page.source-url | regex_replace: '(https?:\/\/)?(www\.)?', '' | split: "/" | first }}</a>
+			<div class="card__body__description__source">{{ page.source-text }}</div>
+			<a class="card__body__description__source simple-link" href="{{ page.source-url }}" target="_blank" >{{ page.source-url | regex_replace: '(https?:\/\/)?(www\.)?', '' | split: "/" | first }}</a>
 			</div>
 			{% else %}{% endif %}			
 		</div>
