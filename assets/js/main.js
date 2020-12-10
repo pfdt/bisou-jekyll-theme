@@ -207,7 +207,7 @@ $(document).ready(function () {
             userPhotoURL = user.photoURL;
 
             // Retrieve and push bookmarks status
-            getFirebaseBookmars(currentUserID);
+            getFirebaseBookmarks(currentUserID);
 
             // Retrieve and push Rating status
             getFirebaseRatings(currentUserID);
@@ -230,13 +230,13 @@ $(document).ready(function () {
     }
 
     // Retrieve and push bookmarks status
-    async function getFirebaseBookmars(currentUserID) {
+    async function getFirebaseBookmarks(currentUserID) {
         firebase
             .database()
             .ref(currentUserID + "/recipes/")
             .orderByChild("bookmark")
             .equalTo(true)
-            .on("value", function (snapshot) {
+            .once("value", function (snapshot) {
                 var filterValue = [];
                 filterValue.push(":not(*)");
                 snapshot.forEach(function (child) {
@@ -244,7 +244,6 @@ $(document).ready(function () {
                     $(".r_" + recipe + " .card__body__controls__bookmark").addClass("active");
                     filterValue.push(".r_" + recipe);
                 });
-
                 // assign bookmarks button
                 filterValue = filterValue.toString();
                 currentBookmarks = filterValue;
@@ -264,7 +263,7 @@ $(document).ready(function () {
             .ref(currentUserID + "/recipes/")
             .orderByChild("rating")
             .startAt(1)
-            .on("value", function (snapshot) {
+            .once("value", function (snapshot) {
                 snapshot.forEach(function (child) {
                     let recipe = child.key;
                     let rating = child.val().rating;
@@ -599,9 +598,11 @@ $(document).ready(function () {
     }
 
     // Isotope filter
-    async function isotopeFilter(filterValue) {
+    async function isotopeFilter(filterValue, noScrollTop) {
         $grid.isotope({ filter: filterValue });
-		$htmlBody.animate({scrollTop: 0});
+        if (!noScrollTop) {
+            $htmlBody.animate({scrollTop: 0});
+        }
     }
 
     // Isotope sorting
@@ -712,7 +713,7 @@ $(document).ready(function () {
 
                 // reload isotope if Bookmarks page
                 if (currentFilter == "cat=bookmarks") {
-                    isotopeFilter(filterValue);
+                    isotopeFilter(filterValue, true);
                 }
             });
         } else {
