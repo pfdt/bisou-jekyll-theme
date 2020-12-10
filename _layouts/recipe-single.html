@@ -4,7 +4,7 @@ layout: default
 {% comment %}
 	This layout is used by the documents in the _posts/ collection
 {% endcomment %}
-  <div id="content" class="card card--single before-bg--{{ page.category | slugify }} r_{{ page.slug | slugify }}">
+  <div id="content" class="card card--single before-bg--{{ page.category | slugify }} r_{{ page.slug | slugify }}" data-observe-resizes>
 	    
 	<div class="card__cover card__cover--single">
       {% if page.image and page.image != "" %}
@@ -16,7 +16,7 @@ layout: default
 	
 	<div class="card__body card__body--single pure-g">
 	
-		<div class="card__body__controls pure-u-1">
+		<div class="card__body__controls">
 			<div class="card__body__controls__rating" value="{{ page.slug | slugify }}">				
 				<div class="rating__dots"></div>
 				<div class="rating__borders"></div>
@@ -28,27 +28,17 @@ layout: default
 			</div>
 			<div class="card__body__controls__bookmark" value="{{ page.slug | slugify }}"></div>
 		</div>
-		<div class="card__body__title card__body__title--single pure-u-1">
+		<div class="card__body__title card__body__title--single">
 			<a class="" href="{{ page.url | absolute_url }}">
 				<h1>{{ page.title | replace: "'", "’" | downcase }}</h1>
 			</a>
 		</div>
 		
-		{% comment %}
-		<div class="card__body__taxonomies pure-u-1">
-		  	<div class="">{{ page.category | downcase }}</div>
-		  	<div class="">{{ page.technique | downcase }}</div>
-		  	{% if page.source and page.source != "" %}
-			<div class="source">source : <a href="{{ page.source }}" target="_blank" >{{ page.source }}</a></div> 
-			{% else %}{% endif %}
-		</div>
-		{% endcomment %}
-		
-		<div class="card__body__ingredients pure-u-1 pure-u-sm-1-2">	
+		<div class="card__body__ingredients grid-sm1_md1-2">	
 			<span class="card__body__ingredients__item p-ingredient">{{ page.ingredients | regex_replace: 'ounces?|oz\.', 'oz' | regex_replace: '(tea|bar)spoon', 'tsp' | regex_replace: '(?<=[0-9]),5', '½' | replace: "tablespoon", "tbsp" | replace: "1/4", "¼" | replace: "1/2", "½" | replace: "3/4", "¾" | replace: "1/3", "⅓" | replace: "2/3", "⅔" | regex_replace: '[\r\n]', '</span><span class="card__body__ingredients__item p-ingredient">'}}</span>
 		</div>
 		
-		<div class="card__body__description--single pure-u-1 pure-u-sm-1-2">
+		<div class="card__body__description--single grid-sm1_md1-2">
 			<div class="card__body__description__label label">instructions :</div>
 			<div class="card__body__description__instructions e-instructions">{{ content }}</div>		
 			{% if page.source-url and page.source-url != "" %}{% assign source-url = true %}{% else %}{% endif %}
@@ -61,7 +51,7 @@ layout: default
 			{% else %}{% endif %}			
 		</div>
 		
-		<div class="card__body__edit-recipe pure-u-1">
+		<div class="card__body__edit-recipe">
 			<a href="/admin/#/pages/_recipes-{{ page.slug | slugify }}-md/" class="adminContent simple-link">edit recipe</a>
 		</div>
 	</div>

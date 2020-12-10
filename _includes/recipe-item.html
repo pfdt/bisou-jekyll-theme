@@ -1,16 +1,16 @@
 {% comment %}
 	recipe card displayed in recipes list
 {% endcomment %}
-<div class="grid-item pure-u-1 pure-u-md-1-2 pure-u-lg-1-3 pure-u-xl-1-4 c_{{ recipe.category | slugify }} r_{{ recipe.slug | slugify }}" data-name="{{ recipe.slug | slugify }}" data-date="{{ recipe.date }}" data-rating="0">
+<div class="grid-item c_{{ recipe.category | slugify }} r_{{ recipe.slug | slugify }}" data-name="{{ recipe.slug | slugify }}" data-date="{{ recipe.date }}" data-rating="0">
 	<div class="card--list pure-g">	
-		<a href="{{ recipe.url | relative_url }}" class=" card__cover card__cover--list before-bg--{{ recipe.category | slugify }} pure-u-1">
+		<a href="{{ recipe.url | relative_url }}" class="card__cover card__cover--list before-bg--{{ recipe.category | slugify }}">
 			{% if recipe.image and recipe.image != "" %}
 			<img class="card__cover__img lazy" data-src="{% if site.env != 'production' %}{{ site.urlbase }}{% endif %}{{ recipe.image }}{{ site.img-transform--card }}" alt="{{ recipe.title }}">
 			{% else %}
 			<div class="card__cover__img card__cover__img--placeholder" alt="{{ recipe.title }}"></div>
 			{% endif %}
 		</a>
-		<div class="card__body--list pure-u-1">
+		<div class="card__body--list">
 			<div class="card__body__controls">
 				<div class="card__body__controls__rating" value="{{ recipe.slug | slugify }}">				
 					<div class="rating__dots"></div>

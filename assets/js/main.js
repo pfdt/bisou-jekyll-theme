@@ -36,9 +36,10 @@ const
 	login_modalClose = {{ site.data.taxonomies.account.login_close | jsonify }};
 
 $(document).ready(function () {
+    var
+        $1em = parseFloat(getComputedStyle(document.body, null).fontSize);
     const
 		$htmlBody = $("html, body"),
-		$1em = parseFloat(getComputedStyle(document.body, null).fontSize),
 		scrollTopOffset = $1em * 6.3,
 		wideLayoutBreakingpoint = $1em * 35.5,
 		$searchInput = $("#searchbar__input"),
@@ -65,19 +66,18 @@ $(document).ready(function () {
             date: "[data-date]",
             rating: "[data-rating]",
         },
-		/*
-		hiddenStyle: {
-			opacity: 0
-		},
-		visibleStyle: {
-			opacity: 1
-		},
-		*/
-		transitionDuration: 0
+        percentPosition: true,
+        layoutMode: 'fitRows',
+        transitionDuration: 0
     });
 
 	var $items = $grid.find(".grid-item");
     $grid.addClass("showOn").isotope("revealItemElements", $items);
+    
+    // update isotope layout event listener
+    document.addEventListener('ResizeObserverCompleted', function() {
+        isotopeLayout();
+    });
 
     // URL hash detector
     detectHash();
@@ -116,7 +116,12 @@ $(document).ready(function () {
             elements_selector: ".lazy",
         });
     }
-
+    
+    // Isotope udpate layout
+    async function isotopeLayout() {
+        $grid.isotope('layout');
+    }
+    
     /**
      * Detect on loading if there is an hash in the url.
      */
@@ -360,7 +365,6 @@ $(document).ready(function () {
 		    $(".theme-switch input[type='checkbox']").prop( "checked", true );
 		}
 	}
-    
 
     /* ==========================================================================
 	Interactivity / triggers
@@ -501,8 +505,8 @@ $(document).ready(function () {
         } else {
             activateSidebar();
         }
-        $gridContainer.isotope("layout");
     }
+
 
     /**
      * Isotope filter functions
@@ -596,7 +600,7 @@ $(document).ready(function () {
         $("#no-result").removeClass("active");
         $searchInput.val("");
     }
-
+    
     // Isotope filter
     async function isotopeFilter(filterValue, noScrollTop) {
         $grid.isotope({ filter: filterValue });
@@ -676,7 +680,7 @@ $(document).ready(function () {
             disableSidebar();
         }
     }
-
+    
     /**
      * toggle recipe bookmark status on firebase and layout
      */

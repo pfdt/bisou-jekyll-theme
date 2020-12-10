@@ -4,7 +4,7 @@ layout: default
 {% comment %}
 	This layout is used to display all the recipes, filtered by a category if specified
 {% endcomment %}
-	<div id="content" class="grid-layout">
+	<div id="content" class="grid-layout" data-observe-resizes>
 		<div id="isotopeContent" class="pure-g">
 			{% assign sorted_recipes = site.recipes | sort: "title" %}
 			{% for recipe in sorted_recipes %}
