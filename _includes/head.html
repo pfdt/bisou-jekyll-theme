@@ -42,7 +42,9 @@
 	</style>
 	
 	<!-- Javascript -->
-	<script type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/dark-theme.min.js' | relative_url }}"></script>
+	<script type="text/javascript">
+		{% include dark-theme.min.js %}
+	</script>
 	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
 	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/isotope.pkgd.min.js' | relative_url }}"></script>
 	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/lazyload.min.js' | relative_url }}"></script>
