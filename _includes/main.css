@@ -174,21 +174,21 @@ a {
 	-webkit-transform: translate(-16rem);
 	    -ms-transform: translate(-16rem);
 	        transform: translate(-16rem);
-    -webkit-transition: -webkit-transform 0.15s ease-in-out;
-    transition: -webkit-transform 0.15s ease-in-out;
-    -o-transition: transform 0.15s ease-in-out;
-    transition: transform 0.15s ease-in-out;
-    transition: transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+    -webkit-transition: -webkit-transform 0.2s ease-in-out;
+    transition: -webkit-transform 0.2s ease-in-out;
+    -o-transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 .activeSidebar #main-nav {
 	-webkit-transform: translate(0);
 	    -ms-transform: translate(0);
 	        transform: translate(0);
-    -webkit-transition: -webkit-transform 0.15s ease-in-out;
-    transition: -webkit-transform 0.15s ease-in-out;
-    -o-transition: transform 0.15s ease-in-out;
-    transition: transform 0.15s ease-in-out;
-    transition: transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+    -webkit-transition: -webkit-transform 0.2s ease-in-out;
+    transition: -webkit-transform 0.2s ease-in-out;
+    -o-transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 
 /* burger button */
@@ -583,11 +583,11 @@ body:not(.signed-in) #sort-button--rating {
 	width: 100%;
 	margin: 0 auto;
 	min-height: 100%;
-	-webkit-transition: -webkit-transform 0.15s ease-in-out;
-	transition: -webkit-transform 0.15s ease-in-out;
-	-o-transition: transform 0.15s ease-in-out;
-	transition: transform 0.15s ease-in-out;
-	transition: transform 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+	-webkit-transition: -webkit-transform 0.2s ease-in-out;
+	transition: -webkit-transform 0.2s ease-in-out;
+	-o-transition: transform 0.2s ease-in-out;
+	transition: transform 0.2s ease-in-out;
+	transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 .grid-layout {
 	padding: 2em 1.2em;
