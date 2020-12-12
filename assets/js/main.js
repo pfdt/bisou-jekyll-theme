@@ -776,7 +776,7 @@ $(document).ready(function () {
     }
     
 	// theme switcher
-	function switchTheme(e) {
+	async function switchTheme(e) {
 	    if(e.is(':checked')) {
 			document.documentElement.setAttribute('data-theme', 'dark');
 			localStorage.setItem('theme', 'dark');

@@ -1090,22 +1090,42 @@ body:not(.signed-in) #sort-button--rating {
 
 /****** .grid-layout media breakpoints *****/
 /* cards between 18em and 26em */
-.SM > #isotopeContent {max-width: 28.4em }
-.MD > #isotopeContent {max-width: 54.4em }
-.LG > #isotopeContent {max-width: 80.4em }
-.XL > #isotopeContent {max-width: 106.4em }
+
+// default : no max-width
+.SM > #isotopeContent {max-width: 28.4em}
+.MD > #isotopeContent {max-width: 54.4em}
+.LG > #isotopeContent {max-width: 80.4em}
+.XL > #isotopeContent {max-width: 106.4em}
 
 .grid-item {width: 100%}
-.MD > div:first-of-type > .grid-item{width: 50%}
-.LG > div:first-of-type > .grid-item{width: 33.3333%}
-.XL > div:first-of-type > .grid-item{width: 25%}
+.MD > div:first-of-type > .grid-item {width: 50%}
+.LG > div:first-of-type > .grid-item {width: 33.3333%}
+.XL > div:first-of-type > .grid-item {width: 25%}
 
 .grid-sm1_md1-2 {width: 100%}
-.MD .grid-sm1_md1-2{width: 50%}
+.MD .grid-sm1_md1-2 {width: 50%}
+
+/****** .grid-layout media breakpoints - compatibility mode *****/
+/* media query = nb-of-card * card-max-width + sidebar-size-max + content-padding */
+[data-media-queries="compatibility-mode"] #isotopeContent {max-width: 28.4em}
+
+@media screen and (min-width: 54.2em) {
+	[data-media-queries="compatibility-mode"] #isotopeContent {max-width: 54.4em}
+	[data-media-queries="compatibility-mode"] .grid-item {width: 50%}
+	[data-media-queries="compatibility-mode"] .grid-sm1_md1-2 {width: 50%}
+}
+@media screen and (min-width: 72.2em) {
+	[data-media-queries="compatibility-mode"] #isotopeContent {max-width: 80.4em}
+	[data-media-queries="compatibility-mode"] .grid-item {width: 33.3333%}
+}
+@media screen and (min-width: 90.2em) {
+	[data-media-queries="compatibility-mode"] #isotopeContent {max-width: 106.4em}
+	[data-media-queries="compatibility-mode"] .grid-item {width: 25%}
+}
 
 
 /****** Media Queries *****/
-@media screen and (min-width: 35.5em) {
+@media screen and (min-width: 36em) {
 	.modal {
 		max-width: 440px;
 		margin: 1.75rem auto;
@@ -1192,15 +1212,6 @@ body:not(.signed-in) #sort-button--rating {
 	.card__cover--single {
 		height: 16em;
 	}
-	/* .tag.technique {
-		top:unset;
-		bottom:20px;
-	}
-	.tag.category {
-		top:unset;
-		bottom:50px;
-	}
-	*/
 	.card__body__ingredients {
 		padding-left: 0.6em;
 		padding-right: 0.8em;
@@ -1210,20 +1221,17 @@ body:not(.signed-in) #sort-button--rating {
 	}
 	
 }
-@media screen and (min-width: 52em) {
+@media screen and (min-width: 54.2em) {
 	.card__cover--single {
 		height: 18em;
 	}
 }	
-@media screen and (min-width: 70em) {
-	.modal-lg {
-	max-width: 800px;
-	}
+@media screen and (min-width: 72.2em) {
 	.card__cover--single {
 		height: 20em;
 	}
 }
-@media screen and (min-width: 100em) {
+@media screen and (min-width: 90.2em) {
 	.card__cover--single {
 		height: 22em;
 	}
