@@ -1094,12 +1094,12 @@ body:not(.signed-in) #sort-button--rating {
 .XL > #isotopeContent {max-width: 106.4em}
 
 .grid-item {width: 100%}
-.MD > div:first-of-type > .grid-item {width: 50%}
+.MD > div:first-of-type > .grid-item {width: 49.9999%}
 .LG > div:first-of-type > .grid-item {width: 33.3333%}
-.XL > div:first-of-type > .grid-item {width: 25%}
+.XL > div:first-of-type > .grid-item {width: 24.9999%}
 
 .grid-sm1_md1-2 {width: 100%}
-.MD .grid-sm1_md1-2 {width: 50%}
+.MD .grid-sm1_md1-2 {width: 49.9999%}
 
 /****** .grid-layout media breakpoints - compatibility mode *****/
 /* media query = nb-of-card * card-max-width + sidebar-size-max + content-padding */
@@ -1107,8 +1107,8 @@ body:not(.signed-in) #sort-button--rating {
 
 @media screen and (min-width: 54.2em) {
 	[data-media-queries="compatibility-mode"] #isotopeContent {max-width: 54.4em}
-	[data-media-queries="compatibility-mode"] .grid-item {width: 50%}
-	[data-media-queries="compatibility-mode"] .grid-sm1_md1-2 {width: 50%}
+	[data-media-queries="compatibility-mode"] .grid-item {width: 49.9999%}
+	[data-media-queries="compatibility-mode"] .grid-sm1_md1-2 {width: 49.9999%}
 }
 @media screen and (min-width: 72.2em) {
 	[data-media-queries="compatibility-mode"] #isotopeContent {max-width: 80.4em}
@@ -1116,7 +1116,7 @@ body:not(.signed-in) #sort-button--rating {
 }
 @media screen and (min-width: 90.2em) {
 	[data-media-queries="compatibility-mode"] #isotopeContent {max-width: 106.4em}
-	[data-media-queries="compatibility-mode"] .grid-item {width: 25%}
+	[data-media-queries="compatibility-mode"] .grid-item {width: 24.9999%}
 }
 
 
