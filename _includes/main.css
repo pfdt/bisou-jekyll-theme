@@ -774,7 +774,7 @@ body:not(.signed-in) #sort-button--rating {
 }
 .card__body__description--single h2, .card__body__description--single h3, .card__body__description--single h4, .card__body__description--single h5, .card__body__description--single h6 {
 	font-family: 'Barlow Condensed', Helvetica, sans-serif;
-	font-weight: bold;
+	text-decoration: underline;
 	line-height: 1.6em;
 	letter-spacing: 0.05em;
 	font-size: 1em;
