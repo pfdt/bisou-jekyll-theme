@@ -471,8 +471,12 @@ $(document).ready(function () {
 		
     // initiate search functionality
     initSearch();
-
-
+    
+    // functions to launch after the page is fully loaded
+    $(document).ready(function () {
+        preloadImages();
+    });
+    
     /* ==========================================================================
 	Interactivity / functions
 	========================================================================== */
@@ -866,5 +870,40 @@ $(document).ready(function () {
         }
         layoutCleanFilter($emptySearch);
         isotopeFilter(filterValue);
+    }
+    
+    // images to preload
+    async function preloadImages() {
+        var img = [
+            "{{ '/assets/img-static/alt_logo-icon.svg' | relative_url }}",
+            "{{ '/assets/img-static/alt_star--borders.svg' | relative_url }}",
+            "{{ '/assets/img-static/alt_star.svg' | relative_url }}",
+            "{{ '/assets/img-static/alt_bookmark.svg' | relative_url }}",
+            "{{ '/assets/img-static/alt_arrow--up.svg' | relative_url }}",
+            "{{ '/assets/img-static/alt_arrow--down.svg' | relative_url }}",
+            "{{ '/assets/img-static/alt_logo.svg' | relative_url }}",
+            "{{ '/assets/img-static/alt_bookmarks.svg' | relative_url }}",
+            "{{ '/assets/img-static/alt_star--dots.svg' | relative_url }}",
+            "{{ '/assets/img-static/alt_bookmark--border.svg' | relative_url }}",
+            "{{ '/assets/img-static/alt_sort--name.svg' | relative_url }}",
+            "{{ '/assets/img-static/alt_sort--date.svg' | relative_url }}",
+            "{{ '/assets/img-static/alt_sort--rating.svg' | relative_url }}",
+            "{{ '/assets/img-static/logo-icon.svg' | relative_url }}",
+            "{{ '/assets/img-static/star--borders.svg' | relative_url }}",
+            "{{ '/assets/img-static/star.svg' | relative_url }}",
+            "{{ '/assets/img-static/bookmark.svg' | relative_url }}",
+            "{{ '/assets/img-static/arrow--up.svg' | relative_url }}",
+            "{{ '/assets/img-static/arrow--down.svg' | relative_url }}",
+            "{{ '/assets/img-static/logo.svg' | relative_url }}",
+            "{{ '/assets/img-static/bookmarks.svg' | relative_url }}",
+            "{{ '/assets/img-static/star--dots.svg' | relative_url }}",
+            "{{ '/assets/img-static/bookmark--border.svg' | relative_url }}",
+            "{{ '/assets/img-static/sort--name.svg' | relative_url }}",
+            "{{ '/assets/img-static/sort--date.svg' | relative_url }}",
+            "{{ '/assets/img-static/sort--rating.svg' | relative_url }}"
+        ];
+        for (let i = 0; i < img.length; i++) {
+            $("head").append("<link rel='preload' href='"+img[i]+"' as='image'>");
+        }      
     }
 });

@@ -57,6 +57,9 @@
 		<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/main.js' | relative_url }}"></script>
 	{% endif %}
 	
+	<link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
+	<link href="https://lh3.googleusercontent.com" rel="preconnect" crossorigin>
+	
 	{% if site.googlanalytics_ID  and site.googlanalytics_ID != "" %}
 	<script>
 		window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -67,31 +70,7 @@
 	{% endif %}
 	
 	<!-- Preload -->
-	<link rel="preload" href="{{ '/assets/img-static/logo-icon.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/alt_logo-icon.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/star--borders.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/alt_star--borders.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/star.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/alt_star.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/bookmark.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/alt_bookmark.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/arrow--up.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/alt_arrow--up.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/arrow--down.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/alt_arrow--down.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/logo.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/alt_logo.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/bookmarks.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/alt_bookmarks.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/star--dots.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/alt_star--dots.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/bookmark--border.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/alt_bookmark--border.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/sort--name.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/alt_sort--name.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/sort--date.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/alt_sort--date.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/sort--rating.svg' | relative_url }}" as="image">
-	<link rel="preload" href="{{ '/assets/img-static/alt_sort--rating.svg' | relative_url }}" as="image">
-	
+	<link rel="preload" as="font" type="font/woff2" href="{{ '/assets/webfonts/Abril-Fatface.woff2' | relative_url }}" crossorigin>
+	<link rel="preload" as="font" type="font/woff2" href="{{ '/assets/webfonts/Barlow-Condensed.woff2' | relative_url }}" crossorigin>
+
 </head>
