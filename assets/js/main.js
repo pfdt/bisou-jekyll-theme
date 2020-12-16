@@ -56,7 +56,9 @@ $(document).ready(function () {
 	========================================================================== */
 		
     // Lady load - image loading
-    initiateLazyLoad();
+    var lazyLoadInstance = new LazyLoad({
+        thresholds: "500% 0px"
+    });
 	
     // Isotope - initiate
     var $grid = $($gridContainer).isotope({
