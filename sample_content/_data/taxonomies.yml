@@ -27,7 +27,7 @@ account:
   signed-in_body: "<li>add recipes to your personal collection,</li><li>rate your
     favorites recipes,</li><li>sync your preferences between your devices,</li><li>try the true dark mode.</li>"
   signed-in_close: ok, back to the recipes...
-  footer: Powered by <a href="https://github.com/pfdt/bisou-jekyll-theme" target="_blank" class="simple-link">bisous - jekyll theme</a>.
+  footer: Powered by <a href="https://github.com/pfdt/bisou-jekyll-theme" target="_blank" rel="noopener" class="simple-link">bisous - jekyll theme</a>.
 theme-colors:
   primary_color: "#02101D"
   bg_color: "#001526"

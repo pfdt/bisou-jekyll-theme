@@ -1,11 +1,11 @@
 <div class="sidebar" id="sidebar">
 	<div class="filter-button-group" id="filter-button--specials">
-		<a class="filter-button" id="filter-button--all-recipes" data-filter="*"{% if page.layout and page.layout == 'recipe-single' %} href="/"{% endif %}>
+		<a class="filter-button" id="filter-button--all-recipes" data-filter="*" {% if page.layout and page.layout == 'recipe-single' %}href="/"{% else %}rel="nofollow"{% endif %}>
 			<div class="filter-button__active"></div>
 			<div class="filter-button__icon filter-button__icon--all-recipes"></div>
 			<div class="filter-button__title">all recipes</div>
 		</a>
-		<a class="filter-button" id="filter-button--bookmarks" data-filter=":not(*)"{% if page.layout and page.layout == 'recipe-single' %} href="/?cat=bookmarks"{% endif %}>
+		<a class="filter-button" id="filter-button--bookmarks" data-filter=":not(*)" {% if page.layout and page.layout == 'recipe-single' %}href="/?cat=bookmarks"{% else %}rel="nofollow"{% endif %}>
 			<div class="filter-button__active"></div>
 			<div class="filter-button__icon filter-button__icon--bookmarks"></div>
 			<div class="filter-button__title">collection</div>
@@ -14,7 +14,7 @@
 	<div class="filter-button-group" id="filter-button--categories">
 		<span>browse by taste :</span>
 	{% for category in site.data.taxonomies.categories %}
-		<a class="filter-button" data-filter=".c_{{ category | slugify }}"{% if page.layout and page.layout == 'recipe-single' %} href="/?cat={{ category | slugify }}"{% endif %}>
+		<a class="filter-button" data-filter=".c_{{ category | slugify }}" {% if page.layout and page.layout == 'recipe-single' %}href="/?cat={{ category | slugify }}"{% else %}rel="nofollow"{% endif %}>
 			<div class="filter-button__active"></div>
 			<div class="filter-button__icon filter-button__icon--circle before-bg--{{ category | slugify }}"></div>
 			<div class="filter-button__title">{{ category | downcase }}</div>
