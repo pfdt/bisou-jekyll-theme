@@ -406,6 +406,11 @@ $(document).ready(function () {
         filterCategories($(this));
     });
 
+    // sidebar others filters items click
+    $("#filter-button--other-filters").on("click", "a", function () {
+        filterCategories($(this));
+    });
+
     // sidebar sort items click
     $("#sorting-button-group").on("click", "li", function () {
         sortItems($(this));
@@ -512,7 +517,6 @@ $(document).ready(function () {
             activateSidebar();
         }
     }
-
 
     /**
      * Isotope filter functions

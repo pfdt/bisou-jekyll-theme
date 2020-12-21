@@ -455,6 +455,12 @@ a {
 	margin: auto;
 	background: var(--font-color);
     border-radius: 50%;
+	-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+}
+.filter-button__icon--circle--other-filters:before {
+	background-color: transparent;
+	border: solid 0.18em;
 }
 .filter-button__active {
 	display: none;

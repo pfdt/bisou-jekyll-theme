@@ -6,7 +6,13 @@ layout: default
 {% endcomment %}
 	<div id="content" class="grid-layout" data-observe-resizes>
 		<div id="isotopeContent" class="pure-g">
-			{% assign sorted_recipes = site.recipes | sort: "title" %}
+			{% assign sorted_recipes = site.recipes | sort: "title" %}	
+			{% assign date_sorted_recipes = site.recipes | sort: "date" | reverse %}{% assign latest_recipes_list = '' | split: ',' %}
+			{% for recipe in date_sorted_recipes limit:12 %}
+				{% assign recipe_slug = recipe.slug | split: ',' %}
+				{% assign latest_recipes_list = latest_recipes_list | concat: recipe_slug %}
+			{% endfor %}
+
 			{% for recipe in sorted_recipes %}
 				{% include recipe-item.html %}
 			{% endfor %}

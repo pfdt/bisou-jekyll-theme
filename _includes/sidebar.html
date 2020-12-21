@@ -12,7 +12,7 @@
 		</a>
 	</div>
 	<div class="filter-button-group" id="filter-button--categories">
-		<span>browse by taste :</span>
+		<span>browse by taste:</span>
 	{% for category in site.data.taxonomies.categories %}
 		<a class="filter-button" data-filter=".c_{{ category | slugify }}" {% if page.layout and page.layout == 'recipe-single' %}href="/?cat={{ category | slugify }}"{% else %}rel="nofollow"{% endif %}>
 			<div class="filter-button__active"></div>
@@ -21,8 +21,33 @@
 		</a>
 	{% endfor %}
 	</div>
+	<div class="filter-button-group" id="filter-button--other-filters">
+		<span>other filters:</span>
+		<a class="filter-button" data-filter=".c_3max" {% if page.layout and page.layout == 'recipe-single' %}href="/?cat=3-max"{% else %}rel="nofollow"{% endif %}>
+			<div class="filter-button__active"></div>
+			<div class="filter-button__icon filter-button__icon--circle filter-button__icon--circle--other-filters"></div>
+			<div class="filter-button__title">3 ingredients max</div>
+		</a>
+		<a class="filter-button" data-filter=".c_latest" {% if page.layout and page.layout == 'recipe-single' %}href="/?cat=latest"{% else %}rel="nofollow"{% endif %}>
+			<div class="filter-button__active"></div>
+			<div class="filter-button__icon filter-button__icon--circle filter-button__icon--circle--other-filters"></div>
+			<div class="filter-button__title">latest additions</div>
+		</a>
+
+		<a class="filter-button" data-filter=".c_batching" {% if page.layout and page.layout == 'recipe-single' %}href="/?cat=batching"{% else %}rel="nofollow"{% endif %}>
+			<div class="filter-button__active"></div>
+			<div class="filter-button__icon filter-button__icon--circle filter-button__icon--circle--other-filters"></div>
+			<div class="filter-button__title">batching</div>
+		</a>
+		<a class="filter-button" data-filter=".c_zero-proof" {% if page.layout and page.layout == 'recipe-single' %}href="/?cat=zero-proof"{% else %}rel="nofollow"{% endif %}>
+			<div class="filter-button__active"></div>
+			<div class="filter-button__icon filter-button__icon--circle filter-button__icon--circle--other-filters"></div>
+			<div class="filter-button__title">zero-proof</div>
+		</a>
+
+	</div>
 	<div class="sorting">
-		<span>sort by :</span>
+		<span>sort by:</span>
 		<ul class="sorting-button-group" id="sorting-button-group">
 			<li id="sort-button--name" class="sort-button" data-sorting="name">
 				<div class="sort-button__icon sort-button__icon--name"></div>

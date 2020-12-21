@@ -1,7 +1,11 @@
 {% comment %}
 	recipe card displayed in recipes list
 {% endcomment %}
-<div class="grid-item c_{{ recipe.category | slugify }} r_{{ recipe.slug | slugify }}" data-name="{{ recipe.slug | slugify }}" data-date="{{ recipe.date }}" data-rating="0">
+{% capture simplified-ingredients %}{{ recipe.ingredients | downcase | regex_replace: '(^([0-9¼½¾⅓⅔]*\s?[¼½¾⅓⅔]?|[0-9]*(\/|,|\.|-|to|or)[0-9]*)\s?(oz.?|ounces?|cups?|tb?sp|(table|tea|bar)spoon|dash(es)?|drops?|top|pinch(es)?|slices?|pieces?|stalks?|splash(es)?|handful|sprigs?|cubes?|large|(m|c)?l|k?g)?\s?(of)?\s)|(\s\(.*\))|(,\s.*)', '' }}{% endcapture %}
+{% assign ingredients-count = simplified-ingredients | regex_replace: '^.*(bitters?|simple syrup|(mineral|soda) water|extract|salt|(lemon|lime) juice)$', '' | regex_replace: '[\r\n]', '$$$' | split: '$$$' | size %}
+{% if ingredients-count <= 3 %}{% assign 3max = true %}{% else %}{% assign 3max = false %}{% endif %}
+{% if latest_recipes_list contains recipe.slug %}{% assign latest_recipes = true %}{% else %}{% assign latest_recipes = false %}{% endif %}
+<div class="grid-item r_{{ recipe.slug | slugify }} c_{{ recipe.category | slugify }}{% if 3max and 3max == true %} c_3max{% endif %}{% if latest_recipes and latest_recipes == true %} c_latest{% endif %}{% if recipe.batching and recipe.batching == true %} c_batching{% endif %}{% if recipe.zero-proof and recipe.zero-proof == true %} c_zero-proof{% endif %}" data-name="{{ recipe.slug | slugify }}" data-date="{{ recipe.date }}" data-rating="0">
 	<div class="card--list pure-g">	
 		<a href="{{ recipe.url | relative_url }}" class="card__cover card__cover--list before-bg--{{ recipe.category | slugify }}">
 			{% if recipe.image and recipe.image != "" %}
@@ -25,8 +29,7 @@
 				<div class="card__body__controls__bookmark" value="{{ recipe.slug | slugify }}"></div>
 			</div>		
 			<h3 class="card__body__title card__body__title--list">{{ recipe.title | replace: "'", "’" | downcase }}</h3>
-			<p class="card__body__description--list">{{ recipe.ingredients | downcase | 
-regex_replace: '^([0-9¼½¾⅓⅔]*\s?[¼½¾⅓⅔]?|[0-9]*(\/|,|\.|-|to|or)[0-9]*)\s?(oz.?|ounces?|cups?|tb?sp|(table|tea|bar)spoon|dash(es)?|drops?|top|pinch(es)?|slices?|pieces?|splash(es)?|sprigs?|cubes?|large|(m|c)?l|k?g)?\s', '' | regex_replace: '^handful\sof\s|\s\(.*\)|,\s.*', '' | regex_replace: '[\r\n]', ', ' }}</p>
+			<p class="card__body__description--list">{{ simplified-ingredients | regex_replace: '[\r\n]', ', ' }}</p>
 		</div>
 	</div>
 </div>
