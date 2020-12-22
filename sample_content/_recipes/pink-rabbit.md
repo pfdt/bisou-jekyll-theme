@@ -4,12 +4,13 @@ title: Pink Rabbit
 category: Spirit-forward
 technique: Stir
 ingredients: |-
-  1 oz gin
+  1 oz dry gin
   1 oz blanc vermouth
   1 oz rooibos tea
   ½ tsp lemon juice
-source: https://punchdrink.com/recipes/pink-rabbit/
-image: /assets/img/Article-Pink-Rabbit-Summer-Cocktails-Five-Ingredient-Easy-Drink-Recipes.jpg
+source-url: https://punchdrink.com/recipes/pink-rabbit/
+image: "/assets/img/Article-Pink-Rabbit-Summer-Cocktails-Five-Ingredient-Easy-Drink-Recipes.jpg"
+
 date: 2019-02-11 21:57:33 +0100
 
 ---

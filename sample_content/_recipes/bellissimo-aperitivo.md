@@ -9,8 +9,8 @@ ingredients:  |-
   2 tsp Fernet Branca
   1 dash maraschino liqueur
   1 dash Angostura bitters
-source: http://imbibemagazine.com/bellissimo-aperitivo/
-image: /assets/img/bellissimo-aperitivo.jpg
+source-url: http://imbibemagazine.com/bellissimo-aperitivo/
+image: "/assets/img/bellissimo-aperitivo.jpg"
 layout: recipe-single
 
 ---

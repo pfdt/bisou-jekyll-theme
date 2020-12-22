@@ -10,8 +10,8 @@ ingredients:  |-
   ¾ oz lime juice
   1 dash allspice dram
   3 coriander
-source: http://imbibemagazine.com/beg-your-pardon-recipe/
-image: /assets/img/beg-your-pardon.jpg
+source-url: http://imbibemagazine.com/beg-your-pardon-recipe/
+image: "/assets/img/beg-your-pardon.jpg"
 layout: recipe-single
 
 ---

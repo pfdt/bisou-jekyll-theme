@@ -9,8 +9,8 @@ ingredients:  |-
   2 tsp heavy cream
   1 whole egg
   1 dash nutmeg
-source: 
-image: /assets/img/whisky-flip.jpg
+source-url: 
+image: "/assets/img/whisky-flip.jpg"
 layout: recipe-single
 
 ---

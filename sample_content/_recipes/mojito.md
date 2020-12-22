@@ -4,13 +4,13 @@ date: 2018-08-21 23:04:04 +0100
 category: Long
 technique: In glass
 ingredients:  |-
-  2 oz light rum
+  2 oz column still lightly aged Cuban rum
   1 oz simple syrup (1:1)
   ¾ oz lime juice
   1 oz soda water
   8 mint leaf
-source: https://punchdrink.com/recipes/jelani-johnsons-mojito/
-image: /assets/img/mojito.jpg
+source-url: https://punchdrink.com/recipes/jelani-johnsons-mojito/
+image: "/assets/img/mojito.jpg"
 layout: recipe-single
 
 ---

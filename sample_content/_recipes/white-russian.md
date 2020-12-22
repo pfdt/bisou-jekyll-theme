@@ -5,11 +5,11 @@ category: Dairy
 technique: Shake
 ingredients:  |-
   2 oz vodka
-  1 oz Kahlua
+  1 oz coffee liqueur
   1 oz heavy cream
   ½ oz coffee
-source: http://imbibemagazine.com/white-russian-recipe/
-image: /assets/img/white-russian.jpg
+source-url: http://imbibemagazine.com/white-russian-recipe/
+image: "/assets/img/white-russian.jpg"
 layout: recipe-single
 
 ---

@@ -7,8 +7,9 @@ ingredients: |-
   2 dashes Peychaud’s bitters
   2 dashes Angostura bitters
 title: Vieux Carre
-source: http://imbibemagazine.com/vieux-carre-recipe/
-image: /assets/img/vc.jpg
+source-url: http://imbibemagazine.com/vieux-carre-recipe/
+image: "/assets/img/vc.jpg"
+
 technique: Stir
 category: Spirit-forward
 date: 2019-03-11 13:51:59 +0100

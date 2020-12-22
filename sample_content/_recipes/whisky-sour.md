@@ -1,7 +1,7 @@
 ---
 title: Whisky Sour
 date: 2018-08-21 21:57:09 +0000
-category: Sweet & fruity
+category: Citrusy
 technique: Dry Shake
 ingredients: |-
   2 oz rye whiskey
@@ -9,8 +9,8 @@ ingredients: |-
   ½ oz orange juice
   ½ oz rich simple syrup (2:1)
   1 egg white
-source: https://punchdrink.com/recipes/dan-sabos-whiskey-sour/
-image: /assets/img/whisky-sour.jpg
+source-url: https://punchdrink.com/recipes/dan-sabos-whiskey-sour/
+image: "/assets/img/whisky-sour.jpg"
 layout: recipe-single
 
 ---

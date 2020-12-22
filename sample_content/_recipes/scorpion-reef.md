@@ -1,18 +1,19 @@
 ---
 title: Scorpion Reef
-date: 2018-08-19 22:21:52 +0100
+date: 2018-08-19T22:21:52.000+01:00
 category: Tiki
 technique: Swizzle
-ingredients:  |-
+ingredients: |-
   1 oz mezcal
-  1 oz Jamaican rum
+  1 oz blended lightly aged Jamaican rum
   1 oz pineapple juice
   ¾ oz lemon juice
   ¾ oz orgeat syrup
   2 dash chocolate bitters
-  2 dash Angostura bitters
-source: http://imbibemagazine.com/scorpion-reef/
-image: /assets/img/scorpion-reef.jpg
+  5-6 dash Angostura bitters, to float
+source-url: http://imbibemagazine.com/scorpion-reef/
+source-text: Marshall Davis, Gallo Pelón Mezcaleria (Raleigh)
+image: "/assets/img/scorpion-reef.jpg"
 layout: recipe-single
 
 ---

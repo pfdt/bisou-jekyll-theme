@@ -7,11 +7,11 @@ ingredients:  |-
   1 oz Amaro Montenegro
   1 oz coffee
   1 tbsp heavy cream
-  ½ oz Kahlua
+  ½ oz coffee liqueur
   ½ oz banana liqueur
   ½ oz demerara syrup (1:1)
-source: http://imbibemagazine.com/monteccino-coffee-cocktail/
-image: /assets/img/monteccino-coffee.jpg
+source-url: http://imbibemagazine.com/monteccino-coffee-cocktail/
+image: "/assets/img/monteccino-coffee.jpg"
 layout: recipe-single
 
 ---

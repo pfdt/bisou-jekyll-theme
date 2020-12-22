@@ -4,13 +4,13 @@ date: 2018-08-18 21:53:35 +0100
 category: Bitter
 technique: Shake
 ingredients:  |-
-  1½ oz dark rum
+  1½ oz column still aged Trinidad rum
   ½ oz Fernet Branca
   ½ oz lime juice
   ½ oz demerara syrup (1:1)
   ½ oz egg white
-source: http://imbibemagazine.com/bitter-pill/
-image: /assets/img/bitter-pill.jpg
+source-url: http://imbibemagazine.com/bitter-pill/
+image: "/assets/img/bitter-pill.jpg"
 layout: recipe-single
 
 ---

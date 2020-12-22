@@ -4,13 +4,13 @@ date: 2018-08-19 16:35:08 +0100
 category: Tropical
 technique: Dry shake
 ingredients:  |-
-  1½ oz gin
+  1½ oz dry gin
   ¾ oz yellow Chartreuse
   ¾ oz lime juice
   ¼ oz rich simple syrup (2:1)
   ½ egg white
-source: http://imbibemagazine.com/green-eyes-gin-cocktail/
-image: /assets/img/green-eyes-gin.jpg
+source-url: http://imbibemagazine.com/green-eyes-gin-cocktail/
+image: "/assets/img/green-eyes-gin.jpg"
 layout: recipe-single
 
 ---

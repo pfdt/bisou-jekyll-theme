@@ -4,15 +4,15 @@ date: 2018-08-13 19:23:54 +0100
 category: Dairy
 technique: Shake
 ingredients:  |-
-  1½ oz gin
+  1½ oz dry gin
   1 oz simple syrup (1:1)
   ½ oz lemon juice
   ½ oz lime juice
   1 oz egg white
   4 tbsp heavy cream
   3 dash orange blossom water
-source: http://imbibemagazine.com/ramos-gin-fizz/
-image: /assets/img/ramos-gin-fizz.jpg
+source-url: http://imbibemagazine.com/ramos-gin-fizz/
+image: "/assets/img/ramos-gin-fizz.jpg"
 layout: recipe-single
 
 ---

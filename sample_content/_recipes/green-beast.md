@@ -5,12 +5,13 @@ category: Long
 technique: In glass
 ingredients: |-
   ¾ oz absinthe
-  ¾ oz fresh lime juice
+  ¾ oz lime juice
   ¾ oz simple syrup (1:1)
   4 slices cucumber
   2 oz still water, to top
-source: http://imbibemagazine.com/green-beast-absinthe-cocktail/
-image: /assets/img/green-beast-absinthe-cocktail-sweet-liberty-miami-crdt-ellie-groden.jpg
+source-url: http://imbibemagazine.com/green-beast-absinthe-cocktail/
+image: "/assets/img/green-beast-absinthe-cocktail-sweet-liberty-miami-crdt-ellie-groden.jpg"
+
 date: 2019-04-28 12:10:02 +0200
 
 ---

@@ -1,7 +1,7 @@
 ---
 title: I don't carrot all
 date: 2018-09-30 21:51:03 +0100
-category: Sweet & fruity
+category: Fruity
 technique: Swizzle
 ingredients:  |-
   1½ oz Vodka Zubrowska
@@ -10,8 +10,8 @@ ingredients:  |-
   ¾ oz coconut cream
   1½ oz carrot juice
   1 splash soda water
-source: http://imbibemagazine.com/i-dont-carrot-all-bitter-twisted-phoenix/
-image: /assets/img/i-dont-carrot-all.jpg
+source-url: http://imbibemagazine.com/i-dont-carrot-all-bitter-twisted-phoenix/
+image: "/assets/img/i-dont-carrot-all.jpg"
 layout: recipe-single
 
 ---

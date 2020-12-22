@@ -5,13 +5,13 @@ category: Bitter
 technique: Shake
 ingredients:  |-
   1 oz Campari
-  ¾ oz grapefruit juice
+  ¾ oz red grapefruit juice
   ½ oz cranberry juice (unsweetened)
   ½ oz Fernet Branca
   ¼ oz simple syrup (1:1)
   2 oz champagne
-source: http://imbibemagazine.com/bittercup-recipe/
-image: /assets/img/bittercup.jpg
+source-url: http://imbibemagazine.com/bittercup-recipe/
+image: "/assets/img/bittercup.jpg"
 layout: recipe-single
 
 ---

@@ -7,11 +7,12 @@ technique: Shake
 ingredients: |-
   1 large sprig rosemary
   ¾ oz simple syrup
-  2 oz blackstrap rum
+  2 oz black blended rum
   1 oz lime juice
   Soda water, to top
-source: https://punchdrink.com/recipes/winter-mojito/
-image: /assets/img/Article-Winter-Rosemary-Mojito-Cocktail-Recipe.jpg
+source-url: https://punchdrink.com/recipes/winter-mojito/
+image: "/assets/img/Article-Winter-Rosemary-Mojito-Cocktail-Recipe.jpg"
+
 
 ---
 Remove the stem from the sprig of the rosemary and combine with the simple syrup in a cocktail shaker. Use a muddler to lightly crush the rosemary and let sit for a few minutes.

@@ -6,12 +6,12 @@ technique: Shake
 ingredients:  |-
   ¾ oz Averna Amaro
   ¾ oz cognac
-  ¾ oz Jamaican rum
+  ¾ oz blended lightly aged Jamaican rum
   ¾ oz lemon juice
   ¾ oz simple syrup (1:1)
   2 dash mole bitters
-source: http://imbibemagazine.com/fall-into-italy-equal-parts-cocktail/
-image: /assets/img/fall-into-italy.jpg
+source-url: http://imbibemagazine.com/fall-into-italy-equal-parts-cocktail/
+image: "/assets/img/fall-into-italy.jpg"
 layout: recipe-single
 
 ---

@@ -1,17 +1,17 @@
 ---
 title: Bananamania
-date: '2018-08-12T10:48:19.000+00:00'
-category: Sweet & fruity
+date: 2018-08-12T10:48:19.000+00:00
+category: Fruity
 technique: Shake
 ingredients: |-
-  2 oz Jamaican rum
+  2 oz black blended Jamaican rum
   ¾ oz amaretto
   ¾ banana
-  1 oz lime juice
+  ¾ oz lime juice
   ½ oz simple syrup (1:1)
   1 dash allspice dram
-source: 
-image: /assets/img/banana-rum.jpg
+source-url: 
+image: "/assets/img/banana-rum.jpg"
 layout: recipe-single
 
 ---

@@ -8,8 +8,8 @@ ingredients:  |-
   ¾ oz Cointreau
   ¾ oz lemon juice
   1 tsp demerara syrup (1:1)
-source: https://punchdrink.com/recipes/joaquin-simos-sidecar/
-image: /assets/img/sidecar.jpg
+source-url: https://punchdrink.com/recipes/joaquin-simos-sidecar/
+image: "/assets/img/sidecar.jpg"
 layout: recipe-single
 
 ---

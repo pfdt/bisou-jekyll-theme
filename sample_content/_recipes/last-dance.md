@@ -8,8 +8,8 @@ ingredients: |-
   ¾ oz green Chartreuse
   ¾ oz maraschino liqueur
   ¾ oz lemon juice
-source: http://imbibemagazine.com/armagnac-cocktail-last-dance/
-image: /assets/img/last-dance.jpg
+source-url: http://imbibemagazine.com/armagnac-cocktail-last-dance/
+image: "/assets/img/last-dance.jpg"
 layout: recipe-single
 
 ---

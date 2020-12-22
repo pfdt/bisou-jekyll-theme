@@ -6,12 +6,13 @@ category: Long
 technique: Shake
 ingredients: |-
   1 oz blanc vermouth
-  1 oz white rum
+  1 oz blended lightly aged rum
   ½ oz lemon
   ¾ oz Don's mix
   ½ oz simple syrup
   2 dashes mole bitters
-source: https://punchdrink.com/recipes/hightail-out/
+  1 top soda water
+source-url: https://punchdrink.com/recipes/hightail-out/
 image: ''
 
 ---

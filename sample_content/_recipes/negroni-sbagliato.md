@@ -7,8 +7,8 @@ ingredients:  |-
   1 oz Campari
   1 oz sweet vermouth
   1 top prosecco
-source: https://punchdrink.com/recipes/negroni-sbagliato/
-image: /assets/img/negroni-sbagliato.jpg
+source-url: https://punchdrink.com/recipes/negroni-sbagliato/
+image: "/assets/img/negroni-sbagliato.jpg"
 layout: recipe-single
 
 ---

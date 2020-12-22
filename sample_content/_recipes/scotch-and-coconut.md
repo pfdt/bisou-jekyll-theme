@@ -11,9 +11,8 @@ ingredients: |-
   ¼ oz dry curaçao
   1 tsp Demerara syrup
   2 dashes mole bitters
-source: http://imbibemagazine.com/scotch-and-coconut-cocktail/
-image: /assets/img/cane-and-table-scotch-and-coconut-horizontal-crdt-emma-janzen.jpg
-star: 5
+source-url: http://imbibemagazine.com/scotch-and-coconut-cocktail/
+image: "/assets/img/cane-and-table-scotch-and-coconut-horizontal-crdt-emma-janzen.jpg"
 
 ---
 Combine the ingredients in a shaker with ice and stir until chilled. Strain into a rocks glass over cube ice.

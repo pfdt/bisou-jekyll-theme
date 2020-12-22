@@ -4,11 +4,11 @@ date: 2018-08-21 23:06:43 +0100
 category: Bitter
 technique: Stir
 ingredients:  |-
-  1 oz gin
+  1 oz dry gin
   ¾ oz Campari
   ¾ oz sweet vermouth
-source: https://punchdrink.com/recipes/dantes-negroni/
-image: /assets/img/negroni.jpg
+source-url: https://punchdrink.com/recipes/dantes-negroni/
+image: "/assets/img/negroni.jpg"
 layout: recipe-single
 
 ---

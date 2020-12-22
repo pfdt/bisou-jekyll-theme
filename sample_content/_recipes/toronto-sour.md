@@ -8,8 +8,8 @@ ingredients:  |-
   ¾ oz lemon juice
   ½ oz maple syrup
   ½ oz red wine
-source: http://imbibemagazine.com/toronto-sour-prairie-school/
-image: /assets/img/toronto-sour.jpg
+source-url: http://imbibemagazine.com/toronto-sour-prairie-school/
+image: "/assets/img/toronto-sour.jpg"
 layout: recipe-single
 
 ---

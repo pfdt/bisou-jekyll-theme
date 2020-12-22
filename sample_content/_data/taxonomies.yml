@@ -6,10 +6,9 @@ categories:
 - Long
 - Citrusy
 - Spirit-forward
-- Sweet & fruity
+- Fruity
 - Tiki
 - Tropical
-- Zero-proof
 techniques:
 - Blend
 - By the batch
@@ -42,7 +41,7 @@ theme-colors:
     alt_secondary-font_color: "#75797D"
   categories-colors:
   - category-title: Bitter
-    category-color: "#FF776B"
+    category-color: "#EF685D"
   - category-title: Dairy
     category-color: "#DCFF8B"
   - category-title: Long
@@ -50,12 +49,10 @@ theme-colors:
   - category-title: Citrusy
     category-color: "#FBEE30"
   - category-title: Spirit-forward
-    category-color: "#1CA2FF"
-  - category-title: Sweet & fruity
+    category-color: "#3076F3"
+  - category-title: Fruity
     category-color: "#FC8BEF"
   - category-title: Tiki
     category-color: "#FF9827"
   - category-title: Tropical
     category-color: "#2CED61"
-  - category-title: Zero-proof
-    category-color: "#FFFFFF"

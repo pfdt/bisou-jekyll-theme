@@ -8,8 +8,8 @@ ingredients:  |-
   ¾ oz lemon juice
   ½ oz simple syrup (1:1)
   ½ egg white
-source: https://punchdrink.com/recipes/pisco-sour/
-image: /assets/img/pisco-sour.jpg
+source-url: https://punchdrink.com/recipes/pisco-sour/
+image: "/assets/img/pisco-sour.jpg"
 layout: recipe-single
 
 ---
