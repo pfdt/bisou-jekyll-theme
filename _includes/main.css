@@ -1004,7 +1004,7 @@ body:not(.signed-in) #sort-button--rating {
     width: 100%;
 }
 .modal-title {
-	margin: 0;
+	margin: 0 0 0.5em 0;
 }
 .modal-content__button {
 	display: -webkit-box;
