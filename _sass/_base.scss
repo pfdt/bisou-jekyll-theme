@@ -1,0 +1,159 @@
+/****** Main theme & normalize *****/
+html {
+	color: var(--font-color);
+	background-color: var(--bg-color);
+	width: 100% !important;
+	overflow-x: hidden !important;
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;	
+}
+body {
+	width: 100% !important;
+	overflow-x: hidden !important;
+	height: 100%;
+	margin: 0;
+	overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+html, button, input, select, textarea {
+	font-family: $text-font;
+	font-weight: 300;
+	line-height: 1.6em;
+	letter-spacing: 0.05em;
+	word-spacing: 0.04em;
+    text-rendering: auto;
+}
+h1, h2, h3, h4, h5, h6, .label {
+	font-family: $title-font;
+	font-weight: 400;
+	letter-spacing: normal;
+	line-height: 1.06em;
+}
+h1 {
+	font-size: 2.25em;
+	margin: 0.4em 0;
+}
+h2 {
+	font-size: 1.8em;
+}
+h3 {
+	font-size: 1.8em;
+}
+li {
+	list-style-type: circle;
+}
+a, button {
+	cursor: pointer;
+	text-decoration: none;
+	-ms-touch-action: manipulation;
+	    touch-action: manipulation;
+}
+p {
+	margin: 0;
+}
+button, input {
+    font-size: 100%;
+    margin: 0;
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
+}
+input::-webkit-search-cancel-button {
+	display: none;
+}
+ul {
+	padding-inline-start: 1.2em;
+    margin-block-start: 0.4em;
+}
+svg {
+	display: inline-block;
+    vertical-align: middle;
+    width: 1em;
+	
+	.primary-color {
+		fill: var(--primary-color);
+	}
+	.font-color {
+		fill: var(--font-color);
+	}
+	.secondary-font-color {
+		fill: var(--secondary-font-color);
+	}
+}
+img:not([src]):not([srcset]) {
+	visibility: hidden;
+}
+.lazy {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+aside, div, footer, header, input, nav, section {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box
+}
+a {
+	color: var(--font-color);
+}
+:focus, input:focus, textarea:focus {
+	outline: none
+}
+
+/*! extract from Pure v2.0.3 - Copyright 2013 Yahoo! - Licensed under the BSD License. */
+.pure-g {
+	text-rendering: optimizespeed;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-ms-flex-line-pack: start;
+	align-content: flex-start
+}
+
+@media all and (-ms-high-contrast:none),
+(-ms-high-contrast:active) {
+	table .pure-g {
+		display: block
+	}
+}
+
+.opera-only :-o-prefocus,
+.pure-g {
+	word-spacing: -.43em
+}
+
+#main-container {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	overflow: hidden;
+	margin-top: $nav-height;
+	padding-left: 0;
+	
+	@include mq-SM {
+		padding-left: $sidebar-width;
+		
+		.activeSidebar & {
+			padding-left: $activeSidebar-width;			
+		}
+	}
+}
+a.simple-link:hover {
+	@include mq-hover {
+		text-decoration: underline;
+	}	
+}
+/* admin contents */
+.adminContent {
+	display: none;
+	
+	&.active {
+		display: initial;
+	}
+}

@@ -31,30 +31,28 @@
 	<meta name="msapplication-config" content="{{ '/browserconfig.xml' | relative_url }}">
 	<meta name="theme-color" content="#0c1e30">
 	
+	<!-- Preload -->
+	<link rel="preload" as="font" type="font/woff2" href="{{ '/assets/webfonts/Abril-Fatface.woff2' | relative_url }}" crossorigin>
+	<link rel="preload" as="font" type="font/woff2" href="{{ '/assets/webfonts/Barlow-Condensed.woff2' | relative_url }}" crossorigin>
+	
 	<!-- CSS -->
-	<style rel="stylesheet" type="text/css" crossorigin="anonymous">
-		{% if site.env == 'production' %}
-			{% include main.min.css %}
-		{% else %}
-			{% include main.css %}
-		{% endif %}		
-	</style>
+	<link href="{{ '/assets/stylesheets/main.css' | relative_url }}" type="text/css" rel="stylesheet" >
 	
 	<!-- Javascript -->
 	<script type="text/javascript">
 		{% include dark-theme.min.js %}
 	</script>
-	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
-	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/isotope.pkgd.min.js' | relative_url }}"></script>
-	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/lazyload.min.js' | relative_url }}"></script>
-	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/bodyScrollLock.min.js' | relative_url }}"></script>
-	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/firebase-app.js' | relative_url }}"></script>
-	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/firebase-auth.js' | relative_url }}"></script>
-	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/firebase-database.js' | relative_url }}"></script>
+	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/scripts/jquery.min.js' | relative_url }}"></script>
+	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/scripts/isotope.pkgd.min.js' | relative_url }}"></script>
+	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/scripts/lazyload.min.js' | relative_url }}"></script>
+	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/scripts/bodyScrollLock.min.js' | relative_url }}"></script>
+	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/scripts/firebase-app.js' | relative_url }}"></script>
+	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/scripts/firebase-auth.js' | relative_url }}"></script>
+	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/scripts/firebase-database.js' | relative_url }}"></script>
 	{% if site.env == 'production' %}
-		<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
+		<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/scripts/main.min.js' | relative_url }}"></script>
 	{% else %}
-		<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/js/main.js' | relative_url }}"></script>
+		<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/scripts/main.js' | relative_url }}"></script>
 	{% endif %}
 	
 	<link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
@@ -68,9 +66,4 @@
 	</script>
 	<script defer src='https://www.google-analytics.com/analytics.js'></script>
 	{% endif %}
-	
-	<!-- Preload -->
-	<link rel="preload" as="font" type="font/woff2" href="{{ '/assets/webfonts/Abril-Fatface.woff2' | relative_url }}" crossorigin>
-	<link rel="preload" as="font" type="font/woff2" href="{{ '/assets/webfonts/Barlow-Condensed.woff2' | relative_url }}" crossorigin>
-
 </head>

@@ -1,0 +1,215 @@
+/****** Header Section *****/
+
+/* header & nav */
+.site-header {
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 50;
+}
+#main-nav {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	margin: 0;
+	padding: 0 $nav-paddingX;
+	width: calc(100% + #{$sidebar-width + 0.5rem});
+	height: $nav-height;
+	background-color: var(--primary-color);
+	@include transform(translate(-$sidebar-width));
+	@include transition(0.2s ease-in-out);
+	
+	.activeSidebar & {
+		@include transform(translate(0));
+		@include transition(0.2s ease-in-out);
+	}
+	
+	@include mq-SM {
+		width: 100%;
+		@include transform(none);
+	}
+}
+
+/* burger button */
+.main-nav__icons {
+	width: 2.4em;
+	height: 2.4em;
+	cursor: pointer;
+	-ms-touch-action: manipulation;
+	    touch-action: manipulation;
+}
+#burger {
+	height: 100%;
+	margin-left: $sidebar-width - $nav-paddingX;
+	padding: 0 $nav-paddingX 0 1.7rem;
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+	
+	@include mq-SM {
+		margin-left: 0;
+		padding: 0 0.6rem 0 0;
+	}
+}
+
+/* logo */
+#logo {
+	margin: 0;
+	position: absolute;
+    right: calc(100% - #{$sidebar-width + 0.5rem - $nav-paddingX});
+	
+	> a {
+		display: block;
+		background: url('/assets/img-static/logo.svg') right no-repeat;
+		background-size: 75%;
+		text-indent: -9999px;
+		font-size: 1em;
+	    margin: 0;
+	}
+	[data-theme="dark"] & > a {
+		background-image: url('/assets/img-static/alt_logo.svg');
+	}
+	
+	@include mq-SM {
+		position: relative;
+		right: auto;
+		padding: 0 0.6rem;
+		
+		> a {
+			background-size: 100%;
+		}	
+	}
+}
+
+/* account */
+
+#account {
+	position: absolute;
+	height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-right: $nav-paddingX;
+	
+	@include mq-SM {
+		position: relative;
+		padding-right: 0;
+	}
+}
+.signed-in .main-nav__icons--account {
+	background-size: cover;
+	border-radius: 50%;
+	border: solid 0.08em var(--font-color);
+	width: 2.1em;
+    height: 2.1em;
+}
+
+/* search desktop & mobile */
+.searchbar {
+	width: 20em;
+	margin-left: auto;
+	margin-right: 0.5em;
+	padding-left: 0.4em;
+	overflow: hidden;
+	
+	@include mq-SM {
+		margin-left: unset;
+		margin-right: auto;
+		padding-left: 1em;
+	}
+}
+.layout--recipe-single {
+	.searchbar {
+		display: none;
+	}
+	#logo {
+		margin-right: auto;
+	}	
+}
+#searchbar__form {
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+	position: relative;
+	
+	> label {
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		width: 0;
+	}
+}
+#searchbar__input {
+	-webkit-appearance: none !important;
+	border: none;
+	font-size: 1.15em;
+	padding: 0.13em 1.74em 0.13em 2.6em;
+	height: 2.43em;
+	width: 100%;
+	color: var(--font-color);
+	background-color: var(--secondary-bg-color);
+	border-radius: 0.35em;
+	
+	@include mq-SM {
+		height: 2.26em;
+	}
+}
+.searchbar__label {
+	display: none;
+}
+.searchbar__icon {
+	position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.searchbar__icon--search {
+	width: 1.8em;
+    padding-left: 0.6em;
+    padding-top: 0.08em;
+	
+	@include mq-SM {
+		width: 1.6em;
+	}
+}
+.searchbar__icon--empty-search {
+	display: none;
+	right: 0;
+	width: 1.2em;
+	height: 100%;
+    padding: 0 0.6em;
+	cursor: pointer;
+	opacity: 0;
+	@include transition(opacity 0.15s ease-in-out);
+
+	&.active {
+		display: block;
+		
+		.searchbar:hover & {
+			opacity: 1;
+			@include transition(opacity 0.15s ease-in-out);
+		}
+	}
+}
