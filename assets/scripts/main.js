@@ -21,7 +21,7 @@ const
 	allowEmpty = false,
 	disableBodyScroll = bodyScrollLock.disableBodyScroll,
 	enableBodyScroll = bodyScrollLock.enableBodyScroll,
-	jsonFeedUrl = '/assets/feeds/recipes.json',
+	jsonFeedUrl = '/assets/feeds/search.json',
 	firebase_apiKey = {{ site.firebase_apiKey | jsonify }},
 	firebase_projectId = {{ site.firebase_projectId | jsonify }},
 	firebase_databaseName = {{ site.firebase_databaseName | jsonify }},
