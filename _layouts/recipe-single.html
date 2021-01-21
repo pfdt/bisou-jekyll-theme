@@ -51,9 +51,11 @@ layout: default
 			{% else %}{% endif %}			
 		</div>
 		
-		<div class="card__body__edit-recipe">
-			<a href="/admin/#/pages/_recipes-{{ page.slug | slugify }}-md/" class="adminContent simple-link">edit recipe</a>
-		</div>
+		{% if site.adminUrl  and site.adminUrl != "" %}
+			<div class="card__body__edit-recipe">
+				<a href="{{ site.adminUrl }}#/pages/_recipes-{{ page.slug | slugify }}-md/" class="adminContent simple-link" target="_blank">edit recipe</a>
+			</div>
+		{% endif %}
 	</div>
 </div>
 
