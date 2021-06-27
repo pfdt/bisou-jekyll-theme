@@ -9,7 +9,7 @@
 	<div class="card--list pure-g">	
 		<a href="{{ recipe.url | relative_url }}" class="card__cover card__cover--list before-bg--{{ recipe.category | slugify }}">
 			{% if recipe.image and recipe.image != "" %}
-			<img class="card__cover__img lazy" data-src="{% if site.env != 'production' %}{{ site.baseUrl }}{% endif %}{{ recipe.image }}{{ site.img-transform--card }}" alt="{{ recipe.title }}">
+			<img class="card__cover__img lazy" data-src="{% if site.env != 'production' %}{{ site.urlbase }}{% endif %}{{ recipe.image }}{{ site.img-transform--card }}" alt="{{ recipe.title }}">
 			{% else %}
 			<div class="card__cover__img card__cover__img--placeholder" alt="{{ recipe.title }}"></div>
 			{% endif %}

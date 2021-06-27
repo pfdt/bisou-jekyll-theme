@@ -1,24 +1,37 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>{% if page.layout == 'recipe-single' %}{{ page.title }} | {% endif %}{{ site.title }}{% if page.layout == 'recipes-list' %} - {{ site.description }}{% endif %}</title>
-	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | replace: "
-	", " " }}{% else %}{{ site.description }}{% endif %}">
+	<title>{% if page.layout == 'recipe-single' %}{{ page.title }} - a {{ page.category | downcase }} cocktail | {% endif %}{{ site.title }}{% if page.layout == 'recipes-list' %} - {{ site.description }}{% endif %}</title>
+	{% if site.branch and site.branch != 'master' %}
+		<meta name="robots" content="noindex, nofollow">
+	{% endif %}
+	
+	{% comment %} processed data {% endcomment %}
+	{% if page.layout and page.layout == 'recipe-single' %}
+		{% capture simplified-ingredients %}{{ page.ingredients | downcase | regex_replace: '(^([0-9¼½¾⅓⅔]*\s?[¼½¾⅓⅔]?|[0-9]*(\/|,|\.|-|to|or)[0-9]*)\s?(oz.?|ounces?|cups?|tb?sp|(table|tea|bar)spoon|dash(es)?|drops?|top|pinch(es)?|slices?|pieces?|stalks?|splash(es)?|handful|sprigs?|cubes?|large|(m|c)?l|k?g)?\s?(of)?\s)|(\s\(.*\))|(,\s.*)', '' }}{% endcapture %}
+		{% capture meta-description %}Get the recipe of this {{ page.category | downcase }} drink made up with {{ simplified-ingredients | regex_replace: '[\r\n]', ', ' }}.{% endcapture %}
+		{% capture recipe-image %}{% if site.env != 'production' %}{{ site.urlbase }}{% endif %}{{ page.image }}{% endcapture %}
+	{% endif %}
+	
+	<meta name="description" content="{% if meta-description %}{{ meta-description }}{% else %}{{ site.meta-description }}{% endif %}">
+	<meta name="thumbnail" content="{% if page.layout == 'recipe-single' %}{{ recipe-image | absolute_url }}{{ site.img-transform--sharing }}{% else %}{{ '/assets/img-static/sharing-img.png' | absolute_url }}{% endif %}" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	{% comment %} open graph meta {% endcomment %}
-	<meta property="og:title" content="{% if page.layout == 'recipe-single' %}{{ page.title }}, a {{ page.category | downcase }} cocktail recipe | {% endif %}{{ site.title }}{% if page.layout == 'recipes-list' %} - {{ site.description }}{% endif %}">
+	<meta property="og:title" content="{% if page.layout == 'recipe-single' %}{{ page.title }} - a {{ page.category | downcase }} cocktail | {% endif %}{{ site.title }}{% if page.layout == 'recipes-list' %} - {{ site.description }}{% endif %}">
 	<meta property="og:type" content="{% if page.layout == 'recipe-single' %}article{% else %}website{% endif %}">
-	<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.urlbase }}">
-	<meta property="og:image" content="{% if page.layout == 'recipe-single' %}{{ site.urlbase }}{{ page.image }}{{ site.img-transform--sharing }}{% else %}{{ '/assets/img-static/sharing-img.png' | absolute_url }}{% endif %}">
-	<meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | replace: "
-	", " " }}{% else %}{{ site.description }}{% endif %}">
+	<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+	<meta property="og:image" content="{% if page.layout == 'recipe-single' %}{{ recipe-image | absolute_url }}{{ site.img-transform--sharing }}{% else %}{{ '/assets/img-static/sharing-img.png' | absolute_url }}{% endif %}">
+	<meta property="og:description" content="{% if meta-description %}{{ meta-description }}{% else %}{{ site.meta-description }}{% endif %}">
 	<meta property="og:site_name" content="{{ site.title }}">
 	<meta property="og:locale" content="{{ site.locale }}">
 	{% if page.date %}
 	<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
 	{% endif %}
 	{% comment %} favicon {% endcomment %}
+	{% if page.layout and page.layout == 'recipes-list' %}
+		<link rel="canonical" href="{{ site.urlbase }}" />
+	{% endif %}
 	<link rel="apple-touch-icon" sizes="180x180" href="{{ '/apple-touch-icon.png' | relative_url }}">
 	<link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | relative_url }}">
 	<link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16.png' | relative_url }}">
@@ -31,6 +44,50 @@
 	<meta name="msapplication-config" content="{{ '/browserconfig.xml' | relative_url }}">
 	<meta name="theme-color" content="#0c1e30">
 	
+	{% comment %} google structured data {% endcomment %}
+	{% if page.layout == 'recipes-list' %}
+	<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "WebSite",
+		  "url": "{{ site.urlbase }}",
+		  "potentialAction": {
+			"@type": "SearchAction",
+			"target": {
+			  "@type": "EntryPoint",
+			  "urlTemplate": "{{ site.urlbase }}?q={search_term_string}"
+			},
+			"query-input": "required name=search_term_string"
+		  }
+		}
+	</script>
+	{% else if page.layout == 'recipe-single' %}
+	<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org/",
+		  "@type": "Recipe",
+		  "name": "{{ page.title }}",
+		  "image": [
+				"{{ recipe-image | absolute_url }}{{ site.img-transform--1x1 }}",
+				"{{ recipe-image | absolute_url }}{{ site.img-transform--4x3 }}",
+				"{{ recipe-image | absolute_url }}{{ site.img-transform--16x9 }}"
+				],
+		  "author": {
+			"@type": "Person",
+			"name": "{{ site.title }}"
+		  },
+		  "datePublished": "{{ page.date | date: "%Y-%m-%d" }}",
+		  "description": "A {{ page.category | downcase }} drink made up with {{ simplified-ingredients | regex_replace: '[\r\n]', ', ' }}.",
+		  "keywords": "cake for a party, coffee",
+		  "recipeCategory": "Cocktail",
+		  "recipeIngredient": [
+		  	"{{ page.ingredients | regex_replace: 'ounces?|oz\.', 'oz' | regex_replace: '(tea|bar)spoon', 'tsp' | regex_replace: '(?<=[0-9]),5', '½' | replace: "tablespoon", "tbsp" | replace: "1/4", "¼" | replace: "1/2", "½" | replace: "3/4", "¾" | replace: "1/3", "⅓" | replace: "2/3", "⅔" | regex_replace: '[\r\n]', '",
+			"'}}"
+			]
+		}	
+	</script>
+	{% endif %}
+		
 	<!-- Preload -->
 	<link rel="preload" as="font" type="font/woff2" href="{{ '/assets/webfonts/Abril-Fatface.woff2' | relative_url }}" crossorigin>
 	<link rel="preload" as="font" type="font/woff2" href="{{ '/assets/webfonts/Barlow-Condensed.woff2' | relative_url }}" crossorigin>

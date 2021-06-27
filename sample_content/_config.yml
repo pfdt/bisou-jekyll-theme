@@ -1,12 +1,17 @@
 title: bisou #site title
 description: a cocktail recipes jekyll theme #site description
-baseUrl:  #site baseUrl
+meta-description: Explore hundreds of cocktail recipes, from tiki to bitter, dairy, long, citrusy, spirit-forward, fruity or tropical drinks. #homepage meta description
 url:  #site url
+baseurl: "" #site internal path
+urlbase:  #site base url
 permalink: "/:path/"
 adminUrl:  #eg. for forestry https://app.forestry.io/sites/YourForestrySiteID/
 
 img-transform--card: ?nf_resize=smartcrop&w=600&h=465 #Netlify Large Media img transform parameters for card images
 img-transform--sharing: ?nf_resize=smartcrop&w=1200&h=630 #Netlify Large Media img transform parameters for sharing images
+img-transform--1x1: ?nf_resize=smartcrop&w=1200&h=1200 #Netlify Large Media img transform parameters for structured data
+img-transform--4x3: ?nf_resize=smartcrop&w=1200&h=900 #Netlify Large Media img transform parameters for structured data
+img-transform--16x9: ?nf_resize=smartcrop&w=1200&h=675 #Netlify Large Media img transform parameters for structured data
 googlanalytics_ID: "" #add your UA ID if needed
 firebase_apiKey: "" #apiKey of your firebase realtime database (for collection and ratings functions)
 firebase_projectId: "" #projectId of your firebase realtime database (for collection and ratings functions)
@@ -31,6 +36,10 @@ defaults:
     values:
       layout: recipe-single
       date: 1970-01-01 00:00:00
+  - scope:
+      path: "admin/*"
+    values:
+      sitemap: false
 
 sass:
   style: compressed
