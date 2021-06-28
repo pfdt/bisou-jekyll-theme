@@ -14,6 +14,7 @@ var
 	currentSortOrder,
 	currentBookmarks = ':not(*)',
 	currentUserID,
+    latestFilter,
 	jsonFeed,
 	userPhotoURL;
 
@@ -174,6 +175,7 @@ $(document).ready(function () {
     }
 
     async function getCurrentSort(URLparam) {
+        var paramCat = URLparam.match(/(\?(q|cat)=.*?(?=&|(?=$)))/g)[0] || "";
         URLparam = URLparam.match(/(&sort=.*?(?=$))/g) || "";
         URLparam = URLparam.toString().replace("&sort=", "");
         var sortOrder = URLparam.split("_")[1];
@@ -183,12 +185,17 @@ $(document).ready(function () {
         if (sort !== "") {
             if ((sort == "name" && sortOrder == "asc") || (sort !== "name" && sortOrder !== "desc")) {
                 currentSortOrder = "asc";
-                isotopeSort();
             } else {
                 currentSortOrder = "desc";
-                isotopeSort();
             }
+            isotopeSort();
             layoutCleanSort();
+        } else if (paramCat == "?cat=latest") {
+            latestFilter = true;
+            currentSort = "name";
+            currentSortOrder = "asc";
+            isotopeSort('latestFilter');
+            layoutCleanSort('latestFilter');
         } else {
             defaultSort();
         }
@@ -550,10 +557,31 @@ $(document).ready(function () {
             layoutCleanSearch();
 			
 			// filter items
-			isotopeFilter(filterValue);
-			
-            // change url
-            pushURL();
+            if (currentFilter == "cat=latest") {
+                latestFilter = true;
+                
+                // filter items
+                isotopeFilter(filterValue, false, 'date_desc');
+                
+                // change url
+                pushURL('latestFilter');
+                
+            } else if (latestFilter == true) {
+                latestFilter = false;
+                
+                // filter items
+                isotopeFilter(filterValue, false, 'resetLatestFilter');
+                
+                // change url
+                pushURL();
+                
+            } else {
+                isotopeFilter(filterValue);
+                
+                // change url
+                pushURL();
+                
+            }
 
             // disable sidebar if widelayout == false
             disableSidebarCondition();
@@ -573,7 +601,14 @@ $(document).ready(function () {
             
             // filter
             currentFilter = "cat=bookmarks";
-            isotopeFilter(currentBookmarks);
+            
+            // filter items
+            if (latestFilter == true) {
+                latestFilter = false;
+                isotopeFilter(currentBookmarks, false, 'resetLatestFilter');                
+            } else {
+                isotopeFilter(currentBookmarks);       
+            }
 
             // clean filter value
             layoutCleanFilter(link);
@@ -592,9 +627,10 @@ $(document).ready(function () {
     // reset filter
     async function resetFilter() {
         currentFilter = "cat=all";
+        latestFilter = false;
         layoutCleanFilter($recipesAll);
         layoutCleanSearch();
-        isotopeFilter('*');
+        isotopeFilter('*', false, 'resetLatestFilter');
         pushURL();
     }
 
@@ -612,21 +648,40 @@ $(document).ready(function () {
     }
     
     // Isotope filter
-    async function isotopeFilter(filterValue, noScrollTop) {
-        $grid.isotope({ filter: filterValue });
+    async function isotopeFilter(filterValue, noScrollTop, sortValue) {
+        if (sortValue && sortValue == "date_desc") {
+            $grid.isotope({ filter: filterValue, sortBy: 'date', sortAscending: false });
+            layoutCleanSort('latestFilter');
+        } else if (sortValue && sortValue == "resetLatestFilter") {
+            if (currentSortOrder == "asc") {
+                var sortAscendingValue = true;
+            } else {
+                var sortAscendingValue = false;
+            }
+            $grid.isotope({ filter: filterValue, sortBy: currentSort, sortAscending: sortAscendingValue });
+            layoutCleanSort();
+        } else { 
+            $grid.isotope({ filter: filterValue });
+        }
+        
         if (!noScrollTop) {
             $htmlBody.animate({scrollTop: 0});
         }
     }
 
     // Isotope sorting
-    async function isotopeSort() {
-        if (currentSortOrder == "asc") {
-            var sortAscendingValue = true;
+    async function isotopeSort(option) {
+        
+        if (option && option == "latestFilter") {
+            $grid.isotope({ sortBy: 'date', sortAscending: false });
         } else {
-            var sortAscendingValue = false;
+            if (currentSortOrder == "asc") {
+                var sortAscendingValue = true;
+            } else {
+                var sortAscendingValue = false;
+            }
+            $grid.isotope({ sortBy: currentSort, sortAscending: sortAscendingValue });
         }
-        $grid.isotope({ sortBy: currentSort, sortAscending: sortAscendingValue });
     }
 
     // Isotope update sorting
@@ -658,14 +713,24 @@ $(document).ready(function () {
     }
 
     // clean sorting value
-    async function layoutCleanSort() {
+    async function layoutCleanSort(option) {
         $(".sort-button").removeClass("asc").removeClass("desc");
-        $("#sort-button--" + currentSort).addClass(currentSortOrder);
+        
+        if (option && option == "latestFilter") {
+            $("#sort-button--date").addClass("desc");
+        } else {
+            $("#sort-button--" + currentSort).addClass(currentSortOrder);
+        }
     }
 
     // push filter & sorting URL
-    async function pushURL() {
-       history.replaceState(null, "", "/?" + currentFilter + "&sort=" + currentSort + "_" + currentSortOrder);
+    async function pushURL(option) { 
+        if (option && option == "latestFilter") {
+            history.replaceState(null, "", "/?" + currentFilter + "&sort=date_desc");
+        }
+        else {
+           history.replaceState(null, "", "/?" + currentFilter + "&sort=" + currentSort + "_" + currentSortOrder); 
+        }
     }
 
     /**
@@ -875,7 +940,7 @@ $(document).ready(function () {
             $("#no-result").addClass("active");
         }
         layoutCleanFilter($emptySearch);
-        isotopeFilter(filterValue);
+        isotopeFilter(filterValue, false, 'resetLatestFilter');
     }
     
     // images to preload
