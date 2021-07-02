@@ -1,7 +1,9 @@
 /****** Sidebar menu *****/
 
 .sidebar {
-	display: none;
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
 	position: fixed;
 	left: 0;    
     -webkit-box-orient: vertical;    
@@ -13,6 +15,7 @@
     width: $sidebar-width;
     background-color: var(--primary-color);
     overflow-x: hidden;
+    @include transform(translate(-$sidebar-width));
     @include transition(all 0.15s ease-in-out);
     z-index: 30;
     max-width: 80%;
@@ -30,14 +33,10 @@
         }
     }
     .activeSidebar & {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
+        @include transform(translate(0));
     }
     @include mq-SM {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
+        @include transform(translate(0));
         height: calc(100vh - 4.5em);
         
         .activeSidebar & {
@@ -98,7 +97,6 @@
 	    background-image: url('/assets/img-static/alt_bookmarks.svg');
     } 
 }
-
 .filter-button__icon--circle:before {
     content: '';
     display: -webkit-box;
@@ -263,16 +261,16 @@ body:not(.signed-in) #sort-button--rating {
 .overlay {
     width: 100%;
     height: 100%;
-    visibility: hidden;
     background: var(--primary-color);
     position: fixed;
     z-index: 100;
     left: 0;
     top: 0;
     opacity: 0;
-    @include transition(all 0.15s ease-in-out);
+    @include transform(scale(0));
+    @include transition(opacity 0.15s ease-in-out);
 }
 .activeSidebar #overlay--sidebar, .modal-open #overlay--modal {
-    visibility: visible;
+    @include transform(scale(1));
     opacity: 0.5;
 }

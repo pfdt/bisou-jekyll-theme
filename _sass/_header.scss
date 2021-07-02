@@ -111,12 +111,17 @@
 		padding-right: 0;
 	}
 }
-.signed-in .main-nav__icons--account {
+.main-nav__icons--account {
 	background-size: cover;
-	border-radius: 50%;
-	border: solid 0.08em var(--font-color);
+	border: solid 0.08em;
+	border-radius: 50%;	
+	border-color: transparent;
 	width: 2.1em;
-    height: 2.1em;
+	height: 2.1em;
+	
+	.signed-in & {
+		border-color: var(--font-color);
+	}
 }
 
 /* search desktop & mobile */
@@ -195,17 +200,17 @@
 	}
 }
 .searchbar__icon--empty-search {
-	display: none;
 	right: 0;
 	width: 1.2em;
 	height: 100%;
     padding: 0 0.6em;
 	cursor: pointer;
 	opacity: 0;
+	@include transform(scale(0));
 	@include transition(opacity 0.15s ease-in-out);
 
 	&.active {
-		display: block;
+		@include transform(scale(1));
 		
 		.searchbar:hover & {
 			opacity: 1;

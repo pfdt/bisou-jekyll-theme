@@ -82,7 +82,7 @@ svg {
 	}
 }
 img:not([src]):not([srcset]) {
-	visibility: hidden;
+	opacity: 0;
 }
 .lazy {
 	text-indent: 100%;

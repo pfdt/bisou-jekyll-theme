@@ -349,7 +349,7 @@ $(document).ready(function () {
     async function signedIn() {
         $('body').addClass("signed-in");
         $('.main-nav__icons--account').css('background-image', "url('"+userPhotoURL+"')");
-        $('.main-nav__icons--account > path').css('display', 'none');
+        $('.main-nav__icons--account > path').css('opacity', '0');
         $('.modal-title').html(signedIn_modalTitle);
         $('.modal-content__body').html(signedIn_modalBody);
         $('.modal-content__button .modal-off').html(signedIn_modalClose);
@@ -357,7 +357,7 @@ $(document).ready(function () {
     async function signedOut() {
         $('body').removeClass('signed-in');
 		$('.main-nav__icons--account').css('background-image', 'none');
-        $('.main-nav__icons--account > path').css('display', 'block');
+        $('.main-nav__icons--account > path').css('opacity', '1');
         $('.modal-title').html(login_modalTitle);
         $('.modal-content__body').html(login_modalBody);
         $('.modal-content__button .modal-off').html(login_modalClose);
