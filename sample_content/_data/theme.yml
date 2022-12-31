@@ -1,0 +1,29 @@
+theme_color-default:
+    primary_color: "#02101d"
+    bg_color: "#001526"
+    secondary-bg_color: "#0c1e30"
+    font_color: "#ffffff"
+    secondary-font_color: "#75797d"
+  theme_color-dark:
+    primary_color: "#000000"
+    bg_color: "#000000"
+    secondary-bg_color: "#092740"
+    font_color: "#e0e0e4"
+    secondary-font_color: "#75797d"
+  account-modal_content:
+    login_close: no thanks, back to the recipes...
+    login_title: login to...
+    signed-in_body: |-
+      <li>add recipes to your personal collection,</li>
+      <li>rate your favorites recipes,</li>
+      <li>sync your preferences between your devices,</li>
+      <li>try the true dark mode.</li>
+    signed-in_close: ok, back to the recipes!
+    signed-in_title: your are logged in, let's...
+    login_body: |-
+      <li>add recipes to your personal collection,</li>
+      <li>rate your favorites recipes,</li>
+      <li>sync your preferences between your devices,</li>
+      <li>enable a true dark mode.</li>
+    footer: |-
+      Powered by <a href="https://github.com/pfdt/bisou-jekyll-theme" target="_blank" rel="noopener" class="simple-link">bisous - jekyll theme</a>.

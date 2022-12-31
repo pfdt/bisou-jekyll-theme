@@ -1,14 +1,14 @@
 <div class="modal fade" id="account-modal" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-content modal-content__header">
-		<h2 class="modal-title">{{ site.data.taxonomies.account.login_title }}</h2>
+		<h2 class="modal-title">{{ site.data.theme.account-modal_content.login_title }}</h2>
 		{% include close.svg %}
 	</div>
 	<div class="modal-content modal-content__body">
-		{{ site.data.taxonomies.account.login_body | markdownify }}
+		{{ site.data.theme.account-modal_content.login_body | markdownify }}
 	</div>
 	<div class="modal-content modal-content__button">
 		{% include google-sign.svg %}
-		<a class="modal-off js-close-modal simple-link" rel="nofollow">{{ site.data.taxonomies.account.login_close }}</a>
+		<a class="modal-off js-close-modal simple-link" rel="nofollow">{{ site.data.theme.account-modal_content.login_close }}</a>
 		<a id="button--signOut" class="simple-link" rel="nofollow">sign out</a>
 	</div>
 	<div class="modal-content modal-content__theme-switcher">
@@ -18,5 +18,5 @@
 		</label>
 		<span>enable dark mode</span>
 	</div>
-	<div class="modal-content modal-content__footer">{{ site.data.taxonomies.account.footer }}</div>
+	<div class="modal-content modal-content__footer">{{ site.data.theme.account-modal_content.footer }}</div>
 </div>

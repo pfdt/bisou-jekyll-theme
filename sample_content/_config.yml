@@ -5,7 +5,7 @@ url:  #site url
 baseurl: "" #site internal path
 urlbase:  #site base url
 permalink: "/:path/"
-adminUrl:  #eg. for forestry https://app.forestry.io/sites/YourForestrySiteID/
+netlifyCMS:  #eg. true/false to activate Netlify CMS integration
 
 img-transform--card: ?nf_resize=smartcrop&w=600&h=465 #Netlify Large Media img transform parameters for card images
 img-transform--sharing: ?nf_resize=smartcrop&w=1200&h=630 #Netlify Large Media img transform parameters for sharing images

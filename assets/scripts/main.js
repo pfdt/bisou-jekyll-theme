@@ -29,12 +29,12 @@ const
 	firebase_authDomain = firebase_projectId+'.firebaseapp.com',
 	firebase_databaseURL = firebase_databaseName+'.firebaseio.com',
 	firebase_storageBucket = firebase_projectId+'.appspot.com',
-	signedIn_modalTitle = {{ site.data.taxonomies.account.signed-in_title | jsonify }},
-	signedIn_modalBody = {{ site.data.taxonomies.account.signed-in_body | markdownify | jsonify }},
-	signedIn_modalClose = {{ site.data.taxonomies.account.signed-in_close | jsonify }},
-	login_modalTitle = {{ site.data.taxonomies.account.login_title | jsonify }},
-	login_modalBody = {{ site.data.taxonomies.account.login_body | markdownify | jsonify }},
-	login_modalClose = {{ site.data.taxonomies.account.login_close | jsonify }};
+	signedIn_modalTitle = {{ site.data.theme.account-modal_content.signed-in_title | jsonify }},
+	signedIn_modalBody = {{ site.data.theme.account-modal_content.signed-in_body | markdownify | jsonify }},
+	signedIn_modalClose = {{ site.data.theme.account-modal_content.signed-in_close | jsonify }},
+	login_modalTitle = {{ site.data.theme.account-modal_content.login_title | jsonify }},
+	login_modalBody = {{ site.data.theme.account-modal_content.login_body | markdownify | jsonify }},
+	login_modalClose = {{ site.data.theme.account-modal_content.login_close | jsonify }};
 
 $(document).ready(function () {
     var

@@ -14,10 +14,10 @@
 	<div class="filter-button-group" id="filter-button--categories">
 		<span>browse by taste:</span>
 	{% for category in site.data.taxonomies.categories %}
-		<a class="filter-button" data-filter=".c_{{ category | slugify }}" {% if page.layout and page.layout == 'recipe-single' %}href="/?cat={{ category | slugify }}"{% else %}rel="nofollow"{% endif %}>
+		<a class="filter-button" data-filter=".c_{{ category.title | slugify }}" {% if page.layout and page.layout == 'recipe-single' %}href="/?cat={{ category.title | slugify }}"{% else %}rel="nofollow"{% endif %}>
 			<div class="filter-button__active"></div>
-			<div class="filter-button__icon filter-button__icon--circle before-bg--{{ category | slugify }}"></div>
-			<div class="filter-button__title">{{ category | downcase }}</div>
+			<div class="filter-button__icon filter-button__icon--circle before-bg--{{ category.title | slugify }}"></div>
+			<div class="filter-button__title">{{ category.title | downcase }}</div>
 		</a>
 	{% endfor %}
 	</div>

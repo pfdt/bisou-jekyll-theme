@@ -123,4 +123,9 @@
 	</script>
 	<script defer src='https://www.google-analytics.com/analytics.js'></script>
 	{% endif %}
+	
+	{% if page.layout == 'recipes-list' and site.netlifyCMS and site.netlifyCMS == true %}
+	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+	{% endif %}
+	
 </head>
