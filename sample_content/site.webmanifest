@@ -1,6 +1,8 @@
+---
+---
 {
-    "name": "boozy bisou",
-    "short_name": "boozy bisou",
+    "name": "{{ site.data.content.title }}",
+    "short_name": "{{ site.data.content.title }}",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +15,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#001526",
-    "background_color": "#001526",
+    "theme_color": "{{ site.data.theme.theme_color-default.bg_color }}",
+    "background_color": "{{ site.data.theme.theme_color-default.bg_color }}",
     "display": "standalone"
 }

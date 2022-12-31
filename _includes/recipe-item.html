@@ -7,9 +7,9 @@
 {% if latest_recipes_list contains recipe.slug %}{% assign latest_recipes = true %}{% else %}{% assign latest_recipes = false %}{% endif %}
 <div class="grid-item r_{{ recipe.slug | slugify }} c_{{ recipe.category | slugify }}{% if 3max and 3max == true %} c_3max{% endif %}{% if latest_recipes and latest_recipes == true %} c_latest{% endif %}{% if recipe.batching and recipe.batching == true %} c_batching{% endif %}{% if recipe.zero-proof and recipe.zero-proof == true %} c_zero-proof{% endif %}" data-name="{{ recipe.slug | slugify }}" data-date="{{ recipe.date }}" data-rating="0">
 	<div class="card--list pure-g">	
-		<a href="{{ recipe.url | relative_url }}" class="card__cover card__cover--list before-bg--{{ recipe.category | slugify }}">
+		<a href="{{ recipe.url }}" class="card__cover card__cover--list before-bg--{{ recipe.category | slugify }}">
 			{% if recipe.image and recipe.image != "" %}
-			<img class="card__cover__img lazy" data-src="{% if site.env != 'production' %}{{ site.urlbase }}{% endif %}{{ recipe.image }}{{ site.img-transform--card }}" alt="{{ recipe.title }}">
+			<img class="card__cover__img lazy" data-src="{% if site.env != 'production' %}{{ site.data.content.url }}{% endif %}{{ recipe.image | append: site.data.tools.netlify-lm.img--card }}" alt="{{ recipe.title }}">
 			{% else %}
 			<div class="card__cover__img card__cover__img--placeholder" alt="{{ recipe.title }}"></div>
 			{% endif %}

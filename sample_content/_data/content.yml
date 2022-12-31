@@ -1,0 +1,21 @@
+title: boozy bisou
+description: cocktail recipes collection
+meta-description: Explore hundreds of cocktail recipes, from tiki to bitter, dairy, long, citrusy, spirit-forward, fruity or tropical drinks.
+url: https://boozybisou.com
+account-modal_content:
+    login_close: no thanks, back to the recipes...
+    login_title: login to...
+    signed-in_body: |-
+      <li>add recipes to your personal collection,</li>
+      <li>rate your favorites recipes,</li>
+      <li>sync your preferences between your devices,</li>
+      <li>try the true dark mode.</li>
+    signed-in_close: ok, back to the recipes!
+    signed-in_title: your are logged in, let's...
+    login_body: |-
+      <li>add recipes to your personal collection,</li>
+      <li>rate your favorites recipes,</li>
+      <li>sync your preferences between your devices,</li>
+      <li>enable a true dark mode.</li>
+    footer: |-
+      Powered by <a href="https://github.com/pfdt/bisou-jekyll-theme" target="_blank" rel="noopener" class="simple-link">bisous - jekyll theme</a>.

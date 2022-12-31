@@ -9,12 +9,12 @@ layout: compress
 >
 {% if page.category_filter and page.category_filter != "" %}{% else %}{% endif %}
 	<channel>
-		<title>{{ site.title | xml_escape }}{% if page.category_filter and page.category_filter != "" %} - {{ page.category_filter | downcase | xml_escape }} cocktails collection{% endif %}</title>
-		<description>{% if page.category_filter and page.category_filter != "" %}{{ page.category_filter | downcase | xml_escape }} cocktails{% else %}{{ site.description }}{% endif %}</description>
+		<title>{{ site.data.content.title | xml_escape }}{% if page.category_filter and page.category_filter != "" %} - {{ page.category_filter | downcase | xml_escape }} cocktails collection{% endif %}</title>
+		<description>{% if page.category_filter and page.category_filter != "" %}{{ page.category_filter | downcase | xml_escape }} cocktails{% else %}{{ site.data.content.description }}{% endif %}</description>
 		<sy:updatePeriod>{{ site.feed.update_period | default: "daily" | xml_escape }}</sy:updatePeriod>
 		<sy:updateFrequency>{{ site.feed.update_frequency | default: 1 | xml_escape }}</sy:updateFrequency>
-		<link>{{ site.url }}</link>
-		<atom:link href="{{ site.url }}/{{ page.path }}" rel="self" type="application/rss+xml" />
+		<link>{{ site.data.content.url }}</link>
+		<atom:link href="{{ site.data.content.url }}/{{ page.path }}" rel="self" type="application/rss+xml" />
 		<lastBuildDate>{% for post in filtered_post limit:1 %}{{ post.date | date_to_rfc822 }}{% endfor %}</lastBuildDate>
 		{% assign feed_items = site.feed.items | default: 10 %}
 		{% for post in filtered_post limit:feed_items %}
@@ -23,8 +23,8 @@ layout: compress
 					<description>{% if page.category_filter and page.category_filter != "" %}{% else %}{{ '<b>Cocktail category:</b> ' | xml_escape }}{{ post.category | xml_escape }}{{ ' <br>' | xml_escape }}{% endif %}{{ '<b>Ingredients:</b> <span class="p-ingredient">' | xml_escape }}{{ post.ingredients | regex_replace: 'ounces?|oz\.', 'oz' | regex_replace: '(tea|bar)spoon', 'tsp' | regex_replace: '(?<=[0-9]),5', '½' | replace: "tablespoon", "tbsp" | replace: "1/4", "¼" | replace: "1/2", "½" | replace: "3/4", "¾" | replace: "1/3", "⅓" | replace: "2/3", "⅔" | regex_replace: '[\r\n]', '</span>, <span class="p-ingredient">' | xml_escape }}{{ '</span>' | xml_escape }}{% if post.content and post.content != "" %}{{ ' <br><b>Instructions:</b> <div class="e-instructions">' | xml_escape }}{{ post.content | strip_html | xml_escape }}{{ '</div>' | xml_escape }}{% endif %}
 				</description>
 				<pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-				<link>{{ site.url }}{{ post.url }}</link>
-				<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+				<link>{{ site.data.content.url }}{{ post.url }}</link>
+				<guid isPermaLink="true">{{ site.data.content.url }}{{ post.url }}</guid>
 			</item>
 		{% endfor %}
 	</channel>

@@ -1,0 +1,113 @@
+# config.yml
+
+backend:
+  name: git-gateway
+  branch: #git branch used
+local_backend: true
+media_folder: 'assets/img'
+site_url:  #site base url
+display_url:  #site base url
+show_preview_links: true
+
+
+collections:
+  - name: 'recipes'
+    label: 'Recipes'
+    folder: '_recipes/'
+    create: true
+    preview_path: '{{slug}}'
+    fields:
+      - {label: 'Recipe name', name: 'title', widget: 'string'}
+      - {
+        label: 'Category',
+        name: 'category',
+        widget: 'relation',
+        collection: 'settings',
+        file: 'taxonomies',
+        display_fields: [categories.*.title],
+        search_fields: [categories.*.title],
+        value_field: 'categories.*.title',
+      }
+      - {
+        label: 'Technique',
+        name: 'technique',
+        widget: 'relation',
+        collection: 'settings',
+        file: 'taxonomies',
+        display_fields: [techniques.*],
+        search_fields: [techniques.*],
+        value_field: 'techniques.*',
+        }
+      - {label: 'Ingredients', name: 'ingredients', widget: 'text', hint: 'One line per ingredient and its quantity (tips: ¼, ½, ¾)'}
+      - {label: 'Description', name: 'body', widget: 'markdown', required: false}
+      - {label: 'Image', name: 'image', widget: 'image', choose_url: false, required: false}
+      - {label: 'Source (text)', name: 'source-text', widget: 'string', required: false}
+      - {label: 'Source (url)', name: 'source-url', widget: 'string', pattern: ['https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)', 'Must be a valid url'], required: false}
+      - {label: 'Zero-proof recipe or alternative', name: 'zero-proof', widget: 'boolean', default: false}
+      - {label: 'Batching recipe or alternative', name: 'batching', widget: 'boolean', default: false}
+      - {label: 'Date', name: 'date', widget: 'datetime', date_format: true, time_format: false}
+      - {label: 'Published', name: 'published', widget: 'boolean', default: true}
+      - {label: 'Layout', name: 'layout', widget: 'hidden', default: 'recipe-single'}
+
+  - name: 'settings'
+    label: 'Settings'
+    files:
+    - label: 'Thème'
+      name: 'theme'
+      file: '_data/theme.yml'
+      format: 'yml'
+      fields:
+       - label: 'Default theme colors'
+         name: 'theme_color-default'
+         widget: 'object'
+         collapsed: true
+         fields:
+           - {label: 'Primary color', name: 'primary_color', widget: 'color', hint: 'nav and sidebar background'}
+           - {label: 'Background color', name: 'bg_color', widget: 'color', hint: 'body background and alt text color'}
+           - {label: 'Secondary background color', name: 'secondary-bg_color', widget: 'color', hint: 'search input and active filter background'}
+           - {label: 'Font color', name: 'font_color', widget: 'color', hint: 'default text color, icons color and modal background'}
+           - {label: 'Secondary font color', name: 'secondary-font_color', widget: 'color', hint: 'secondary texts color'}
+       - label: 'Dark theme colors'
+         name: 'theme_color-dark'
+         widget: 'object'
+         collapsed: true
+         fields:
+          - {label: 'Primary color', name: 'primary_color', widget: 'color', hint: 'nav and sidebar background'}
+          - {label: 'Background color', name: 'bg_color', widget: 'color', hint: 'body background and alt text color'}
+          - {label: 'Secondary background color', name: 'secondary-bg_color', widget: 'color', hint: 'search input and active filter background'}
+          - {label: 'Font color', name: 'font_color', widget: 'color', hint: 'default text color, icons color and modal background'}
+          - {label: 'Secondary font color', name: 'secondary-font_color', widget: 'color', hint: 'secondary texts color'}
+       - label: 'Account modal content'
+         name: 'account-modal_content'
+         widget: 'object'
+         collapsed: true
+         fields:
+           - {label: 'Login title', name: 'login_title', widget: 'string'}
+           - {label: 'Login close', name: 'login_close', widget: 'string'}
+           - {label: 'Login body', name: 'login_body', widget: 'code', default_language: 'html', output_code_only: true}
+           - {label: 'Signed in title', name: 'signed-in_title', widget: 'string'}
+           - {label: 'Signed in close', name: 'signed-in_close', widget: 'string'}
+           - {label: 'Signed in body', name: 'signed-in_body', widget: 'code', default_language: 'html', output_code_only: true}
+           - {label: 'Footer', name: 'footer', widget: 'code', default_language: 'html', output_code_only: true}
+    - label: 'Taxonomies'
+      name: 'taxonomies'
+      file: '_data/taxonomies.yml'
+      format: 'yml'
+      fields:
+       - name: 'categories'
+         label: 'Categories'
+         widget: 'list'
+         collapsed: true
+         minimize_collapsed: true
+         summary: '{{fields.title}}'
+         fields:
+           - {label: 'Title', name: 'title', widget: 'string'}
+           - {label: 'Color', name: 'color', widget: 'color'}
+       - label: 'Techniques'
+         name: 'techniques'
+         widget: 'list'
+         collapsed: true
+         minimize_collapsed: true
+         summary: '{{fields.title}}'
+         field: {label: 'Title', name: 'title', widget: 'string'}
+  

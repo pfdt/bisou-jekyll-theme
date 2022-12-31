@@ -1,58 +1,24 @@
----
-forcedeploy: false
 categories:
-- Bitter
-- Dairy
-- Long
-- Citrusy
-- Spirit-forward
-- Fruity
-- Tiki
-- Tropical
+    - title: Bitter
+      color: "#ED5345"
+    - title: Citrusy
+      color: "#FBEE30"
+    - title: Dairy
+      color: "#CEFF5C"
+    - title: Fruity
+      color: "#FC8BEF"
+    - title: Long
+      color: "#25CDD0"
+    - title: Spirit-forward
+      color: "#236EFB"
+    - title: Tiki
+      color: "#FF9827"
+    - title: Tropical
+      color: "#2CED61"
 techniques:
-- Blend
-- By the batch
-- Dry Shake
-- In glass
-- Shake
-- Stir
-- Swizzle
-account:
-  login_title: login to...
-  login_body: "<li>add recipes to your personal collection,</li><li>rate your favorites
-    recipes,</li><li>sync your preferences between your devices,</li><li>enable a true dark mode.</li>"
-  login_close: no thanks, back to the recipes...
-  signed-in_title: your are logged in, let's...
-  signed-in_body: "<li>add recipes to your personal collection,</li><li>rate your
-    favorites recipes,</li><li>sync your preferences between your devices,</li><li>try the true dark mode.</li>"
-  signed-in_close: ok, back to the recipes...
-  footer: Powered by <a href="https://github.com/pfdt/bisou-jekyll-theme" target="_blank" rel="noopener" class="simple-link">bisous - jekyll theme</a>.
-theme-colors:
-  primary_color: "#02101D"
-  bg_color: "#001526"
-  secondary-bg_color: "#0C1E30"
-  font_color: "#FFFFFF"
-  secondary-font_color: "#75797D"
-  alt_theme_colors:
-    alt_primary_color: "#000000"
-    alt_bg_color: "#000000"
-    alt_secondary-bg_color: "#092740"
-    alt_font_color: "#E0E0E4"
-    alt_secondary-font_color: "#75797D"
-  categories-colors:
-  - category-title: Bitter
-    category-color: "#EF685D"
-  - category-title: Dairy
-    category-color: "#DCFF8B"
-  - category-title: Long
-    category-color: "#3FDBE8"
-  - category-title: Citrusy
-    category-color: "#FBEE30"
-  - category-title: Spirit-forward
-    category-color: "#3076F3"
-  - category-title: Fruity
-    category-color: "#FC8BEF"
-  - category-title: Tiki
-    category-color: "#FF9827"
-  - category-title: Tropical
-    category-color: "#2CED61"
+    - Blend
+    - Dry Shake
+    - In glass
+    - Shake
+    - Stir
+    - Swizzle

@@ -1,0 +1,12 @@
+theme_color-default:
+    primary_color: "#02101d"
+    bg_color: "#001526"
+    secondary-bg_color: "#0c1e30"
+    font_color: "#ffffff"
+    secondary-font_color: "#75797d"
+theme_color-dark:
+    primary_color: "#000000"
+    bg_color: "#000000"
+    secondary-bg_color: "#092740"
+    font_color: "#e0e0e4"
+    secondary-font_color: "#75797d"

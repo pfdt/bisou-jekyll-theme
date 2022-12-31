@@ -8,7 +8,7 @@ layout: default
 	    
 	<div class="card__cover card__cover--single">
       {% if page.image and page.image != "" %}
-        <img class="card__cover__img card__cover__img--single" src="{% if site.env != 'production' %}{{ site.urlbase }}{% endif %}{{ page.image }}{{ site.img-transform--card }}" alt="{{ recipe.title }}">
+        <img class="card__cover__img card__cover__img--single" src="{% if site.env != 'production' %}{{ site.data.content.url }}{% endif %}{{ page.image | append: site.data.tools.netlify-lm.img--card }}" alt="{{ recipe.title }}">
       {% else %}
         <div class="card__cover__img card__cover__img--list card__cover__img--placeholder" alt="{{ page.title }}"></div>
       {% endif %}
@@ -29,7 +29,7 @@ layout: default
 			<div class="card__body__controls__bookmark" value="{{ page.slug | slugify }}"></div>
 		</div>
 		<div class="card__body__title card__body__title--single">
-			<a class="" href="{{ page.url | absolute_url }}">
+			<a class="" href="{{ page.url | prepend: site.data.content.url }}">
 				<h1>{{ page.title | replace: "'", "’" | downcase }}</h1>
 			</a>
 		</div>
@@ -51,11 +51,9 @@ layout: default
 			{% else %}{% endif %}			
 		</div>
 		
-		{% if site.adminUrl  and site.adminUrl != "" %}
-			<div class="card__body__edit-recipe">
-				<a href="{{ site.adminUrl }}#/pages/_recipes-{{ page.slug | slugify }}-md/" class="adminContent simple-link" target="_blank">edit recipe</a>
-			</div>
-		{% endif %}
+		<div class="card__body__edit-recipe">
+			<a href="{{ site.data.content.url }}/admin/#/collections/recipes/entries/{{ page.slug | slugify }}" class="adminContent simple-link" target="_blank">edit recipe</a>
+		</div>
 	</div>
 </div>
 

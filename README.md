@@ -20,7 +20,7 @@ This theme is compatible with jekyll-remote-theme and my personal website is liv
 - Website and img hosting: [Netlify and Netlify Large Media](https://www.netlify.com/)
 - Login and user database hosting: [Firebase](https://firebase.google.com)
 - Client-side search and filter: [jekyll-search](https://github.com/mathaywarduk/jekyll-search), [Isotope](https://isotope.metafizzy.co/)
-- CMS : [Forestry](https://forestry.io/)
+- CMS : [Netlify CMS](https://www.netlifycms.org/)
 
 Some lines and good tips from [cagrimmett/jekyll-tools](https://github.com/cagrimmett/jekyll-tools), [pure-css/pure](https://github.com/pure-css/pure/), [verlok/vanilla-lazyload]([cagrimmett/jekyll-tools](https://github.com/cagrimmett/jekyll-tools)), [James Barnett](https://codepen.io/jamesbarnett/pen/vlpkh), [willmcpo/body-scroll-lock](https://github.com/willmcpo/body-scroll-lock), [RealFaviconGenerator](https://realfavicongenerator.net/) and uzful advices from [mandawan](https://github.com/mandawan).
 

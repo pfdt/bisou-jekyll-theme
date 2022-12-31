@@ -95,25 +95,25 @@ $isotopeContent-max-width-XL: $card--list-max-width * 4 + $grid-layout-paddingX 
 
 /****** Theme colors *****/
 :root {
-	--primary-color: {{ site.data.taxonomies.theme-colors.primary_color }};
-	--bg-color: {{ site.data.taxonomies.theme-colors.bg_color }};
-	--secondary-bg-color: {{ site.data.taxonomies.theme-colors.secondary-bg_color }};
-	--font-color: {{ site.data.taxonomies.theme-colors.font_color }};
-	--secondary-font-color: {{ site.data.taxonomies.theme-colors.secondary-font_color }};
+	--primary-color: {{ site.data.theme.theme_color-default.primary_color }};
+	--bg-color: {{ site.data.theme.theme_color-default.bg_color }};
+	--secondary-bg-color: {{ site.data.theme.theme_color-default.secondary-bg_color }};
+	--font-color: {{ site.data.theme.theme_color-default.font_color }};
+	--secondary-font-color: {{ site.data.theme.theme_color-default.secondary-font_color }};
 }
 
 [data-theme="dark"] {
-	--primary-color: {{ site.data.taxonomies.theme-colors.alt_theme_colors.alt_primary_color }};
-	--bg-color: {{ site.data.taxonomies.theme-colors.alt_theme_colors.alt_bg_color }};
-	--secondary-bg-color: {{ site.data.taxonomies.theme-colors.alt_theme_colors.alt_secondary-bg_color }};
-	--font-color: {{ site.data.taxonomies.theme-colors.alt_theme_colors.alt_font_color }};
-	--secondary-font-color: {{ site.data.taxonomies.theme-colors.alt_theme_colors.alt_secondary-font_color }};
+	--primary-color: {{ site.data.theme.theme_color-dark.primary_color }};
+	--bg-color: {{ site.data.theme.theme_color-dark.bg_color }};
+	--secondary-bg-color: {{ site.data.theme.theme_color-dark.secondary-bg_color }};
+	--font-color: {{ site.data.theme.theme_color-dark.font_color }};
+	--secondary-font-color: {{ site.data.theme.theme_color-dark.secondary-font_color }};
 }
 
 /****** Category colors *****/
-{% for category in site.data.taxonomies.theme-colors.categories-colors %}
-.before-bg--{{ category.category-title | slugify }}:before {
-	background-color: {{ category.category-color }} !important;
+{% for category in site.data.taxonomies.categories %}
+.before-bg--{{ category.title | slugify }}:before {
+	background-color: {{ category.color }} !important;
 }
 {% endfor %}
 

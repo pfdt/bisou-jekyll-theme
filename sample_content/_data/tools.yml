@@ -1,0 +1,12 @@
+google-analytics:
+    id: 
+netlify-lm:
+    img--card: ?nf_resize=smartcrop&w=600&h=465
+    img--sharing: ?nf_resize=smartcrop&w=1200&h=630
+    img--1x1: ?nf_resize=smartcrop&w=1200&h=1200
+    img--4x3: ?nf_resize=smartcrop&w=1200&h=900
+    img--16x9: ?nf_resize=smartcrop&w=1200&h=675
+firebase: 
+    apiKey: 
+    projectId: 
+    dbName: 
