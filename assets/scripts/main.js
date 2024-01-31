@@ -1,66 +1,72 @@
 ---
 ---
 /* ==========================================================================
-	Initialisation
+    Initialisation
 ========================================================================== */
 
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js';
+import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signInWithRedirect, signOut, getRedirectResult } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js';
+import { getDatabase, ref, onValue, query, startAt, orderByChild, equalTo, update } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js';
+
 var
-	q,
-	TIMEOUT_ID = 0,
-	activeSidebar = false,
-	wideLayout = true,
-	currentFilter,
-	currentSort,
-	currentSortOrder,
-	currentBookmarks = ':not(*)',
-	currentUserID,
+    q,
+    TIMEOUT_ID = 0,
+    activeSidebar = false,
+    wideLayout = true,
+    currentFilter,
+    currentSort,
+    currentSortOrder,
+    currentBookmarks = ':not(*)',
+    currentUserID,
     latestFilter,
-	jsonFeed,
-	userPhotoURL;
+    jsonFeed,
+    userPhotoURL;
 
 const
-	allowEmpty = false,
-	disableBodyScroll = bodyScrollLock.disableBodyScroll,
-	enableBodyScroll = bodyScrollLock.enableBodyScroll,
-	jsonFeedUrl = '/assets/feeds/search.json',
-	firebase_apiKey = {{ site.data.tools.firebase.apiKey | jsonify }},
-	firebase_projectId = {{ site.data.tools.firebase.projectId | jsonify }},
-	firebase_databaseName = {{ site.data.tools.firebase.dbName | jsonify }},
-	firebase_authDomain = firebase_projectId+'.firebaseapp.com',
-	firebase_databaseURL = firebase_databaseName+'.firebaseio.com',
-	firebase_storageBucket = firebase_projectId+'.appspot.com',
-	signedIn_modalTitle = {{ site.data.content.account-modal_content.signed-in_title | jsonify }},
-	signedIn_modalBody = {{ site.data.content.account-modal_content.signed-in_body | markdownify | jsonify }},
-	signedIn_modalClose = {{ site.data.content.account-modal_content.signed-in_close | jsonify }},
-	login_modalTitle = {{ site.data.content.account-modal_content.login_title | jsonify }},
-	login_modalBody = {{ site.data.content.account-modal_content.login_body | markdownify | jsonify }},
-	login_modalClose = {{ site.data.content.account-modal_content.login_close | jsonify }};
-
+    allowEmpty = false,
+    disableBodyScroll = bodyScrollLock.disableBodyScroll,
+    enableBodyScroll = bodyScrollLock.enableBodyScroll,
+    jsonFeedUrl = '/assets/feeds/search.json',
+    firebase_apiKey = {{ site.data.tools.firebase.apiKey | jsonify }},
+    firebase_projectId = {{ site.data.tools.firebase.projectId | jsonify }},
+    firebase_databaseName = {{ site.data.tools.firebase.dbName | jsonify }},
+    firebase_authDomain = firebase_projectId+'.firebaseapp.com',
+    // firebase_authDomain = {{ site.data.content.url | regex_replace: 'https?:\/\/', '' | regex_replace: '\/.*', '' | jsonify }},
+    // firebase_authDomain = '10.0.0.141:4000',
+    firebase_databaseURL = firebase_databaseName+'.firebaseio.com',
+    firebase_storageBucket = firebase_projectId+'.appspot.com',
+    signedIn_modalTitle = {{ site.data.content.account-modal_content.signed-in_title | jsonify }},
+    signedIn_modalBody = {{ site.data.content.account-modal_content.signed-in_body | markdownify | jsonify }},
+    signedIn_modalClose = {{ site.data.content.account-modal_content.signed-in_close | jsonify }},
+    login_modalTitle = {{ site.data.content.account-modal_content.login_title | jsonify }},
+    login_modalBody = {{ site.data.content.account-modal_content.login_body | markdownify | jsonify }},
+    login_modalClose = {{ site.data.content.account-modal_content.login_close | jsonify }};
+ 
 $(document).ready(function () {
     var
         $1em = parseFloat(getComputedStyle(document.body, null).fontSize);
     const
-		$htmlBody = $("html, body"),
-		scrollTopOffset = $1em * 6.3,
-		wideLayoutBreakingpoint = $1em * 35.5,
-		$searchInput = $("#searchbar__input"),
-		$emptySearch = $("#searchbar__empty-search"),
-		$allMenuItems = $(".filter-button"),
-		$gridContainer = $("#isotopeContent"),
-		$bookmarksFilter = $("#filter-button--bookmarks"),
-		$recipesAll = $("#filter-button--all-recipes"),
-		$sidebar = document.querySelector('#sidebar'),
-		$accountModal = document.querySelector('#account-modal');
+        $htmlBody = $("html, body"),
+        scrollTopOffset = $1em * 6.3,
+        wideLayoutBreakingpoint = $1em * 35.5,
+        $searchInput = $("#searchbar__input"),
+        $emptySearch = $("#searchbar__empty-search"),
+        $allMenuItems = $(".filter-button"),
+        $gridContainer = $("#isotopeContent"),
+        $bookmarksFilter = $("#filter-button--bookmarks"),
+        $recipesAll = $("#filter-button--all-recipes"),
+        $sidebar = document.querySelector('#sidebar'),
+        $accountModal = document.querySelector('#account-modal');
 
     /* ==========================================================================
-	Initiate on launch
-	========================================================================== */
-		
+    Initiate on launch
+    ========================================================================== */
+        
     // Lady load - image loading
     var lazyLoadInstance = new LazyLoad({
         thresholds: "500% 0px"
     });
-	
+    
     // Isotope - initiate
     var $grid = $($gridContainer).isotope({
         itemSelector: '.grid-item',
@@ -74,7 +80,7 @@ $(document).ready(function () {
         transitionDuration: 0
     });
 
-	var $items = $grid.find(".grid-item");
+    var $items = $grid.find(".grid-item");
     $grid.addClass("showOn").isotope("revealItemElements", $items);
     
     // update isotope layout event listener
@@ -86,21 +92,25 @@ $(document).ready(function () {
     detectHash();
 
     // Firebase - initiate
-    initiateFirebase();
-
-    function initiateFirebase() {
-        var config = {
-            apiKey: firebase_apiKey,
-            authDomain: firebase_authDomain,
-            databaseURL: firebase_databaseURL,
-            storageBucket: firebase_storageBucket
-        };
-        firebase.initializeApp(config);
-    }
-
+    const firebaseConfig = {
+        apiKey: firebase_apiKey,
+        authDomain: firebase_authDomain,
+        databaseURL: firebase_databaseURL,
+        storageBucket: firebase_storageBucket
+    };
+     
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const auth = getAuth(app);
+    
     // Firebase - on auth change
-    firebase.auth().onAuthStateChanged(function (user) {
+    onAuthStateChanged(auth, (user) => {
+    if (user) {
+        currentUserID = user.uid;
         loadFirebaseDatas(user);
+    } else {
+        currentUserID = undefined;
+    }
     });
     
     // Get dark theme preference
@@ -108,9 +118,9 @@ $(document).ready(function () {
 
 
     /* ==========================================================================
-	Loading functions
-	========================================================================== */
-	
+    Loading functions
+    ========================================================================== */
+    
     /**
      * Lazy load - image loading
      */
@@ -154,10 +164,10 @@ $(document).ready(function () {
         paramCat = paramCat.toString().replace("?cat=", "").replace("?q=", "") || "*";
 
         if (paramCat == "bookmarks") {
-	        var filterValue = currentBookmarks; 
-	        currentFilter = "cat=" + paramCat;
-			$bookmarksFilter.addClass("active");
-			isotopeFilter(filterValue);
+            var filterValue = currentBookmarks; 
+            currentFilter = "cat=" + paramCat;
+            $bookmarksFilter.addClass("active");
+            isotopeFilter(filterValue);
         } else if (paramSearch == true) {       
             currentFilter = "q=" + paramCat;
             let searchInput = decodeURIComponent(paramCat);
@@ -232,114 +242,106 @@ $(document).ready(function () {
             // Admin or not ?
             getFirebaseAdminStatus(currentUserID);
         } else {
-		    currentUserID = undefined;
+            currentUserID = undefined;
             // hide signed-in contents
             signedOut();
             
             // update Bookmarks page if is current page
-			if (currentFilter == "cat=bookmarks") {
-				modalON();
-			}
+            if (currentFilter == "cat=bookmarks") {
+                modalON();
+            }
         }
     }
-
+    
     // Retrieve and push bookmarks status
     async function getFirebaseBookmarks(currentUserID) {
-        firebase
-            .database()
-            .ref(currentUserID + "/recipes/")
-            .orderByChild("bookmark")
-            .equalTo(true)
-            .once("value", function (snapshot) {
-                var filterValue = [];
-                filterValue.push(":not(*)");
-                snapshot.forEach(function (child) {
-                    let recipe = child.key;
-                    $(".r_" + recipe + " .card__body__controls__bookmark").addClass("active");
-                    filterValue.push(".r_" + recipe);
-                });
-                // assign bookmarks button
-                filterValue = filterValue.toString();
-                currentBookmarks = filterValue;
-                $bookmarksFilter.attr("data-filter", filterValue);
-
-                // update Bookmarks page if is current page
-                if (currentFilter == "cat=bookmarks") {
-                    isotopeFilter(filterValue);
-                }
+        const qFirebaseBookmarks = query(ref(db, currentUserID + '/recipes/'), orderByChild('bookmark'), equalTo(true));
+        return onValue(qFirebaseBookmarks, (snapshot) => {
+            var filterValue = [];
+            filterValue.push(":not(*)");
+            snapshot.forEach(function (child) {
+                let recipe = child.key;
+                $(".r_" + recipe + " .card__body__controls__bookmark").addClass("active");
+                filterValue.push(".r_" + recipe);
             });
+            // assign bookmarks button
+            filterValue = filterValue.toString();
+            currentBookmarks = filterValue;
+            $bookmarksFilter.attr("data-filter", filterValue);
+
+            // update Bookmarks page if is current page
+            if (currentFilter == "cat=bookmarks") {
+                isotopeFilter(filterValue);
+            }
+        }, {
+            onlyOnce: true
+        })
     }
 
     // Retrieve and push Rating status
     async function getFirebaseRatings(currentUserID) {
-        firebase
-            .database()
-            .ref(currentUserID + "/recipes/")
-            .orderByChild("rating")
-            .startAt(1)
-            .once("value", function (snapshot) {
-                snapshot.forEach(function (child) {
-                    let recipe = child.key;
-                    let rating = child.val().rating;
-                    $(".r_" + recipe).attr("data-rating", rating);
-                    $(".r_" + recipe + " .card__body__controls__rating")
-                        .addClass("active")
-                        .find(".rating__icons." + rating)
-                        .addClass("active");
-                });
-
-                // update sorting datas
-                isotopeSortUpdate();
+        const qFirebaseRatings = query(ref(db, currentUserID + '/recipes/'), orderByChild('rating'), startAt(1));
+        return onValue(qFirebaseRatings, (snapshot) => {
+            snapshot.forEach(function (child) {
+                let recipe = child.key;
+                let rating = child.val().rating;
+                $(".r_" + recipe).attr("data-rating", rating);
+                $(".r_" + recipe + " .card__body__controls__rating")
+                    .addClass("active")
+                    .find(".rating__icons." + rating)
+                    .addClass("active");
             });
+
+            // update sorting datas
+            isotopeSortUpdate();
+        }, {
+            onlyOnce: true
+        })
     }
 
     // Admin or not ?
     async function getFirebaseAdminStatus(currentUserID) {
-        firebase
-            .database()
-            .ref(currentUserID + "/role")
-            .on("value", function (snapshot) {
-                if (snapshot.val() == "admin") {
-                    $(".adminContent").addClass("active");
-                }
-            });
+        const qFirebaseAdminStatus = query(ref(db, currentUserID + '/role'));
+        return onValue(qFirebaseAdminStatus, (snapshot) => {
+            if (snapshot.val() == "admin") {
+                $(".adminContent").addClass("active");
+            }
+        });
     }
 
     /**
      * Firebase Google Auth functions
      */
 
-    var provider = new firebase.auth.GoogleAuthProvider();
+    const provider = new GoogleAuthProvider();
 
     function googleSignin() {
-        firebase
-            .auth()
-            .signInWithRedirect(provider)
-            .then(function (result) {
-                var token = result.credential.accessToken;
-                var user = result.user;
-                console.log(token);
-                console.log(user);
-            })
-            .catch(function (error) {
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                console.log(error.code);
-                console.log(error.message);
-            });
+        auth.useDeviceLanguage();
+        signInWithPopup(auth, provider)
+          .then((result) => {
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+            const user = result.user;
+            console.log('success');
+            console.log(token);
+            console.log(user);
+          }).catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            const credential = GoogleAuthProvider.credentialFromError(error);
+            console.log('error');
+            console.log(errorCode);
+            console.log(errorMessage);
+          }); 
     }
+
     function googleSignout() {
-        firebase
-            .auth()
-            .signOut()
-            .then(
-                function () {
-                    console.log("Signout Succesfull");
-                },
-                function (error) {
-                    console.log("Signout Failed");
-                }
-            );
+        signOut(auth).then(() => {
+            console.log("Déconnexion réussie");
+        })
+        .catch((error) => {
+            console.log("Échec de la déconnexion");
+        });
     }
 
     /**
@@ -356,7 +358,7 @@ $(document).ready(function () {
     }
     async function signedOut() {
         $('body').removeClass('signed-in');
-		$('.main-nav__icons--account').css('background-image', 'none');
+        $('.main-nav__icons--account').css('background-image', 'none');
         $('.main-nav__icons--account > path').css('opacity', '1');
         $('.modal-title').html(login_modalTitle);
         $('.modal-content__body').html(login_modalBody);
@@ -368,17 +370,17 @@ $(document).ready(function () {
     /**
      * Theme preference
      */
-	async function getThemePreference() {
-		currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-		if (currentTheme && currentTheme === 'dark') {
-		    $(".theme-switch input[type='checkbox']").prop( "checked", true );
-		}
-	}
+    async function getThemePreference() {
+        currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+        if (currentTheme && currentTheme === 'dark') {
+            $(".theme-switch input[type='checkbox']").prop( "checked", true );
+        }
+    }
 
     /* ==========================================================================
-	Interactivity / triggers
-	========================================================================== */
-
+    Interactivity / triggers
+    ========================================================================== */
+    
     // Trigger window width calc
     wideWindowDetector();
 
@@ -439,29 +441,29 @@ $(document).ready(function () {
     });
     
     // body no-result
-	$("#no-result").on("click", "a", function () {
+    $("#no-result").on("click", "a", function () {
         resetFilter();
     });
       
     // modal signIn click
     $(".modal-content__button").on("click", "#button--signIn", function () {
-	    googleSignin();
+        googleSignin();
     });
     
     // modal signOut click
     $(".modal-content__button").on("click", "#button--signOut", function () {
-	    googleSignout();
-	    signedOut();
-		if (currentFilter == "cat=bookmarks") {
-	        resetFilter();
+        googleSignout();
+        signedOut();
+        if (currentFilter == "cat=bookmarks") {
+            resetFilter();
         }
     });
     
     // modal close modal click
     $("#account-modal").on("click", ".js-close-modal", function () {
         modalOFF();
-		if (!currentUserID) {
-        	resetFilter();
+        if (!currentUserID) {
+            resetFilter();
         }
     });
 
@@ -470,19 +472,19 @@ $(document).ready(function () {
         disableSidebar();
     });
     
-	// overlay--modal click
-	$("body").on("click", "#overlay--modal", function () {
+    // overlay--modal click
+    $("body").on("click", "#overlay--modal", function () {
         modalOFF();
-		if (!currentUserID) {
-        	resetFilter();
+        if (!currentUserID) {
+            resetFilter();
         }
     });
 
-	// theme switcher click
+    // theme switcher click
     $(".theme-switch").on("change", "input[type='checkbox']", function () {
-	    switchTheme($(this));
+        switchTheme($(this));
     });
-		
+        
     // initiate search functionality
     initSearch();
     
@@ -492,27 +494,22 @@ $(document).ready(function () {
     });
     
     /* ==========================================================================
-	Interactivity / functions
-	========================================================================== */
-
-    // Load firebase datas function
-    function loadData(path) {
-        return firebase.database().ref(path).once("value");
-    }
+    Interactivity / functions
+    ========================================================================== */
 
     /**
      * Set the var wideLayout depends on breakpoint
      */
   
-	async function wideWindowDetector() {
-	    let newWideLayout = $(window).width() > wideLayoutBreakingpoint;    	        
-		if (newWideLayout !== wideLayout) {
-			if (activeSidebar == true) {
-				disableSidebar();	
-			}
-			wideLayout = !wideLayout;
-		}
-	}
+    async function wideWindowDetector() {
+        let newWideLayout = $(window).width() > wideLayoutBreakingpoint;    	        
+        if (newWideLayout !== wideLayout) {
+            if (activeSidebar == true) {
+                disableSidebar();	
+            }
+            wideLayout = !wideLayout;
+        }
+    }
 
     /**
      * Burger button click
@@ -555,8 +552,8 @@ $(document).ready(function () {
 
             // clean search value
             layoutCleanSearch();
-			
-			// filter items
+            
+            // filter items
             if (currentFilter == "cat=latest") {
                 latestFilter = true;
                 
@@ -596,7 +593,7 @@ $(document).ready(function () {
             resetFilter();
         } else {
             if (!currentUserID) {
-	            modalON();
+                modalON();
             }
             
             // filter
@@ -740,11 +737,11 @@ $(document).ready(function () {
     async function activateSidebar() {
         activeSidebar = true;
         $("body").addClass("activeSidebar");
-		if (wideLayout == false) {
-			disableBodyScroll($sidebar);
+        if (wideLayout == false) {
+            disableBodyScroll($sidebar);
         }
     }
-	
+    
     async function disableSidebar() {
         activeSidebar = false;
         $("body").removeClass("activeSidebar");
@@ -760,6 +757,7 @@ $(document).ready(function () {
      * toggle recipe bookmark status on firebase and layout
      */
 
+
     function toggleBookmark(bookmark) {
         if (currentUserID) {
             var recipe = bookmark.attr("value");
@@ -767,15 +765,18 @@ $(document).ready(function () {
             // get var
             var path = currentUserID + "/recipes/" + recipe;
             // get status and toggle
-            loadData(path).then((snapshot) => {
+            
+            const qToggleBookmark = query(ref(db, path));
+            return onValue(qToggleBookmark, (snapshot) => {
                 var filterValue = currentBookmarks;
                 if (snapshot.val() == null || snapshot.val().bookmark == false) {
                     bookmark.addClass("active");
                     filterValue += ",.r_" + recipe;
                     filterValue = filterValue.replace(/^,/, "").replace(",,", ",");
-                    firebase.database().ref(path).update({
-                        bookmark: true,
-                    });
+                    let data = { bookmark: true };
+                    let updates = {};
+                    updates[path] = data;
+                    update(ref(db), updates);
                 } else {
                     bookmark.removeClass("active");
                     filterValue = filterValue
@@ -783,10 +784,12 @@ $(document).ready(function () {
                         .replace(",,", ",")
                         .replace(/,$/, "")
                         .replace(/^,/, "");
-                    firebase.database().ref(path).update({
-                        bookmark: false,
-                    });
+                    let data = { bookmark: false };
+                    let updates = {};
+                    updates[path] = data;
+                    update(ref(db), updates);
                 }
+                
                 currentBookmarks = filterValue;
                 $bookmarksFilter.attr("data-filter", filterValue);
 
@@ -794,6 +797,8 @@ $(document).ready(function () {
                 if (currentFilter == "cat=bookmarks") {
                     isotopeFilter(filterValue, true);
                 }
+            }, {
+                onlyOnce: true
             });
         } else {
             modalON();
@@ -811,8 +816,10 @@ $(document).ready(function () {
             var recipe = recipeObject.attr("value");
             var path = currentUserID + "/recipes/" + recipe;
 
-            // save new rating
-            loadData(path).then((snapshot) => {
+            // save new rating    
+            const qSaveRating = query(ref(db, path));
+            return onValue(qSaveRating, (snapshot) => {
+
                 var stars = Number(ratingObject.attr("value"));
 
                 if (snapshot.val() !== null && snapshot.val().rating == stars) {
@@ -822,13 +829,18 @@ $(document).ready(function () {
                     recipeObject.addClass("active").find(".rating__icons").removeClass("active");
                     ratingObject.addClass("active");
                 }
-                firebase.database().ref(path).update({
-                    rating: stars,
-                });
+              
+                let data = { rating: stars };
+                let updates = {};
+                updates[path] = data;
+                update(ref(db), updates);
+                              
                 $(".r_" + recipe).attr("data-rating", stars);
 
                 // update sort datas
                 isotopeSortUpdate();
+            }, {
+                onlyOnce: true
             });
         } else {
             modalON();
@@ -850,16 +862,16 @@ $(document).ready(function () {
         enableBodyScroll($accountModal);
     }
     
-	// theme switcher
-	async function switchTheme(e) {
-	    if(e.is(':checked')) {
-			document.documentElement.setAttribute('data-theme', 'dark');
-			localStorage.setItem('theme', 'dark');
-	    } else {
-			document.documentElement.setAttribute('data-theme', 'light');
-			localStorage.setItem('theme', 'light');
-	    }
-	}
+    // theme switcher
+    async function switchTheme(e) {
+        if(e.is(':checked')) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        }
+    }
 
     /**
      * Search functions
@@ -925,7 +937,7 @@ $(document).ready(function () {
             let source = item.source || "";
 
             if (title.indexOf(q) > -1 || ingredients.indexOf(q) > -1 || technique.indexOf(q) > -1 || category.indexOf(q) > -1 || source.indexOf(q) > -1) {
-                searchValue = item.data_search;
+                let searchValue = item.data_search;
                 resultsCount++;
                 searchValues.push(searchValue);
             }

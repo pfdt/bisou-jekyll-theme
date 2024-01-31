@@ -102,13 +102,10 @@
 	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/scripts/isotope.pkgd.min.js' }}"></script>
 	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/scripts/lazyload.min.js' }}"></script>
 	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/scripts/bodyScrollLock.min.js' }}"></script>
-	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/scripts/firebase-app.js' }}"></script>
-	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/scripts/firebase-auth.js' }}"></script>
-	<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/scripts/firebase-database.js' }}"></script>
 	{% if site.env == 'production' %}
-		<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/scripts/main.min.js' }}"></script>
+		<script defer type="module" crossorigin="anonymous" src="{{ '/assets/scripts/main.min.js' }}"></script>
 	{% else %}
-		<script defer type="text/javascript" crossorigin="anonymous" src="{{ '/assets/scripts/main.js' }}"></script>
+		<script defer type="module" crossorigin="anonymous" src="{{ '/assets/scripts/main.js' }}"></script>
 	{% endif %}
 	
 	<link href="https://www.google-analytics.com" rel="preconnect" crossorigin>
