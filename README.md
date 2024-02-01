@@ -27,4 +27,4 @@ Some lines and good tips from [cagrimmett/jekyll-tools](https://github.com/cagri
 I'm not a developer and this is my first time using jekyll and more broadly github, I hope it is not too dirty. :)
 
 
-*latest version: v2.4*
+*latest version: v2.4.1*
