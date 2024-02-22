@@ -5,7 +5,7 @@
 ========================================================================== */
 
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js';
-import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signInWithRedirect, signOut, getRedirectResult } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js';
+import { getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signOut } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js';
 import { getDatabase, ref, onValue, query, startAt, orderByChild, equalTo, update } from 'https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js';
 
 var
@@ -31,8 +31,6 @@ const
     firebase_projectId = {{ site.data.tools.firebase.projectId | jsonify }},
     firebase_databaseName = {{ site.data.tools.firebase.dbName | jsonify }},
     firebase_authDomain = firebase_projectId+'.firebaseapp.com',
-    // firebase_authDomain = {{ site.data.content.url | regex_replace: 'https?:\/\/', '' | regex_replace: '\/.*', '' | jsonify }},
-    // firebase_authDomain = '10.0.0.141:4000',
     firebase_databaseURL = firebase_databaseName+'.firebaseio.com',
     firebase_storageBucket = firebase_projectId+'.appspot.com',
     signedIn_modalTitle = {{ site.data.content.account-modal_content.signed-in_title | jsonify }},
