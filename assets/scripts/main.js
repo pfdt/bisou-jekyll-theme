@@ -754,8 +754,7 @@ $(document).ready(function () {
     /**
      * toggle recipe bookmark status on firebase and layout
      */
-
-
+     
     function toggleBookmark(bookmark) {
         if (currentUserID) {
             var recipe = bookmark.attr("value");
@@ -767,11 +766,12 @@ $(document).ready(function () {
             const qToggleBookmark = query(ref(db, path));
             return onValue(qToggleBookmark, (snapshot) => {
                 var filterValue = currentBookmarks;
-                if (snapshot.val() == null || snapshot.val().bookmark == false) {
+                if (snapshot.val() == null || snapshot.val().bookmark == undefined || snapshot.val().bookmark == false) {
                     bookmark.addClass("active");
                     filterValue += ",.r_" + recipe;
                     filterValue = filterValue.replace(/^,/, "").replace(",,", ",");
-                    let data = { bookmark: true };
+                    let data = snapshot.val() || {};
+                    data.bookmark = true;   
                     let updates = {};
                     updates[path] = data;
                     update(ref(db), updates);
@@ -782,7 +782,8 @@ $(document).ready(function () {
                         .replace(",,", ",")
                         .replace(/,$/, "")
                         .replace(/^,/, "");
-                    let data = { bookmark: false };
+                    let data = snapshot.val() || {};
+                    data.bookmark = false;
                     let updates = {};
                     updates[path] = data;
                     update(ref(db), updates);
@@ -827,8 +828,8 @@ $(document).ready(function () {
                     recipeObject.addClass("active").find(".rating__icons").removeClass("active");
                     ratingObject.addClass("active");
                 }
-              
-                let data = { rating: stars };
+                let data = snapshot.val() || {};
+                data.rating = stars;
                 let updates = {};
                 updates[path] = data;
                 update(ref(db), updates);
